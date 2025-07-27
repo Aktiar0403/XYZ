@@ -1,6 +1,4 @@
-// html2pdf.js – Export visit summary and prescription to PDF
-
-import html2pdf from './html2pdf.js';
+// html2pdf.js – Export visit summary and prescription to PDF using window.html2pdf from CDN
 
 export function exportToPDF(containerId = 'pdf-content', filename = 'NephroCare_Report.pdf') {
   const element = document.getElementById(containerId);
@@ -17,5 +15,6 @@ export function exportToPDF(containerId = 'pdf-content', filename = 'NephroCare_
     jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
   };
 
-  html2pdf().set(opt).from(element).save();
+  // Use global html2pdf from CDN
+  window.html2pdf().set(opt).from(element).save();
 }
