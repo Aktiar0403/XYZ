@@ -3,7 +3,7 @@
 export let diagnosisRules = [];
 
 // Load diagnosis rules from external enriched JSON file
-export async function loadDiagnosisRulesFromFile(url = 'data/diagnosisRules.json') {
+export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.json') {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to load diagnosis rules');
