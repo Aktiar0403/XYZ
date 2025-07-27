@@ -1,7 +1,7 @@
 // app.js – NephroCare Pro: Main Application Script
 
-import { loadDiagnosisRulesFromFile, generateDiagnosisText, getMissingFields } from '.js/diagnosis.js';
-import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from '.js/medicines.js';
+import { loadDiagnosisRulesFromFile, generateDiagnosisText, getMissingFields } from 'js/diagnosis.js';
+import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from 'js/medicines.js';
 import { applyReferenceTooltips } from '.js/inputhints.js';
 import { exportToPDF } from 'js./html2pdf.js';
 
