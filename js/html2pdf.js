@@ -1,6 +1,6 @@
 // html2pdf.js – Export visit summary and prescription to PDF
 
-import html2pdf from 'html2pdf.js';
+import html2pdf from './html2pdf.js';
 
 export function exportToPDF(containerId = 'pdf-content', filename = 'NephroCare_Report.pdf') {
   const element = document.getElementById(containerId);
