@@ -114,7 +114,7 @@
     ],
     "followUpAdvice": "Take the tablet after meals. Avoid in patients with uncontrolled blood pressure.",
     "missingFields": ["bicarbonate"]
-  }.
+  },
   {
     "diagnosis": "Nephrotic Syndrome",
     "doctorReason": "Massive proteinuria (>3.5 g/day) with edema suggests nephrotic syndrome.",
@@ -230,9 +230,8 @@
     ],
     "followUpAdvice": "Increase hydration. Urology referral may be required.",
     "missingFields": ["hydronephrosis", "flank-pain", "stones"]
-  }
-]
-[
+  },
+
   {
     "diagnosis": "Suspected NSAID-Induced AKI",
     "doctorReason": "Rising creatinine with history of NSAID use and oliguria indicates drug-induced kidney injury.",

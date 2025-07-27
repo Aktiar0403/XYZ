@@ -1,5 +1,5 @@
 // js/inputhints.js
-import { referenceRanges } from 'js/referenceRanges.js';
+import { referenceRanges } from './referenceRanges.js';
 
 export function applyReferenceTooltips(formElement) {
   const inputs = formElement.querySelectorAll('input, select');
