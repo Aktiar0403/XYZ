@@ -3,7 +3,7 @@
 export let medicines = [];
 
 // Load medicines from external JSON
-export async function loadMedicinesFromFile(url = 'medicines.json') {
+export async function loadMedicinesFromFile(url = '.data/medicines.json') {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error('Failed to load medicines');
