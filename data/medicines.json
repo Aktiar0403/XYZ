@@ -1,0 +1,1248 @@
+[
+  {
+    "name": "Telmisartan 40",
+    "indication": "Hypertension in CKD",
+    "working": "ARB - Reduces pressure & proteinuria",
+    "composition": "Telmisartan 40 mg",
+    "linkedDiagnosis": ["Hypertension", "CKD Stage 1", "CKD Stage 2"],
+    "type": "Rx",
+    "dose": "40 mg once daily",
+    "instructions": "Take in morning. Monitor BP. Avoid NSAIDs."
+  },
+  {
+    "name": "Febuxostat 40",
+    "indication": "Hyperuricemia in CKD",
+    "working": "Xanthine oxidase inhibitor - lowers uric acid",
+    "composition": "Febuxostat 40 mg",
+    "linkedDiagnosis": ["Hyperuricemia", "CKD Stage 3"],
+    "type": "Rx",
+    "dose": "40 mg once daily",
+    "instructions": "Check uric acid monthly. Hydrate well."
+  },
+  {
+    "name": "Furosemide 40",
+    "indication": "Fluid overload, edema",
+    "working": "Loop diuretic - removes excess water",
+    "composition": "Furosemide 40 mg",
+    "linkedDiagnosis": ["Edema", "CKD Stage 4", "Volume overload"],
+    "type": "Rx",
+    "dose": "20–40 mg once or twice daily",
+    "instructions": "Take in morning. Monitor electrolytes."
+  },
+  {
+    "name": "Sodium Bicarbonate",
+    "indication": "Metabolic acidosis in CKD",
+    "working": "Buffers excess acid in blood",
+    "composition": "Sodium bicarbonate 500 mg",
+    "linkedDiagnosis": ["Metabolic acidosis", "CKD Stage 4"],
+    "type": "OTC",
+    "dose": "500 mg two to three times daily",
+    "instructions": "Take after meals. Avoid in uncontrolled BP."
+  },
+  {
+    "name": "Erythropoietin Alfa Injection",
+    "indication": "Anemia of CKD",
+    "working": "Stimulates red blood cell production",
+    "composition": "Erythropoietin 4000 IU",
+    "linkedDiagnosis": ["CKD Stage 5", "Anemia", "Hemoglobin < 10"],
+    "type": "Injection",
+    "dose": "4000 IU subcutaneous once or twice weekly",
+    "instructions": "Check hemoglobin weekly. Inject under supervision."
+  },
+  {
+    "name": "Roxadustat",
+    "indication": "Anemia in dialysis or CKD",
+    "working": "HIF stabilizer - boosts endogenous EPO",
+    "composition": "Roxadustat 100 mg",
+    "linkedDiagnosis": ["CKD Stage 4", "Anemia"],
+    "type": "Rx",
+    "dose": "100 mg every alternate day",
+    "instructions": "Monitor Hb and iron regularly. Avoid overdose."
+  },
+  {
+    "name": "Cinacalcet 30",
+    "indication": "Secondary hyperparathyroidism",
+    "working": "Calcimimetic - reduces PTH",
+    "composition": "Cinacalcet 30 mg",
+    "linkedDiagnosis": ["CKD Stage 5", "High PTH", "Hypercalcemia"],
+    "type": "Rx",
+    "dose": "30 mg once daily with food",
+    "instructions": "Check calcium and PTH. May cause nausea."
+  },
+  {
+    "name": "Calcium Acetate",
+    "indication": "Hyperphosphatemia in CKD",
+    "working": "Phosphate binder - reduces phosphate absorption",
+    "composition": "Calcium acetate 667 mg",
+    "linkedDiagnosis": ["CKD Stage 3", "High phosphate"],
+    "type": "Rx",
+    "dose": "1-2 capsules with each meal",
+    "instructions": "Take with meals. Avoid calcium supplements."
+  },
+  {
+    "name": "Sevelamer 800",
+    "indication": "Hyperphosphatemia (non-calcium binder)",
+    "working": "Binds phosphate in gut",
+    "composition": "Sevelamer carbonate 800 mg",
+    "linkedDiagnosis": ["CKD Stage 4", "High phosphate", "Dialysis"],
+    "type": "Rx",
+    "dose": "800 mg with meals",
+    "instructions": "Take with food. Avoid antacids near dose time."
+  },
+  {
+    "name": "Alfacalcidol 0.25",
+    "indication": "CKD-related bone disease, low calcium",
+    "working": "Vitamin D analog - helps calcium metabolism",
+    "composition": "Alfacalcidol 0.25 mcg",
+    "linkedDiagnosis": ["CKD-MBD", "Low calcium", "Secondary hyperparathyroidism"],
+    "type": "Rx",
+    "dose": "0.25 mcg once daily",
+    "instructions": "Check calcium and phosphate monthly."
+  },
+
+  {
+    "name": "Ketosteril",
+    "indication": "CKD nutritional support",
+    "working": "Provides essential keto-analogues to reduce uremia and nitrogen load",
+    "composition": "Alpha-ketoanalogues of essential amino acids",
+    "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4", "CKD Stage 5 (ESRD)"],
+    "type": "Supplement",
+    "dose": "2 tablets three times daily with meals",
+    "instructions": "Take with meals. Low-protein diet recommended."
+  },
+  {
+    "name": "Lasix",
+    "indication": "Fluid overload, edema in CKD",
+    "working": "Loop diuretic, increases urine output and reduces sodium reabsorption",
+    "composition": "Furosemide 40mg",
+    "linkedDiagnosis": ["Edema", "Volume overload", "Hypertensive CKD"],
+    "type": "Diuretic",
+    "dose": "40–80 mg once or twice daily",
+    "instructions": "Monitor electrolytes and renal function. Take in the morning."
+  },
+  {
+    "name": "Acetylcysteine",
+    "indication": "Contrast-induced nephropathy prevention",
+    "working": "Antioxidant that scavenges free radicals and improves renal blood flow",
+    "composition": "N-acetylcysteine 600mg",
+    "linkedDiagnosis": ["Prevent contrast-induced AKI"],
+    "type": "Antioxidant",
+    "dose": "600 mg twice daily before and after contrast",
+    "instructions": "Start one day before contrast exposure."
+  },
+  {
+    "name": "Alphadopa",
+    "indication": "Hypertension in pregnancy with kidney disease",
+    "working": "Central alpha-agonist that lowers blood pressure",
+    "composition": "Methyldopa 250mg",
+    "linkedDiagnosis": ["CKD with pregnancy", "Hypertension in CKD"],
+    "type": "Antihypertensive",
+    "dose": "250–500 mg two to three times daily",
+    "instructions": "Preferred in pregnancy. Monitor BP."
+  },
+  {
+    "name": "Metolazone",
+    "indication": "Refractory edema in CKD",
+    "working": "Thiazide-like diuretic that synergizes with loop diuretics",
+    "composition": "Metolazone 2.5mg",
+    "linkedDiagnosis": ["CKD with edema", "Loop diuretic resistance"],
+    "type": "Diuretic",
+    "dose": "2.5–5 mg once daily",
+    "instructions": "Give 30 minutes before loop diuretics. Monitor potassium."
+  },
+  {
+    "name": "Optineuron",
+    "indication": "CKD-associated peripheral neuropathy",
+    "working": "Neurotropic vitamins support nerve health",
+    "composition": "B1, B6, B12",
+    "linkedDiagnosis": ["CKD with neuropathy", "Uremic neuropathy"],
+    "type": "Supplement",
+    "dose": "1 tablet daily",
+    "instructions": "Can be continued long-term."
+  },
+  {
+    "name": "Zincovit",
+    "indication": "Micronutrient deficiency in CKD",
+    "working": "Provides zinc, antioxidants, and vitamins",
+    "composition": "Zinc, Vitamin C, A, E, B-complex",
+    "linkedDiagnosis": ["CKD fatigue", "Nutritional support"],
+    "type": "Supplement",
+    "dose": "1 capsule daily",
+    "instructions": "Take after food."
+  },
+  {
+    "name": "Rocaltrol",
+    "indication": "Secondary hyperparathyroidism in CKD",
+    "working": "Active vitamin D3 analogue, suppresses PTH",
+    "composition": "Calcitriol 0.25 mcg",
+    "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4", "CKD Stage 5 (ESRD)", "Secondary hyperparathyroidism"],
+    "type": "Vitamin D analogue",
+    "dose": "0.25–0.5 mcg daily",
+    "instructions": "Monitor calcium and phosphate levels regularly."
+  },
+  {
+    "name": "Torsemide",
+    "indication": "Edema and hypertension in CKD",
+    "working": "Loop diuretic with longer half-life than furosemide",
+    "composition": "Torsemide 10mg",
+    "linkedDiagnosis": ["CKD with edema", "Volume overload"],
+    "type": "Diuretic",
+    "dose": "10–20 mg once or twice daily",
+    "instructions": "Monitor renal function and electrolytes."
+  },
+  {
+    "name": "Urimax",
+    "indication": "CKD with BPH causing LUTS",
+    "working": "Alpha-1 blocker improves urine flow",
+    "composition": "Tamsulosin 0.4mg",
+    "linkedDiagnosis": ["CKD with LUTS", "BPH", "Post-renal AKI"],
+    "type": "Alpha-blocker",
+    "dose": "0.4 mg at bedtime",
+    "instructions": "Caution in orthostatic hypotension. Take after dinner."
+  },
+  
+  {
+    "name": "Renodapt",
+    "indication": "Post-transplant immunosuppression",
+    "working": "Inhibits T and B lymphocyte proliferation",
+    "composition": "Mycophenolate mofetil 500mg",
+    "linkedDiagnosis": ["Kidney transplant", "Lupus nephritis"],
+    "type": "Immunosuppressant",
+    "dose": "500–1000 mg twice daily",
+    "instructions": "Take on empty stomach. Monitor CBC and renal function."
+  },
+  {
+    "name": "Omnicortil",
+    "indication": "Nephrotic syndrome, glomerulonephritis",
+    "working": "Corticosteroid with anti-inflammatory effect",
+    "composition": "Prednisolone 10mg",
+    "linkedDiagnosis": ["Nephrotic syndrome", "Lupus nephritis", "FSGS"],
+    "type": "Steroid",
+    "dose": "1–2 mg/kg/day or taper as advised",
+    "instructions": "Do not stop suddenly. Monitor BP, sugar, infection."
+  },
+  {
+    "name": "Tacrograf",
+    "indication": "Post-kidney transplant immunosuppression",
+    "working": "Calcineurin inhibitor preventing organ rejection",
+    "composition": "Tacrolimus 1mg",
+    "linkedDiagnosis": ["Renal transplant", "Lupus nephritis refractory"],
+    "type": "Immunosuppressant",
+    "dose": "0.1 mg/kg/day in divided doses",
+    "instructions": "Monitor trough levels, renal and liver function."
+  },
+  {
+    "name": "Renoalfa",
+    "indication": "Anemia in CKD",
+    "working": "Stimulates erythropoiesis in bone marrow",
+    "composition": "Darbepoetin alfa injection",
+    "linkedDiagnosis": ["CKD anemia", "ESRD anemia"],
+    "type": "ESA injection",
+    "dose": "0.45 mcg/kg/week SC or as advised",
+    "instructions": "Administer SC. Monitor hemoglobin and iron stores."
+  },
+  {
+    "name": "Hifenac",
+    "indication": "Pain in renal stone or musculoskeletal CKD cases",
+    "working": "NSAID that reduces pain and inflammation",
+    "composition": "Aceclofenac 100mg",
+    "linkedDiagnosis": ["Kidney stone pain", "Backache in CKD"],
+    "type": "NSAID",
+    "dose": "100 mg twice daily for short term only",
+    "instructions": "Avoid in CKD Stage 3 or higher. Take after meals."
+  },
+  {
+    "name": "Domstal",
+    "indication": "Nausea and vomiting in uremia",
+    "working": "Dopamine antagonist, prokinetic action",
+    "composition": "Domperidone 10mg",
+    "linkedDiagnosis": ["CKD nausea", "Uremic vomiting"],
+    "type": "Antiemetic",
+    "dose": "10 mg before meals, up to 3 times daily",
+    "instructions": "Short-term use preferred. Avoid in QT prolongation."
+  },
+  {
+    "name": "Sodamint",
+    "indication": "Metabolic acidosis in CKD",
+    "working": "Supplies bicarbonate to buffer acid",
+    "composition": "Sodium bicarbonate 500mg",
+    "linkedDiagnosis": ["Metabolic acidosis in CKD", "Low bicarbonate"],
+    "type": "Alkali",
+    "dose": "1–2 tablets 2–3 times daily",
+    "instructions": "Monitor serum bicarbonate and sodium."
+  },
+  {
+    "name": "Razo",
+    "indication": "Gastric protection in CKD patients on polypharmacy",
+    "working": "Proton pump inhibitor reduces acid secretion",
+    "composition": "Rabeprazole 20mg",
+    "linkedDiagnosis": ["CKD with gastritis", "PPI prophylaxis"],
+    "type": "PPI",
+    "dose": "20 mg before breakfast",
+    "instructions": "Use shortest duration. Avoid long-term unless indicated."
+  },
+  {
+    "name": "Cystone",
+    "indication": "Prevention of kidney stones",
+    "working": "Ayurvedic herbal formulation to reduce lithogenesis",
+    "composition": "Ayurvedic herbs (Himalaya)",
+    "linkedDiagnosis": ["Recurrent renal calculi", "Mild hydronephrosis"],
+    "type": "Ayurvedic",
+    "dose": "2 tablets twice daily",
+    "instructions": "Encourage hydration. Long-term use possible."
+  },
+  {
+    "name": "Renvela",
+    "indication": "Hyperphosphatemia in CKD",
+    "working": "Non-calcium phosphate binder",
+    "composition": "Sevelamer carbonate 800mg",
+    "linkedDiagnosis": ["CKD Stage 5", "High phosphate"],
+    "type": "Phosphate binder",
+    "dose": "800–1600 mg with meals",
+    "instructions": "Take with food. Monitor phosphate levels."
+  },
+  {
+    "name": "Calcimax",
+    "indication": "CKD-related hypocalcemia",
+    "working": "Replenishes calcium stores",
+    "composition": "Calcium carbonate + Vitamin D3",
+    "linkedDiagnosis": ["CKD with low calcium", "Bone disease"],
+    "type": "Supplement",
+    "dose": "1 tablet twice daily",
+    "instructions": "Take after meals. Avoid if serum calcium is high."
+  },
+  {
+    "name": "Decmax",
+    "indication": "Severe glomerular inflammation",
+    "working": "High potency steroid",
+    "composition": "Dexamethasone 4mg",
+    "linkedDiagnosis": ["Severe nephrotic syndrome", "Vasculitis"],
+    "type": "Steroid",
+    "dose": "4–8 mg/day or pulse dosing",
+    "instructions": "Use under specialist supervision. Taper cautiously."
+  },
+  {
+    "name": "Methylcobal",
+    "indication": "Peripheral neuropathy in CKD",
+    "working": "Supports myelin sheath regeneration",
+    "composition": "Methylcobalamin 1500mcg",
+    "linkedDiagnosis": ["Uremic neuropathy", "B12 deficiency in CKD"],
+    "type": "Vitamin B12",
+    "dose": "1500 mcg daily or alternate days",
+    "instructions": "Can be taken long-term. No major side effects."
+  },
+  {
+    "name": "Zyrop",
+    "indication": "Anemia in dialysis patients",
+    "working": "Erythropoietin stimulating agent",
+    "composition": "Recombinant erythropoietin injection",
+    "linkedDiagnosis": ["CKD anemia", "Dialysis-related anemia"],
+    "type": "ESA injection",
+    "dose": "50–150 IU/kg/week SC/IV",
+    "instructions": "Monitor Hb. Give with iron supplementation."
+  },
+  {
+    "name": "Pantocid",
+    "indication": "Acid reflux in CKD",
+    "working": "Suppresses gastric acid secretion",
+    "composition": "Pantoprazole 40mg",
+    "linkedDiagnosis": ["CKD with dyspepsia", "PPI cover"],
+    "type": "PPI",
+    "dose": "40 mg before meals",
+    "instructions": "Avoid long-term. Reassess after 4–8 weeks."
+  },
+  {
+    "name": "Amlo",
+    "indication": "Hypertension in CKD",
+    "working": "Calcium channel blocker lowers BP",
+    "composition": "Amlodipine 5mg",
+    "linkedDiagnosis": ["Hypertensive nephropathy", "CKD BP control"],
+    "type": "CCB",
+    "dose": "2.5–10 mg once daily",
+    "instructions": "Titrate dose based on BP. No dose adjustment in CKD."
+  },
+  {
+    "name": "Xykaa",
+    "indication": "Fever in CKD patients",
+    "working": "Antipyretic, safe in renal disease",
+    "composition": "Paracetamol 650mg",
+    "linkedDiagnosis": ["Fever with CKD", "Pain relief in CKD"],
+    "type": "Analgesic",
+    "dose": "650 mg 6–8 hourly as needed",
+    "instructions": "Preferred over NSAIDs. Max 3g/day."
+  },
+  {
+    "name": "Rosuvas",
+    "indication": "CKD with dyslipidemia",
+    "working": "Inhibits cholesterol synthesis",
+    "composition": "Rosuvastatin 10mg",
+    "linkedDiagnosis": ["CKD with high LDL", "Nephrotic dyslipidemia"],
+    "type": "Statin",
+    "dose": "5–20 mg once daily",
+    "instructions": "Monitor LFTs and CK. Evening dose preferred."
+  },
+  {
+    "name": "Becosules",
+    "indication": "Vitamin B-complex deficiency",
+    "working": "Nutritional support for metabolism",
+    "composition": "B1, B2, B3, B6, B12, Folic acid",
+    "linkedDiagnosis": ["Fatigue in CKD", "Peripheral neuropathy"],
+    "type": "Vitamin",
+    "dose": "1 capsule daily",
+    "instructions": "Safe for long-term use. Take after meals."
+  },
+  {
+    "name": "Ursocol",
+    "indication": "CKD with cholestasis or gallbladder sludge",
+    "working": "Improves bile flow",
+    "composition": "Ursodeoxycholic acid 300mg",
+    "linkedDiagnosis": ["CKD with liver dysfunction"],
+    "type": "Hepato-protective",
+    "dose": "300–600 mg daily",
+    "instructions": "Take with meals. Monitor LFTs."
+  },
+  {
+    "name": "Amlodac AT",
+    "indication": "Resistant hypertension in CKD",
+    "working": "Combo of CCB and beta blocker",
+    "composition": "Amlodipine + Atenolol",
+    "linkedDiagnosis": ["CKD with uncontrolled BP"],
+    "type": "Antihypertensive",
+    "dose": "Once daily",
+    "instructions": "Check BP regularly. Avoid abrupt withdrawal."
+  },
+  {
+    "name": "Lasilactone",
+    "indication": "CKD with resistant edema",
+    "working": "Furosemide + Spironolactone combo",
+    "composition": "Furosemide 20mg + Spironolactone 50mg",
+    "linkedDiagnosis": ["CKD with ascites", "Edema not controlled"],
+    "type": "Diuretic combo",
+    "dose": "Once or twice daily",
+    "instructions": "Monitor potassium and sodium."
+  },
+  {
+    "name": "Moxovas",
+    "indication": "Resistant hypertension",
+    "working": "Imidazoline receptor agonist",
+    "composition": "Moxonidine 0.2mg",
+    "linkedDiagnosis": ["CKD with severe hypertension"],
+    "type": "Central antihypertensive",
+    "dose": "0.2–0.4 mg once daily",
+    "instructions": "Caution in bradycardia. Take at bedtime."
+  },
+  {
+    "name": "Alfa D3",
+    "indication": "CKD-related vitamin D deficiency",
+    "working": "Improves calcium absorption and suppresses PTH",
+    "composition": "Alfacalcidol 0.25 mcg",
+    "linkedDiagnosis": ["CKD Stage 3–5", "Secondary hyperparathyroidism"],
+    "type": "Vitamin D",
+    "dose": "0.25–0.5 mcg daily",
+    "instructions": "Avoid overdose. Monitor calcium/phosphate."
+  },
+  {
+    "name": "Sensipar",
+    "indication": "Secondary hyperparathyroidism in dialysis",
+    "working": "Calcimimetic that reduces PTH secretion",
+    "composition": "Cinacalcet 30mg",
+    "linkedDiagnosis": ["CKD Stage 5", "High PTH on dialysis"],
+    "type": "Calcimimetic",
+    "dose": "30 mg once daily, titrate as needed",
+    "instructions": "Monitor PTH, calcium, phosphate."
+  },
+  
+  {
+    "name": "Cilacar",
+    "indication": "Hypertension in CKD",
+    "working": "Calcium channel blocker relaxing blood vessels",
+    "composition": "Cilnidipine 10mg",
+    "linkedDiagnosis": ["Hypertension", "CKD"],
+    "type": "Antihypertensive",
+    "dose": "5–10 mg once daily",
+    "instructions": "Monitor BP. Take at same time daily."
+  },
+  {
+    "name": "Telmikind",
+    "indication": "Proteinuria, diabetic nephropathy",
+    "working": "ARB that reduces glomerular pressure",
+    "composition": "Telmisartan 40mg",
+    "linkedDiagnosis": ["Proteinuria", "Diabetic CKD"],
+    "type": "ARB",
+    "dose": "40–80 mg once daily",
+    "instructions": "Check potassium and creatinine periodically."
+  },
+  {
+    "name": "Ziblok",
+    "indication": "Hypertension with proteinuria",
+    "working": "Beta-blocker reduces heart workload",
+    "composition": "Bisoprolol 5mg",
+    "linkedDiagnosis": ["CKD", "Hypertension"],
+    "type": "Beta-blocker",
+    "dose": "2.5–5 mg once daily",
+    "instructions": "Monitor pulse. Avoid abrupt stop."
+  },
+  {
+    "name": "Reclide",
+    "indication": "Diabetes in CKD",
+    "working": "Stimulates insulin secretion from pancreas",
+    "composition": "Gliclazide 40mg",
+    "linkedDiagnosis": ["Diabetes with CKD"],
+    "type": "Oral antidiabetic",
+    "dose": "40–80 mg once or twice daily",
+    "instructions": "Check glucose. Avoid hypoglycemia in CKD."
+  },
+  {
+    "name": "Vogliboz",
+    "indication": "Postprandial glucose spikes in CKD",
+    "working": "Delays carbohydrate absorption",
+    "composition": "Voglibose 0.2mg",
+    "linkedDiagnosis": ["Diabetic nephropathy"],
+    "type": "Alpha-glucosidase inhibitor",
+    "dose": "0.2–0.3 mg before meals",
+    "instructions": "Chew before meals. Avoid in GI disorders."
+  },
+  {
+    "name": "Dytor",
+    "indication": "Volume overload in CKD",
+    "working": "Loop diuretic removes excess fluid",
+    "composition": "Torasemide 10mg",
+    "linkedDiagnosis": ["Edema", "CKD", "CHF with renal dysfunction"],
+    "type": "Diuretic",
+    "dose": "10–20 mg daily",
+    "instructions": "Monitor electrolytes and volume status."
+  },
+  {
+    "name": "Clopitab",
+    "indication": "Cardiovascular risk in CKD",
+    "working": "Antiplatelet prevents clot formation",
+    "composition": "Clopidogrel 75mg",
+    "linkedDiagnosis": ["CKD with CAD risk", "Stroke prevention"],
+    "type": "Antiplatelet",
+    "dose": "75 mg once daily",
+    "instructions": "Check for bleeding signs. Use with caution in CKD."
+  },
+  {
+    "name": "Hifenac-P",
+    "indication": "Pain relief in stone or injury with fever",
+    "working": "NSAID + antipyretic combo",
+    "composition": "Aceclofenac + Paracetamol",
+    "linkedDiagnosis": ["Kidney stone", "CKD pain with fever"],
+    "type": "NSAID combo",
+    "dose": "One tablet twice daily",
+    "instructions": "Short term only. Avoid if CKD Stage 3+."
+  },
+  {
+    "name": "Zoryl-M",
+    "indication": "Type 2 Diabetes with CKD",
+    "working": "Glimepiride + Metformin for glucose control",
+    "composition": "Glimepiride 1mg + Metformin 500mg",
+    "linkedDiagnosis": ["Diabetic nephropathy"],
+    "type": "Oral antidiabetic",
+    "dose": "Once or twice daily with meals",
+    "instructions": "Avoid if eGFR < 30. Monitor renal function."
+  },
+  {
+    "name": "Thyronorm",
+    "indication": "Hypothyroidism in CKD",
+    "working": "Synthetic T4 for thyroid hormone replacement",
+    "composition": "Levothyroxine 50mcg",
+    "linkedDiagnosis": ["CKD with hypothyroidism"],
+    "type": "Hormone",
+    "dose": "25–75 mcg in morning empty stomach",
+    "instructions": "Recheck TSH every 6–8 weeks."
+  },
+  {
+    "name": "Folvite",
+    "indication": "Anemia in CKD with low folate",
+    "working": "Replenishes folic acid for RBC synthesis",
+    "composition": "Folic acid 5mg",
+    "linkedDiagnosis": ["CKD anemia", "Hyperhomocysteinemia"],
+    "type": "Vitamin",
+    "dose": "One tablet daily",
+    "instructions": "Well-tolerated. Combine with B12."
+  },
+  {
+    "name": "Pyridox",
+    "indication": "Neuropathy prevention",
+    "working": "Vitamin B6 for nerve health",
+    "composition": "Pyridoxine 100mg",
+    "linkedDiagnosis": ["CKD with peripheral neuropathy"],
+    "type": "Vitamin",
+    "dose": "100 mg daily",
+    "instructions": "Avoid overdose to prevent toxicity."
+  },
+  {
+    "name": "Cyclosporine Neoral",
+    "indication": "Post-transplant maintenance",
+    "working": "Suppresses immune response",
+    "composition": "Cyclosporine 100mg",
+    "linkedDiagnosis": ["Renal transplant", "FSGS"],
+    "type": "Immunosuppressant",
+    "dose": "2–5 mg/kg/day",
+    "instructions": "Monitor trough levels, BP, and creatinine."
+  },
+  {
+    "name": "Proctinal",
+    "indication": "Hyperprolactinemia in CKD",
+    "working": "Dopamine agonist lowers prolactin",
+    "composition": "Bromocriptine 2.5mg",
+    "linkedDiagnosis": ["CKD with hormonal imbalance"],
+    "type": "Dopamine agonist",
+    "dose": "2.5–5 mg/day",
+    "instructions": "Take with food. Watch for dizziness."
+  },
+  {
+    "name": "Minipress XL",
+    "indication": "Resistant hypertension",
+    "working": "Alpha-blocker vasodilator",
+    "composition": "Prazosin 5mg SR",
+    "linkedDiagnosis": ["CKD with difficult BP control"],
+    "type": "Antihypertensive",
+    "dose": "2.5–5 mg at bedtime",
+    "instructions": "Monitor BP. Risk of orthostatic hypotension."
+  },
+  {
+    "name": "Nephrocaps",
+    "indication": "Nutritional support in dialysis",
+    "working": "Renal-specific multivitamin",
+    "composition": "Vitamin B, C, folic acid mix",
+    "linkedDiagnosis": ["CKD Stage 5", "Dialysis"],
+    "type": "Multivitamin",
+    "dose": "One capsule daily",
+    "instructions": "Safe for long-term dialysis use."
+  },
+  {
+    "name": "Revlamer",
+    "indication": "Phosphate control in CKD",
+    "working": "Non-calcium phosphate binder",
+    "composition": "Sevelamer 400mg",
+    "linkedDiagnosis": ["Hyperphosphatemia in CKD"],
+    "type": "Phosphate binder",
+    "dose": "400–800 mg with meals",
+    "instructions": "Take with meals. Recheck phosphate."
+  },
+  {
+    "name": "Esomepra",
+    "indication": "Gastritis prophylaxis in nephropathy",
+    "working": "Suppresses gastric acid",
+    "composition": "Esomeprazole 40mg",
+    "linkedDiagnosis": ["CKD with NSAID use"],
+    "type": "PPI",
+    "dose": "40 mg daily before food",
+    "instructions": "Limit duration. Avoid long-term use if unnecessary."
+  },
+  {
+    "name": "Ketorol DT",
+    "indication": "Renal colic emergency",
+    "working": "Potent NSAID painkiller",
+    "composition": "Ketorolac 10mg",
+    "linkedDiagnosis": ["Renal stone pain"],
+    "type": "NSAID (short-term)",
+    "dose": "10 mg every 4–6 hours, max 40 mg/day",
+    "instructions": "Avoid in CKD patients unless urgent."
+  },
+  {
+    "name": "Trental",
+    "indication": "Microcirculatory improvement",
+    "working": "Increases RBC flexibility",
+    "composition": "Pentoxifylline 400mg",
+    "linkedDiagnosis": ["Diabetic nephropathy", "Peripheral vascular disease"],
+    "type": "Hemorrheologic agent",
+    "dose": "400 mg twice or thrice daily",
+    "instructions": "Take with food. Monitor GI tolerance."
+  },
+  {
+    "name": "Losar",
+    "indication": "CKD with proteinuria",
+    "working": "ARB reducing intraglomerular pressure",
+    "composition": "Losartan 50mg",
+    "linkedDiagnosis": ["Hypertensive CKD", "Diabetic nephropathy"],
+    "type": "ARB",
+    "dose": "50–100 mg/day",
+    "instructions": "Monitor potassium and renal function."
+  },
+  {
+    "name": "Renolog",
+    "indication": "CKD-related muscle cramps",
+    "working": "Potassium-magnesium supplement",
+    "composition": "Potassium chloride + Magnesium citrate",
+    "linkedDiagnosis": ["CKD muscle cramps", "Hypokalemia"],
+    "type": "Electrolyte replacement",
+    "dose": "As per requirement",
+    "instructions": "Use cautiously in CKD. Monitor levels."
+  },
+  {
+    "name": "Furosemide",
+    "indication": "Volume overload in CKD",
+    "working": "Loop diuretic excretes sodium and water",
+    "composition": "Furosemide 40mg",
+    "linkedDiagnosis": ["CKD edema", "CHF"],
+    "type": "Diuretic",
+    "dose": "20–80 mg daily",
+    "instructions": "Watch electrolytes and dehydration."
+  },
+  {
+    "name": "Calcitriol",
+    "indication": "Secondary hyperparathyroidism",
+    "working": "Active vitamin D promotes calcium absorption",
+    "composition": "Calcitriol 0.25 mcg",
+    "linkedDiagnosis": ["CKD Stage 4–5", "CKD-MBD"],
+    "type": "Vitamin D analog",
+    "dose": "0.25 mcg daily or alternate days",
+    "instructions": "Avoid hypercalcemia. Monitor PTH."
+  },
+  {
+    "name": "Alburel",
+    "indication": "Nephrotic syndrome with severe hypoalbuminemia",
+    "working": "Restores oncotic pressure",
+    "composition": "Human Albumin 20%",
+    "linkedDiagnosis": ["Nephrotic syndrome", "Edema"],
+    "type": "Plasma expander",
+    "dose": "100 ml slow IV infusion",
+    "instructions": "Use only in severe cases. Monitor BP and volume."
+  },
+  {
+    "name": "Lasix",
+    "indication": "Acute fluid overload",
+    "working": "Loop diuretic with rapid action",
+    "composition": "Furosemide 20mg injection",
+    "linkedDiagnosis": ["AKI with fluid overload"],
+    "type": "Diuretic injection",
+    "dose": "20–40 mg IV slow push",
+    "instructions": "Give with monitoring. Rehydrate if needed."
+  },
+  {
+    "name": "Tolvaptan",
+    "indication": "Polycystic Kidney Disease",
+    "working": "Vasopressin antagonist slows cyst growth",
+    "composition": "Tolvaptan 15mg",
+    "linkedDiagnosis": ["ADPKD"],
+    "type": "Vaptan",
+    "dose": "15–45 mg/day",
+    "instructions": "Monitor LFTs. Avoid dehydration."
+  },
+  {
+    "name": "Nodosis",
+    "indication": "Chronic metabolic acidosis",
+    "working": "Bicarbonate supplementation",
+    "composition": "Sodium bicarbonate 500mg",
+    "linkedDiagnosis": ["CKD with low bicarbonate"],
+    "type": "Alkali",
+    "dose": "1–2 tabs after meals",
+    "instructions": "Adjust dose to target serum bicarbonate."
+  },
+  {
+    "name": "Ferritas",
+    "indication": "Iron-deficiency anemia in CKD",
+    "working": "Iron replenishment",
+    "composition": "Ferric carboxymaltose injection",
+    "linkedDiagnosis": ["CKD anemia"],
+    "type": "IV Iron",
+    "dose": "500–1000 mg IV single dose",
+    "instructions": "Give under monitoring. Avoid in active infection."
+  },
+  {
+    "name": "Veltam",
+    "indication": "BPH in elderly male CKD patients",
+    "working": "Alpha-blocker improves urine flow",
+    "composition": "Tamsulosin 0.4mg",
+    "linkedDiagnosis": ["CKD with LUTS", "BPH"],
+    "type": "Uroselective agent",
+    "dose": "0.4 mg at bedtime",
+    "instructions": "May cause dizziness. Caution in elderly."
+  },
+  {
+    "name": "Nephrofit",
+    "indication": "General kidney support",
+    "working": "Ayurvedic tonic supporting kidney health",
+    "composition": "Herbal blend",
+    "linkedDiagnosis": ["Early CKD", "Recurrent stones"],
+    "type": "Ayurvedic",
+    "dose": "As directed (commonly 15 ml twice)",
+    "instructions": "Consult before use. Supportive only."
+  },
+  {
+    "name": "Sensitone",
+    "indication": "CKD-induced neuropathic pain",
+    "working": "Gabapentinoid reduces nerve signals",
+    "composition": "Pregabalin 75mg",
+    "linkedDiagnosis": ["Uremic neuropathy"],
+    "type": "Anticonvulsant",
+    "dose": "75 mg at bedtime",
+    "instructions": "Adjust in CKD. Monitor sedation."
+  },
+  
+  {
+    "name": "Mycept",
+    "indication": "Post-renal transplant immunosuppression",
+    "working": "Suppresses T-cell proliferation",
+    "composition": "Mycophenolate mofetil 500mg",
+    "linkedDiagnosis": ["Renal transplant"],
+    "type": "Immunosuppressant",
+    "dose": "500–1000 mg twice daily",
+    "instructions": "Take on empty stomach. Monitor CBC and LFTs."
+  },
+  {
+    "name": "Xarelto",
+    "indication": "CKD with atrial fibrillation",
+    "working": "Direct oral anticoagulant (DOAC)",
+    "composition": "Rivaroxaban 10mg",
+    "linkedDiagnosis": ["AF in CKD"],
+    "type": "Anticoagulant",
+    "dose": "10–20 mg once daily",
+    "instructions": "Renal dose adjustment required. Monitor bleeding."
+  },
+  {
+    "name": "Nefrotec",
+    "indication": "UTI and renal inflammation (Ayurvedic)",
+    "working": "Herbal anti-inflammatory and diuretic",
+    "composition": "Ayurvedic blend",
+    "linkedDiagnosis": ["Recurrent UTI", "Early CKD"],
+    "type": "Ayurvedic",
+    "dose": "2 tablets twice daily",
+    "instructions": "Adjunct only. Not for acute infection."
+  },
+  {
+    "name": "Cinacalcet",
+    "indication": "Secondary hyperparathyroidism in dialysis",
+    "working": "Calcimimetic lowers PTH",
+    "composition": "Cinacalcet 30mg",
+    "linkedDiagnosis": ["CKD-MBD", "Dialysis"],
+    "type": "PTH modulator",
+    "dose": "30–60 mg daily",
+    "instructions": "Monitor calcium and PTH regularly."
+  },
+  {
+    "name": "Urimax",
+    "indication": "BPH with obstructive uropathy in CKD",
+    "working": "Relaxes bladder and prostate muscles",
+    "composition": "Tamsulosin 0.4mg",
+    "linkedDiagnosis": ["BPH", "CKD"],
+    "type": "Uroselective alpha-blocker",
+    "dose": "0.4 mg at bedtime",
+    "instructions": "Take after food. Watch for dizziness."
+  },
+  {
+    "name": "Optineuron",
+    "indication": "Neuropathy in uremia",
+    "working": "Vitamin B complex to support nerves",
+    "composition": "B1, B6, B12 mix",
+    "linkedDiagnosis": ["CKD neuropathy"],
+    "type": "Vitamin combo",
+    "dose": "One tablet daily",
+    "instructions": "Safe long-term. Watch for B6 excess."
+  },
+  {
+    "name": "Aciloc",
+    "indication": "Gastritis in CKD patients",
+    "working": "Reduces stomach acid",
+    "composition": "Ranitidine 150mg",
+    "linkedDiagnosis": ["NSAID-induced gastritis", "CKD"],
+    "type": "H2 blocker",
+    "dose": "150 mg once or twice daily",
+    "instructions": "Avoid in long term due to CNS effects in CKD."
+  },
+  {
+    "name": "Erythropoietin",
+    "indication": "Anemia of chronic kidney disease",
+    "working": "Stimulates RBC production",
+    "composition": "Recombinant EPO 4000 IU",
+    "linkedDiagnosis": ["CKD anemia"],
+    "type": "ESA",
+    "dose": "Weekly subcutaneous injection",
+    "instructions": "Monitor Hb weekly. Adjust dose gradually."
+  },
+  {
+    "name": "Urotone",
+    "indication": "Neurogenic bladder in CKD",
+    "working": "Stimulates detrusor muscle contraction",
+    "composition": "Bethanechol chloride 25mg",
+    "linkedDiagnosis": ["Bladder dysfunction in CKD"],
+    "type": "Cholinergic agent",
+    "dose": "25 mg 2–3 times/day",
+    "instructions": "Use in consultation with urologist."
+  },
+  {
+    "name": "Ketosteril",
+    "indication": "CKD with protein restriction",
+    "working": "Amino acid ketoanalogs",
+    "composition": "Alpha-ketoacid tabs",
+    "linkedDiagnosis": ["CKD Stage 3–5"],
+    "type": "Nutritional therapy",
+    "dose": "1 tablet per 5 kg body weight daily",
+    "instructions": "Use with low-protein diet. Monitor nitrogen balance."
+  },
+  {
+    "name": "Cymgal",
+    "indication": "CMV prophylaxis post-transplant",
+    "working": "Antiviral inhibits CMV replication",
+    "composition": "Valganciclovir 450mg",
+    "linkedDiagnosis": ["Renal transplant"],
+    "type": "Antiviral",
+    "dose": "450 mg once/twice daily",
+    "instructions": "Renal dose adjust. Monitor neutropenia."
+  },
+  {
+    "name": "NaHCO3 Injection",
+    "indication": "Severe metabolic acidosis in AKI",
+    "working": "Rapid bicarbonate correction",
+    "composition": "Sodium bicarbonate IV 7.5%",
+    "linkedDiagnosis": ["Severe acidosis", "AKI"],
+    "type": "IV alkali",
+    "dose": "Slow IV per ABG values",
+    "instructions": "Only in ICU. Monitor pH closely."
+  },
+  {
+    "name": "Lasilactone",
+    "indication": "CKD edema with hypokalemia",
+    "working": "Combines loop + K-sparing diuretic",
+    "composition": "Furosemide + Spironolactone",
+    "linkedDiagnosis": ["CKD edema"],
+    "type": "Combination diuretic",
+    "dose": "One tablet daily",
+    "instructions": "Watch K+ levels. Avoid in hyperkalemia."
+  },
+  {
+    "name": "Renvela",
+    "indication": "Hyperphosphatemia",
+    "working": "Binds phosphate in gut",
+    "composition": "Sevelamer carbonate 800mg",
+    "linkedDiagnosis": ["CKD Stage 4–5"],
+    "type": "Phosphate binder",
+    "dose": "800 mg thrice daily with meals",
+    "instructions": "Not absorbed. GI tolerance varies."
+  },
+  {
+    "name": "Alfacalcidol",
+    "indication": "CKD-MBD",
+    "working": "Activated Vitamin D analog",
+    "composition": "Alfacalcidol 0.25 mcg",
+    "linkedDiagnosis": ["CKD bone disease"],
+    "type": "Vitamin D",
+    "dose": "0.25–1 mcg/day",
+    "instructions": "Avoid overcorrection. Monitor calcium."
+  },
+  {
+    "name": "Shelcal",
+    "indication": "CKD with calcium deficiency",
+    "working": "Provides calcium and D3",
+    "composition": "Calcium carbonate + Vitamin D3",
+    "linkedDiagnosis": ["CKD-MBD"],
+    "type": "Calcium supplement",
+    "dose": "1 tablet after meals",
+    "instructions": "Monitor calcium-phosphate ratio."
+  },
+  {
+    "name": "Zincovit",
+    "indication": "Micronutrient support in CKD",
+    "working": "Zinc + multivitamin",
+    "composition": "Zinc + B complex + C + E",
+    "linkedDiagnosis": ["CKD malnutrition"],
+    "type": "Vitamin supplement",
+    "dose": "1 tablet daily",
+    "instructions": "Well tolerated. Avoid mega dosing."
+  },
+  {
+    "name": "Acitrom",
+    "indication": "Mechanical valve in CKD",
+    "working": "Vitamin K antagonist",
+    "composition": "Acenocoumarol 1mg",
+    "linkedDiagnosis": ["CKD with valve replacement"],
+    "type": "Anticoagulant",
+    "dose": "Dose based on INR",
+    "instructions": "Frequent INR checks. Drug interactions possible."
+  },
+  {
+    "name": "Evion",
+    "indication": "CKD with muscle cramps, infertility",
+    "working": "Vitamin E antioxidant",
+    "composition": "Vitamin E 400 IU",
+    "linkedDiagnosis": ["CKD oxidative stress"],
+    "type": "Antioxidant",
+    "dose": "400 IU/day",
+    "instructions": "Avoid high doses long-term."
+  },
+  {
+    "name": "Symbal",
+    "indication": "CKD with depression or neuropathy",
+    "working": "SNRI",
+    "composition": "Duloxetine 20mg",
+    "linkedDiagnosis": ["CKD with depression", "Neuropathy"],
+    "type": "Antidepressant",
+    "dose": "20–30 mg/day",
+    "instructions": "Start low. Titrate slowly."
+  },
+  {
+    "name": "ZyrCold",
+    "indication": "Cold in CKD patients",
+    "working": "Anti-allergic + decongestant",
+    "composition": "Levocetirizine + Phenylephrine",
+    "linkedDiagnosis": ["URTI in CKD"],
+    "type": "Cold remedy",
+    "dose": "1 tablet as needed",
+    "instructions": "Avoid in uncontrolled HTN."
+  },
+  {
+    "name": "T-Bact",
+    "indication": "Skin infections in immunocompromised CKD",
+    "working": "Topical antibiotic",
+    "composition": "Mupirocin 2%",
+    "linkedDiagnosis": ["Skin infection in dialysis"],
+    "type": "Topical antibiotic",
+    "dose": "Apply 2–3 times/day",
+    "instructions": "Do not use on open wounds."
+  },
+  {
+    "name": "Razo",
+    "indication": "Acid control in dialysis patients",
+    "working": "PPI",
+    "composition": "Rabeprazole 20mg",
+    "linkedDiagnosis": ["Gastritis in CKD"],
+    "type": "PPI",
+    "dose": "20 mg daily before meals",
+    "instructions": "Review long-term use."
+  },
+  {
+    "name": "Decdak",
+    "indication": "Nephrotic syndrome relapse",
+    "working": "Corticosteroid suppressing immunity",
+    "composition": "Dexamethasone 4mg",
+    "linkedDiagnosis": ["Nephrotic syndrome"],
+    "type": "Steroid",
+    "dose": "Tapered course",
+    "instructions": "Monitor sugar and BP."
+  },
+  {
+    "name": "Monocef",
+    "indication": "UTI or sepsis in CKD",
+    "working": "Broad-spectrum antibiotic",
+    "composition": "Ceftriaxone 1g",
+    "linkedDiagnosis": ["UTI", "Sepsis in CKD"],
+    "type": "Antibiotic",
+    "dose": "1 g IV/IM once daily",
+    "instructions": "Adjust dose in advanced CKD."
+  },
+  {
+    "name": "Fibrates",
+    "indication": "Dyslipidemia in CKD",
+    "working": "Lowers triglycerides",
+    "composition": "Fenofibrate 145mg",
+    "linkedDiagnosis": ["CKD with high TG"],
+    "type": "Lipid-lowering",
+    "dose": "145 mg daily",
+    "instructions": "Avoid in eGFR < 30."
+  },
+  {
+    "name": "Nephrozin",
+    "indication": "Supportive antioxidant therapy",
+    "working": "Zinc + Selenium",
+    "composition": "Zinc sulfate + Selenium",
+    "linkedDiagnosis": ["CKD oxidative stress"],
+    "type": "Micronutrient",
+    "dose": "1 tab/day",
+    "instructions": "Safe as adjunct."
+  },
+  {
+    "name": "Tonact",
+    "indication": "Hyperlipidemia in CKD",
+    "working": "Statin inhibits cholesterol synthesis",
+    "composition": "Atorvastatin 10mg",
+    "linkedDiagnosis": ["CKD with high LDL"],
+    "type": "Statin",
+    "dose": "10–20 mg daily",
+    "instructions": "Monitor LFTs."
+  },
+  {
+    "name": "Shelcical HD",
+    "indication": "CKD with osteopenia",
+    "working": "High-dose calcium + D3",
+    "composition": "Calcium 1g + D3 1000 IU",
+    "linkedDiagnosis": ["CKD-MBD"],
+    "type": "Supplement",
+    "dose": "One tab daily",
+    "instructions": "Avoid overcorrection."
+  },
+  {
+    "name": "Renoalfa",
+    "indication": "CKD-specific amino acid blend",
+    "working": "Essential amino acid support",
+    "composition": "EAA mix",
+    "linkedDiagnosis": ["CKD malnutrition"],
+    "type": "Nutritional",
+    "dose": "As directed",
+    "instructions": "Adjunct to protein restriction."
+  },
+  {
+    "name": "Tazloc",
+    "indication": "HTN with CKD",
+    "working": "ARB",
+    "composition": "Telmisartan 40mg",
+    "linkedDiagnosis": ["HTN", "CKD"],
+    "type": "ARB",
+    "dose": "40–80 mg/day",
+    "instructions": "Monitor BP, potassium, creatinine."
+  },
+  {
+    "name": "Nitrofurantoin",
+    "indication": "Recurrent UTI",
+    "working": "Urinary antiseptic",
+    "composition": "Nitrofurantoin 100mg",
+    "linkedDiagnosis": ["UTI", "CKD with infections"],
+    "type": "Antibiotic",
+    "dose": "100 mg twice daily",
+    "instructions": "Avoid in eGFR < 30."
+  },
+  
+  {
+    "name": "Zyrop 4000",
+    "indication": "Anemia due to CKD",
+    "working": "Stimulates erythropoiesis by acting like endogenous erythropoietin",
+    "composition": "Erythropoietin Alfa 4000 IU",
+    "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5", "Anemia of CKD"],
+    "type": "Injection",
+    "dose": "4000 IU subcutaneously weekly",
+    "instructions": "Refrigerate, do not shake. Monitor hemoglobin levels."
+  },
+  {
+    "name": "Cilacar 10",
+    "indication": "Hypertension in CKD",
+    "working": "Calcium channel blocker causing vasodilation",
+    "composition": "Cilnidipine 10mg",
+    "linkedDiagnosis": ["Hypertension", "CKD Stage 2", "CKD Stage 3"],
+    "type": "Tablet",
+    "dose": "10 mg once daily",
+    "instructions": "Take at same time daily. Avoid grapefruit juice."
+  },
+  {
+    "name": "Veltassa",
+    "indication": "Hyperkalemia",
+    "working": "Binds potassium in the colon, promoting excretion",
+    "composition": "Patiromer 8.4g",
+    "linkedDiagnosis": ["Hyperkalemia", "CKD Stage 3", "CKD Stage 4"],
+    "type": "Powder",
+    "dose": "8.4g orally once daily",
+    "instructions": "Take with food. Separate from other oral meds by 3 hours."
+  },
+  {
+    "name": "Cacitral",
+    "indication": "Hypocalcemia and renal osteodystrophy",
+    "working": "Supplies active form of vitamin D",
+    "composition": "Calcitriol 0.25 mcg",
+    "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5", "Secondary Hyperparathyroidism"],
+    "type": "Capsule",
+    "dose": "0.25 mcg daily",
+    "instructions": "Monitor serum calcium and phosphate levels regularly."
+  },
+  {
+    "name": "Nephrocaps",
+    "indication": "Vitamin deficiency in dialysis patients",
+    "working": "Multivitamin supplement tailored for kidney patients",
+    "composition": "Vitamin B Complex, C, E, Folic Acid",
+    "linkedDiagnosis": ["CKD Stage 5", "ESRD", "Dialysis"],
+    "type": "Capsule",
+    "dose": "1 capsule daily",
+    "instructions": "Take after meals. Do not exceed dose."
+  },
+  {
+    "name": "Renoalfa",
+    "indication": "Hyperphosphatemia in CKD",
+    "working": "Phosphate binder that reduces phosphate absorption",
+    "composition": "Sevelamer Carbonate 800 mg",
+    "linkedDiagnosis": ["CKD Stage 4", "CKD Stage 5", "Hyperphosphatemia"],
+    "type": "Tablet",
+    "dose": "800 mg with meals",
+    "instructions": "Swallow whole, do not crush or chew."
+  },
+  {
+    "name": "Ketosteril",
+    "indication": "CKD with protein restriction",
+    "working": "Provides ketoanalogues of essential amino acids",
+    "composition": "Alpha-ketoanalogues",
+    "linkedDiagnosis": ["CKD Stage 3", "CKD Stage 4", "CKD Stage 5"],
+    "type": "Tablet",
+    "dose": "1 tablet per 5kg body weight/day",
+    "instructions": "Use with low-protein diet. Do not exceed recommended dose."
+  },
+  {
+    "name": "Lanthonate",
+    "indication": "Hyperphosphatemia in dialysis",
+    "working": "Binds dietary phosphate in GI tract",
+    "composition": "Lanthanum Carbonate 500 mg",
+    "linkedDiagnosis": ["ESRD", "Hyperphosphatemia"],
+    "type": "Tablet",
+    "dose": "500–1500 mg with meals",
+    "instructions": "Chew tablet thoroughly. Monitor phosphate levels."
+  },
+  {
+    "name": "Nefrosave Forte",
+    "indication": "Early diabetic nephropathy",
+    "working": "Antioxidant, inhibits glycation",
+    "composition": "Acetylcysteine + Taurine",
+    "linkedDiagnosis": ["Diabetic Nephropathy", "Early CKD"],
+    "type": "Tablet",
+    "dose": "1 tablet twice daily",
+    "instructions": "Take with food. Monitor renal parameters."
+  },
+  {
+    "name": "Telma 40",
+    "indication": "Hypertension and proteinuria",
+    "working": "ARB that lowers BP and reduces protein loss",
+    "composition": "Telmisartan 40mg",
+    "linkedDiagnosis": ["Hypertension", "Proteinuria", "CKD"],
+    "type": "Tablet",
+    "dose": "40 mg once daily",
+    "instructions": "Monitor potassium and creatinine periodically."
+  },
+  {
+    "name": "Sodamint",
+    "indication": "Metabolic acidosis in CKD",
+    "working": "Alkali replacement to buffer acids",
+    "composition": "Sodium Bicarbonate 500 mg",
+    "linkedDiagnosis": ["Metabolic Acidosis", "CKD Stage 4"],
+    "type": "Tablet",
+    "dose": "500–1000 mg 2-3 times daily",
+    "instructions": "Avoid in uncontrolled hypertension or heart failure."
+  },
+  {
+    "name": "Mycept 500",
+    "indication": "Post-renal transplant immunosuppression",
+    "working": "Inhibits lymphocyte proliferation",
+    "composition": "Mycophenolate Mofetil 500 mg",
+    "linkedDiagnosis": ["Post-renal transplant"],
+    "type": "Tablet",
+    "dose": "500 mg twice daily",
+    "instructions": "Take on empty stomach. Monitor WBC and renal function."
+  },
+  {
+    "name": "Tacrograf 1",
+    "indication": "Post-renal transplant",
+    "working": "Calcineurin inhibitor suppressing immune response",
+    "composition": "Tacrolimus 1 mg",
+    "linkedDiagnosis": ["Post-renal transplant"],
+    "type": "Capsule",
+    "dose": "0.05–0.1 mg/kg/day in 2 divided doses",
+    "instructions": "Avoid grapefruit juice. Monitor trough levels."
+  },
+  {
+    "name": "Potasium Chloride Oral Solution",
+    "indication": "Hypokalemia in CKD",
+    "working": "Replaces body potassium",
+    "composition": "Potassium Chloride 10% solution",
+    "linkedDiagnosis": ["Hypokalemia", "CKD Stage 3"],
+    "type": "Oral Solution",
+    "dose": "15–30 ml per day",
+    "instructions": "Dilute before use. Do not exceed prescribed dose."
+  },
+  {
+    "name": "Calcigard Retard",
+    "indication": "Hypertension and vasodilation",
+    "working": "Long-acting dihydropyridine calcium blocker",
+    "composition": "Nifedipine SR 20 mg",
+    "linkedDiagnosis": ["Hypertension", "CKD"],
+    "type": "Tablet",
+    "dose": "20 mg twice daily",
+    "instructions": "Do not crush or chew."
+  }
+]
+
