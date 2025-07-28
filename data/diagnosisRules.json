@@ -676,18 +676,7 @@
     "followUpAdvice": "Monitor urine protein at home. Report swelling or weight gain quickly.",
     "missingFields": ["urine-protein-24h"]
   },
-  {
-    "diagnosis": "Post-Renal Transplant Monitoring",
-    "doctorReason": "Patient with transplant requires immunosuppression and rejection monitoring.",
-    "patientExplanation": "You’ve had a kidney transplant. Medications will prevent rejection.",
-    "recommendedTests": ["Creatinine", "CBC", "LFT", "Trough levels"],
-    "suggestedMedicines": [
-      { "name": "Tacrograf", "purpose": "Prevents organ rejection" },
-      { "name": "Mycept", "purpose": "Suppresses immune attack on kidney" }
-    ],
-    "followUpAdvice": "Take meds on time. Don’t skip doses. Regular lab monitoring is mandatory.",
-    "missingFields": []
-  },
+  
   {
     "diagnosis": "Contrast-Induced Nephropathy Risk",
     "doctorReason": "Patient undergoing imaging with CKD has elevated risk of AKI from contrast.",
@@ -784,18 +773,7 @@
     "followUpAdvice": "Restrict high-K foods. Dialysis might be required in resistant cases.",
     "missingFields": ["potassium"]
   },
-  {
-    "diagnosis": "CKD with Acid Reflux or Gastritis",
-    "doctorReason": "CKD patients on polypharmacy are at risk for gastritis or ulcers.",
-    "patientExplanation": "You may have stomach acidity due to your medications or CKD-related effects.",
-    "recommendedTests": ["LFT", "Urea", "H. pylori (if chronic)", "Endoscopy (if alarm symptoms)"],
-    "suggestedMedicines": [
-      { "name": "Razo", "purpose": "Protects the stomach from acid" },
-      { "name": "Pantocid", "purpose": "Alternative PPI" }
-    ],
-    "followUpAdvice": "Avoid painkillers. Eat on time. Use PPIs short-term only.",
-    "missingFields": []
-  },
+ 
   {
     "diagnosis": "Severe Acidosis in AKI",
     "doctorReason": "Bicarbonate < 15 with high creatinine suggests AKI-related acidemia needing ICU care.",
@@ -901,18 +879,7 @@
     "followUpAdvice": "Urgent BP control needed. Eye and heart screening advised.",
     "missingFields": ["sbp", "dbp", "acr"]
   },
-  {
-    "diagnosis": "CKD with Constipation",
-    "doctorReason": "CKD, iron supplements, low fluid intake or calcium binders can lead to constipation.",
-    "patientExplanation": "Your medications or fluid balance may be causing constipation.",
-    "recommendedTests": ["Diet history", "Laxative use", "Serum calcium"],
-    "suggestedMedicines": [
-      { "name": "Lactulose", "purpose": "Softens stool safely" },
-      { "name": "Isabgol", "purpose": "Adds fiber bulk" }
-    ],
-    "followUpAdvice": "Increase fluid (if allowed), fiber, and mobility. Avoid stimulant laxatives.",
-    "missingFields": []
-  },
+  
   {
     "diagnosis": "CKD with Malnutrition (Protein Energy Wasting)",
     "doctorReason": "Weight loss, low albumin, and weakness in CKD suggest PEW syndrome.",
@@ -961,18 +928,7 @@
     "followUpAdvice": "Take tablets after food. Avoid high-protein and high-acid diets.",
     "missingFields": ["bicarbonate"]
   },
-  {
-    "diagnosis": "Post-Transplant Immunosuppression Monitoring",
-    "doctorReason": "Post-transplant patients require strict immunosuppressive drug monitoring to prevent rejection.",
-    "patientExplanation": "You need to keep taking medications that prevent your body from rejecting the transplanted kidney.",
-    "recommendedTests": ["Creatinine", "Tacrolimus level", "CBC", "LFT", "Urine routine"],
-    "suggestedMedicines": [
-      { "name": "Tacrograf", "purpose": "Maintains immune suppression" },
-      { "name": "Mycept", "purpose": "Prevents immune attack on graft" }
-    ],
-    "followUpAdvice": "Take meds at same time daily. Report fever, swelling, or low urine immediately.",
-    "missingFields": []
-  },
+  
   {
     "diagnosis": "CKD with Thyroid Dysfunction",
     "doctorReason": "CKD is associated with altered thyroid metabolism, particularly hypothyroidism.",
@@ -1079,18 +1035,7 @@
     "followUpAdvice": "Take tablets after food. Avoid high-protein and high-acid diets.",
     "missingFields": ["bicarbonate"]
   },
-  {
-    "diagnosis": "Post-Transplant Immunosuppression Monitoring",
-    "doctorReason": "Post-transplant patients require strict immunosuppressive drug monitoring to prevent rejection.",
-    "patientExplanation": "You need to keep taking medications that prevent your body from rejecting the transplanted kidney.",
-    "recommendedTests": ["Creatinine", "Tacrolimus level", "CBC", "LFT", "Urine routine"],
-    "suggestedMedicines": [
-      { "name": "Tacrograf", "purpose": "Maintains immune suppression" },
-      { "name": "Mycept", "purpose": "Prevents immune attack on graft" }
-    ],
-    "followUpAdvice": "Take meds at same time daily. Report fever, swelling, or low urine immediately.",
-    "missingFields": []
-  },
+  
   {
     "diagnosis": "CKD with Thyroid Dysfunction",
     "doctorReason": "CKD is associated with altered thyroid metabolism, particularly hypothyroidism.",
