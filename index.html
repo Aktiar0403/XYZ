@@ -38,6 +38,71 @@
       <label><input type="checkbox" name="symptoms-fatigue" /> Fatigue</label>
       <label><input type="checkbox" name="symptoms-nausea" /> Nausea</label>
     </section>
+<!-- Additional Tests & History Accordion -->
+<div x-data="{ open: false }" class="border rounded-lg overflow-hidden mb-4">
+  <button @click="open = !open" class="w-full bg-green-700 text-white p-3 text-left text-lg font-semibold">
+    Additional Tests & History
+  </button>
+  <div x-show="open" x-transition class="p-4 bg-white border-t">
+    <form id="additional-tests-form">
+      <!-- Hormones -->
+      <label for="prolactin">Prolactin (ng/mL):</label>
+      <input type="number" step="0.1" id="prolactin" name="prolactin" placeholder="Enter Prolactin level">
+
+      <label for="tsh">TSH (µIU/mL):</label>
+      <input type="number" step="0.01" id="tsh" name="tsh" placeholder="Enter TSH">
+
+      <label for="vitamin-d">Vitamin D (ng/mL):</label>
+      <input type="number" step="0.1" id="vitamin-d" name="vitamin-d" placeholder="Enter Vitamin D">
+
+      <!-- Electrolytes & Minerals -->
+      <label for="b12">Vitamin B12 (pg/mL):</label>
+      <input type="number" id="b12" name="b12" placeholder="Enter B12">
+
+      <label for="magnesium">Magnesium (mg/dL):</label>
+      <input type="number" step="0.01" id="magnesium" name="magnesium" placeholder="Enter Magnesium">
+
+      <label for="uric-acid">Uric Acid (mg/dL):</label>
+      <input type="number" step="0.1" id="uric-acid" name="uric-acid" placeholder="Enter Uric Acid">
+
+      <!-- Infections & Immuno -->
+      <label for="ana">ANA (Antinuclear Antibody):</label>
+      <input type="text" id="ana" name="ana" placeholder="Positive/Negative or value">
+
+      <label for="aso">ASO Titer (IU/mL):</label>
+      <input type="number" id="aso" name="aso" placeholder="Enter ASO value">
+
+      <label for="hbsag">HBsAg:</label>
+      <select id="hbsag" name="hbsag">
+        <option value="">Select</option>
+        <option value="Positive">Positive</option>
+        <option value="Negative">Negative</option>
+      </select>
+
+      <!-- Blood & Biochem -->
+      <label for="cbc">CBC Findings Summary:</label>
+      <textarea id="cbc" name="cbc" placeholder="Enter key CBC findings (e.g., anemia, WBC, platelets)"></textarea>
+
+      <label for="ecg">ECG Summary:</label>
+      <textarea id="ecg" name="ecg" placeholder="Normal, LVH, Tall T waves, etc."></textarea>
+
+      <label for="abg">ABG Result:</label>
+      <input type="text" id="abg" name="abg" placeholder="e.g. pH 7.28, HCO3 16">
+
+      <label for="lft">Liver Function Summary:</label>
+      <textarea id="lft" name="lft" placeholder="SGPT, SGOT, Albumin, Bilirubin etc."></textarea>
+
+      <!-- History -->
+      <label><input type="checkbox" id="pregnancy-status" name="pregnancy-status"> Currently Pregnant</label>
+      <label><input type="checkbox" id="contrast-history" name="contrast-history"> Recent Contrast Exposure</label>
+      <label><input type="checkbox" id="lithium-use" name="lithium-use"> History of Lithium Use</label>
+      <label><input type="checkbox" id="polyuria" name="polyuria"> Polyuria (Excess Urine)</label>
+      <label><input type="checkbox" id="recurrent-infections" name="recurrent-infections"> Recurrent Infections</label>
+      <label><input type="checkbox" id="sleep-history" name="sleep-history"> Sleep Issues (Insomnia, Day Sleepiness)</label>
+      <label><input type="checkbox" id="fever" name="fever"> Fever</label>
+    </form>
+  </div>
+</div>
 
     <section>
       <h2>Blood Tests</h2>
