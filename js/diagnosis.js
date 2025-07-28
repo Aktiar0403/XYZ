@@ -13,14 +13,17 @@ export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.jso
   }
 }
 
+
 // Check if a rule is applicable (i.e., all its required fields are present)
 export function isRuleApplicable(rule, visit) {
-  if (!rule.missingFields) return true;
+  if (!rule.missingFields || rule.missingFields.length === 0) return true;
 
   return rule.missingFields.every(field => {
     const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-    return visit[section] && visit[section][key] !== undefined;
+    return visit[section] && visit[section][key] !== undefined && visit[section][key] !== '';
   });
+}
+
 }
 
 // Generate diagnosis objects (not just text) for rendering in doctor & patient view
