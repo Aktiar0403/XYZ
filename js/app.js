@@ -66,13 +66,13 @@ function collectVisitData() {
 
   return visitData;
 }
-document.getElementById("generate-diagnosis").addEventListener("click", () => {
-  const visit = collectVisitData();
-  const doctorDx = generateDiagnosisText(visit);
-  document.getElementById("doctor-diagnosis").value = doctorDx;
-
-  // Optional: add patient-friendly version
-  document.getElementById("patient-diagnosis").value = "This will be added from patient explanation engine."; // placeholder
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("generate-diagnosis").addEventListener("click", () => {
+    const visit = collectVisitData();
+    const doctorDx = generateDiagnosisText(visit);
+    document.getElementById("doctor-diagnosis").value = doctorDx;
+    document.getElementById("patient-diagnosis").value = "This will be added from patient explanation engine.";
+  });
 });
 
 window.addEventListener('DOMContentLoaded', async () => {
