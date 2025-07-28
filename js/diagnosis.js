@@ -20,9 +20,11 @@ export function isRuleApplicable(rule, visit) {
 
   return rule.missingFields.every(field => {
     const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-    return visit[section] && visit[section][key] !== undefined && visit[section][key] !== '';
+    const value = visit?.[section]?.[key];
+    return value !== undefined && value !== null && value !== '';
   });
 }
+
 
 
 // Generate diagnosis objects (not just text) for rendering in doctor & patient view
