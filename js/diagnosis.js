@@ -24,7 +24,6 @@ export function isRuleApplicable(rule, visit) {
   });
 }
 
-}
 
 // Generate diagnosis objects (not just text) for rendering in doctor & patient view
 export function getMatchedDiagnoses(visit) {
