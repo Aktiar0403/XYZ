@@ -1,171 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NephroCare Pro</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NephroCare Pro – Tabbed Input</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <h1>NephroCare Pro</h1>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-6xl mx-auto p-6" x-data="{ tab: 'info' }">
+    <h1 class="text-3xl font-bold text-center mb-6 text-green-700">NephroCare Pro – Patient Entry</h1>
 
-  <form id="visit-form">
-    <section>
-      <h2>Patient Info</h2>
-      <input type="text" name="general-name" placeholder="Name" required />
-      <input type="number" name="general-age" placeholder="Age" />
-      <select name="general-gender">
-        <option value="">Select Gender</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-    </section>
-
-    <section>
-      <h2>Medical History</h2>
-      <label><input type="checkbox" name="medical-diabetes" /> Diabetes</label>
-      <label><input type="checkbox" name="medical-hypertension" /> Hypertension</label>
-      <label><input type="checkbox" name="medical-nsaid-use" /> NSAID Use</label>
-      <label><input type="checkbox" name="medical-past-stone-disease" /> Past Stone Disease</label>
-      <label><input type="checkbox" name="medical-family-ckd" /> Family History of CKD</label>
-    </section>
-
-    <section>
-      <h2>Symptoms</h2>
-      <label><input type="checkbox" name="symptoms-edema" /> Edema</label>
-      <label><input type="checkbox" name="symptoms-fatigue" /> Fatigue</label>
-      <label><input type="checkbox" name="symptoms-nausea" /> Nausea</label>
-    </section>
-<!-- Additional Tests & History Accordion -->
-<div x-data="{ open: false }" class="border rounded-lg overflow-hidden mb-4">
-  <button @click="open = !open" class="w-full bg-green-700 text-white p-3 text-left text-lg font-semibold">
-    Additional Tests & History
-  </button>
-  <div x-show="open" x-transition class="p-4 bg-white border-t">
-    <form id="additional-tests-form">
-      <!-- Hormones -->
-      <label for="prolactin">Prolactin (ng/mL):</label>
-      <input type="number" step="0.1" id="prolactin" name="prolactin" placeholder="Enter Prolactin level">
-
-      <label for="tsh">TSH (µIU/mL):</label>
-      <input type="number" step="0.01" id="tsh" name="tsh" placeholder="Enter TSH">
-
-      <label for="vitamin-d">Vitamin D (ng/mL):</label>
-      <input type="number" step="0.1" id="vitamin-d" name="vitamin-d" placeholder="Enter Vitamin D">
-
-      <!-- Electrolytes & Minerals -->
-      <label for="b12">Vitamin B12 (pg/mL):</label>
-      <input type="number" id="b12" name="b12" placeholder="Enter B12">
-
-      <label for="magnesium">Magnesium (mg/dL):</label>
-      <input type="number" step="0.01" id="magnesium" name="magnesium" placeholder="Enter Magnesium">
-
-      <label for="uric-acid">Uric Acid (mg/dL):</label>
-      <input type="number" step="0.1" id="uric-acid" name="uric-acid" placeholder="Enter Uric Acid">
-
-      <!-- Infections & Immuno -->
-      <label for="ana">ANA (Antinuclear Antibody):</label>
-      <input type="text" id="ana" name="ana" placeholder="Positive/Negative or value">
-
-      <label for="aso">ASO Titer (IU/mL):</label>
-      <input type="number" id="aso" name="aso" placeholder="Enter ASO value">
-
-      <label for="hbsag">HBsAg:</label>
-      <select id="hbsag" name="hbsag">
-        <option value="">Select</option>
-        <option value="Positive">Positive</option>
-        <option value="Negative">Negative</option>
-      </select>
-
-      <!-- Blood & Biochem -->
-      <label for="cbc">CBC Findings Summary:</label>
-      <textarea id="cbc" name="cbc" placeholder="Enter key CBC findings (e.g., anemia, WBC, platelets)"></textarea>
-
-      <label for="ecg">ECG Summary:</label>
-      <textarea id="ecg" name="ecg" placeholder="Normal, LVH, Tall T waves, etc."></textarea>
-
-      <label for="abg">ABG Result:</label>
-      <input type="text" id="abg" name="abg" placeholder="e.g. pH 7.28, HCO3 16">
-
-      <label for="lft">Liver Function Summary:</label>
-      <textarea id="lft" name="lft" placeholder="SGPT, SGOT, Albumin, Bilirubin etc."></textarea>
-
-      <!-- History -->
-      <label><input type="checkbox" id="pregnancy-status" name="pregnancy-status"> Currently Pregnant</label>
-      <label><input type="checkbox" id="contrast-history" name="contrast-history"> Recent Contrast Exposure</label>
-      <label><input type="checkbox" id="lithium-use" name="lithium-use"> History of Lithium Use</label>
-      <label><input type="checkbox" id="polyuria" name="polyuria"> Polyuria (Excess Urine)</label>
-      <label><input type="checkbox" id="recurrent-infections" name="recurrent-infections"> Recurrent Infections</label>
-      <label><input type="checkbox" id="sleep-history" name="sleep-history"> Sleep Issues (Insomnia, Day Sleepiness)</label>
-      <label><input type="checkbox" id="fever" name="fever"> Fever</label>
-    </form>
-  </div>
-</div>
-
-    <section>
-      <h2>Blood Tests</h2>
-      <input type="number" name="blood-creatinine" placeholder="Creatinine" step="0.01" />
-      <input type="number" name="blood-egfr" placeholder="eGFR" />
-      <input type="number" name="blood-urea" placeholder="Urea" />
-      <input type="number" name="blood-potassium" placeholder="Potassium" step="0.01" />
-      <input type="number" name="blood-sodium" placeholder="Sodium" />
-      <input type="number" name="blood-bicarbonate" placeholder="Bicarbonate" step="0.1" />
-      <input type="number" name="blood-phosphate" placeholder="Phosphate" step="0.01" />
-      <input type="number" name="blood-calcium" placeholder="Calcium" step="0.01" />
-      <input type="number" name="blood-hemoglobin" placeholder="Hemoglobin" step="0.1" />
-      <input type="number" name="blood-albumin" placeholder="Albumin" step="0.1" />
-      <input type="number" name="blood-pth" placeholder="PTH" />
-    </section>
-
-    <section>
-      <h2>Urine Tests</h2>
-      <input type="number" name="urine-acr" placeholder="ACR" />
-      <input type="number" name="urine-urine-protein-24h" placeholder="24h Urine Protein" step="0.01" />
-    </section>
-
-    <section>
-      <h2>Ultrasound</h2>
-      <select name="ultrasound-echogenicity">
-        <option value="">Echogenicity</option>
-        <option value="Normal">Normal</option>
-        <option value="Mildly increased">Mildly increased</option>
-        <option value="Markedly increased">Markedly increased</option>
-      </select>
-      <select name="ultrasound-kidney-size">
-        <option value="">Kidney Size</option>
-        <option value="Normal">Normal</option>
-        <option value="Decreased">Decreased</option>
-        <option value="Increased">Increased</option>
-      </select>
-    </section>
-
-   
-    <button id="generate-diagnosis">Generate Diagnosis</button>
-
-  </form>
-
-  <section>
-    <h2>Diagnosis Output</h2>
-    <pre id="diagnosis-output"></pre>
-    <div id="missing-fields"></div>
-  </section>
-
-  <section>
-    <h2>Suggested Medicines</h2>
-    <div id="medicine-output"></div>
-  </section>
-
-  <section>
-    <button id="print-button">Download PDF</button>
-    <div id="pdf-content">
-      <h2>NephroCare Report</h2>
-      <div id="diagnosis-output"></div>
-      <div id="medicine-output"></div>
+    <!-- Tabs Navigation -->
+    <div class="flex space-x-4 border-b pb-2 mb-6">
+      <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
+        <button @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
+      </template>
     </div>
-  </section>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <script type="module" src="./js/app.js"></script>
+
+    <!-- Tab Content -->
+    <div class="bg-white p-6 rounded shadow">
+      <!-- Info Tab -->
+      <div x-show="tab === 'info'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Patient Info</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label>Name</label><input type="text" id="patient-name" class="w-full input"></div>
+          <div><label>Age</label><input type="number" id="patient-age" class="w-full input"></div>
+          <div><label>Gender</label><select id="patient-gender" class="w-full input"><option>Male</option><option>Female</option><option>Other</option></select></div>
+          <div><label>Location</label><input type="text" id="patient-location" class="w-full input"></div>
+        </div>
+      </div>
+
+      <!-- Vitals Tab -->
+      <div x-show="tab === 'vitals'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Vitals & Volume</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label>SBP</label><input type="number" id="sbp" class="w-full input"></div>
+          <div><label>DBP</label><input type="number" id="dbp" class="w-full input"></div>
+          <div><label>Weight</label><input type="number" id="weight" class="w-full input"></div>
+          <div><label>Volume Status</label>
+            <select id="volume-status" class="w-full input">
+              <option value="">Select</option>
+              <option value="Normal">Normal</option>
+              <option value="Hypervolemic">Hypervolemic</option>
+              <option value="Hypovolemic">Hypovolemic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Symptoms Tab -->
+      <div x-show="tab === 'symptoms'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
+            <label><input type="checkbox" :id="sym"> <span x-text="sym.replace(/-/g, ' ')"></span></label>
+          </template>
+        </div>
+      </div>
+
+      <!-- Labs Tab -->
+      <div x-show="tab === 'labs'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <template x-for="test in ['egfr','creatinine','urea','potassium','sodium','calcium','phosphate','bicarbonate','hemoglobin','albumin','pth','acr','urine-protein-24h']" :key="test">
+            <div><label x-text="test.toUpperCase().replace(/-/g, ' ')"></label><input type="number" step="any" :id="test" class="w-full input"></div>
+          </template>
+        </div>
+      </div>
+
+      <!-- History Tab -->
+      <div x-show="tab === 'history'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Medical History</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="hx in ['diabetes','hypertension','nsaid-use','past-stone-disease','family-ckd','tb','hiv','hepatitis','pregnancy-status','contrast-history','lithium-use']" :key="hx">
+            <label><input type="checkbox" :id="hx"> <span x-text="hx.replace(/-/g, ' ')"></span></label>
+          </template>
+        </div>
+      </div>
+
+      <!-- Imaging Tab -->
+      <div x-show="tab === 'imaging'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label>Kidney Size</label><select id="kidney-size" class="w-full input"><option>Normal</option><option>Decreased</option><option>Increased</option><option>Asymmetrical</option></select></div>
+          <div><label>Echogenicity</label><select id="echogenicity" class="w-full input"><option>Normal</option><option>Mildly increased</option><option>Markedly increased</option></select></div>
+          <div><label>Hydronephrosis</label><select id="hydronephrosis" class="w-full input"><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div><label>Stones</label><select id="stones" class="w-full input"><option>None</option><option>Single</option><option>Multiple</option><option>Bilateral</option></select></div>
+          <div><label>Cysts</label><select id="cysts" class="w-full input"><option>None</option><option>Single</option><option>Multiple unilateral</option><option>Multiple bilateral</option></select></div>
+        </div>
+      </div>
+
+      <!-- Advanced Tab -->
+      <div x-show="tab === 'advanced'" class="space-y-4">
+        <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label>ANA</label><input type="text" id="ana" class="w-full input"></div>
+          <div><label>ASO</label><input type="number" id="aso" class="w-full input"></div>
+          <div><label>Vitamin D</label><input type="number" step="0.1" id="vitamin-d" class="w-full input"></div>
+          <div><label>B12</label><input type="number" id="b12" class="w-full input"></div>
+          <div><label>Uric Acid</label><input type="number" id="uric-acid" class="w-full input"></div>
+          <div><label>Magnesium</label><input type="number" id="magnesium" class="w-full input"></div>
+          <div><label>TSH</label><input type="number" id="tsh" class="w-full input"></div>
+          <div><label>Prolactin</label><input type="number" id="prolactin" class="w-full input"></div>
+          <div><label>HBsAg</label><select id="hbsag" class="w-full input"><option>Negative</option><option>Positive</option></select></div>
+        </div>
+        <h3 class="text-lg font-semibold mt-6">Reports</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label>CBC Summary</label><textarea id="cbc" class="w-full input"></textarea></div>
+          <div><label>ECG</label><textarea id="ecg" class="w-full input"></textarea></div>
+          <div><label>LFT</label><textarea id="lft" class="w-full input"></textarea></div>
+          <div><label>ABG</label><textarea id="abg" class="w-full input"></textarea></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.375rem;
+    }
+  </style>
 </body>
 </html>
