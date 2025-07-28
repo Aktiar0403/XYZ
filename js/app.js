@@ -1,6 +1,6 @@
 // app.js – NephroCare Pro: Main Application Script
 
-import { loadDiagnosisRulesFromFile, generateDiagnosisText, getMissingFields } from './diagnosis.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
 import { exportToPDF } from './html2pdf.js';
@@ -27,24 +27,43 @@ if (printButton) {
   // Apply UI reference hints
   if (form) applyReferenceTooltips(form);
 
-  // Form submission handler
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    visitData = serializeFormData(form);
+ 
 
-    const diagnosisText = generateDiagnosisText(visitData);
-    const missing = getMissingFields(visitData);
-    const suggestedMeds = getMedicinesForDiagnosis(diagnosisText);
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  visitData = serializeFormData(form);
 
-    diagnosisOutput.innerText = diagnosisText;
-    missingPrompt.innerHTML = missing.length ? `Suggested Inputs: <ul>${missing.map(f => `<li>${f}</li>`).join('')}</ul>` : '';
+  const diagnoses = getMatchedDiagnoses(visitData);
+  const missing = getMissingFields(visitData);
 
-    medicineOutput.innerHTML = suggestedMeds.map(med => `
-      <div class="med-block">
-        <strong>${med.name}</strong> – ${med.dose}<br/>
-        ${med.instructions} <em>(${med.reason})</em>
-      </div>`).join('\n');
+  // Doctor + Patient Friendly Diagnosis Output
+  diagnosisOutput.innerHTML = diagnoses.map(d =>
+    `<div class="output-block">
+      <strong>${d.diagnosis}</strong><br/>
+      <em>Doctor:</em> ${d.doctorReason}<br/>
+      <em>Patient:</em> ${d.patientExplanation}<br/>
+      <em>Follow-Up:</em> ${d.followUpAdvice}
+    </div><hr/>`
+  ).join('');
+
+  // Missing inputs
+  missingPrompt.innerHTML = missing.length
+    ? `Suggested Inputs: <ul>${missing.map(f => `<li>${f}</li>`).join('')}</ul>`
+    : '';
+
+  // Medicines (auto-linked from suggestedMedicines in rule itself)
+  const suggestedMeds = [];
+  diagnoses.forEach(d => {
+    if (d.suggestedMedicines) suggestedMeds.push(...d.suggestedMedicines);
   });
+
+  medicineOutput.innerHTML = suggestedMeds.map(med =>
+    `<div class="med-block">
+      <strong>${med.name}</strong> – ${med.purpose || ''}
+    </div>`
+  ).join('');
+});
+
 });
 
 function serializeFormData(form) {

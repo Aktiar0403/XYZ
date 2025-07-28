@@ -1,8 +1,6 @@
-// diagnosis.js – final refactored version for NephroCare Pro
-
 export let diagnosisRules = [];
 
-// Load diagnosis rules from external enriched JSON file
+// Load enriched diagnosis rules
 export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.json') {
   try {
     const response = await fetch(url);
@@ -15,54 +13,33 @@ export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.jso
   }
 }
 
-// Evaluate a single condition
-export function evaluateCondition(cond, visit) {
-  const sectionData = visit[cond.section];
-  if (!sectionData) return false;
-  const val = sectionData[cond.field];
-  if (val === undefined) return false;
+// Check if a rule is applicable (i.e., all its required fields are present)
+export function isRuleApplicable(rule, visit) {
+  if (!rule.missingFields) return true;
 
-  switch (cond.operator) {
-    case "<": return parseFloat(val) < cond.value;
-    case ">": return parseFloat(val) > cond.value;
-    case "==": return val == cond.value;
-    case "in": return cond.value.includes(val);
-    default: return false;
-  }
+  return rule.missingFields.every(field => {
+    const [section, key] = field.includes('-') ? field.split('-') : ["", field];
+    return visit[section] && visit[section][key] !== undefined;
+  });
 }
 
-// Evaluate whether a rule is triggered
-export function evaluateRule(rule, visit) {
-  if (rule.type === "simple") {
-    return evaluateCondition({
-      section: "blood",
-      field: rule.test,
-      operator: rule.operator,
-      value: rule.threshold
-    }, visit);
-  }
-
-  if (rule.type === "multi" || rule.type === "compound") {
-    return rule.conditions.every(cond => evaluateCondition(cond, visit));
-  }
-
-  return false;
+// Generate diagnosis objects (not just text) for rendering in doctor & patient view
+export function getMatchedDiagnoses(visit) {
+  return diagnosisRules.filter(rule => isRuleApplicable(rule, visit));
 }
 
-// Generate diagnosis output for UI display or PDF
+// For doctor panel display
 export function generateDiagnosisText(visit) {
-  const matches = [];
-  for (const rule of diagnosisRules) {
-    if (evaluateRule(rule, visit)) {
-      matches.push(`- ${rule.diagnosis || rule.suggestion} (Reason: ${rule.doctorReason || rule.reason})`);
-    }
-  }
-  return matches.length ? matches.join('\n') : "No diagnosis suggestions matched.";
+  const matches = getMatchedDiagnoses(visit);
+  return matches.length
+    ? matches.map(r => `- ${r.diagnosis} (Reason: ${r.doctorReason})`).join('\n')
+    : "No diagnosis suggestions matched.";
 }
 
-// Return all missing fields across rules for prompting the user
+// Return missing fields across all rules
 export function getMissingFields(visit) {
   const needed = new Set();
+
   for (const rule of diagnosisRules) {
     if (rule.missingFields) {
       for (const field of rule.missingFields) {
@@ -73,5 +50,6 @@ export function getMissingFields(visit) {
       }
     }
   }
+
   return Array.from(needed);
 }
