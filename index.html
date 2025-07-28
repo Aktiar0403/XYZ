@@ -5,80 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NephroCare Pro</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 900px; margin: auto; }
-    input, select { padding: 6px; margin: 4px; width: 100%; max-width: 300px; }
-    .section { margin-bottom: 30px; }
-    .med-block { background: #f9f9f9; padding: 10px; margin-bottom: 10px; border-left: 4px solid #2a9d8f; }
-    .output { white-space: pre-wrap; background: #eef; padding: 15px; border-radius: 6px; }
-  </style>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
   <h1>NephroCare Pro</h1>
 
   <form id="visit-form">
-    <div class="section">
-      <h3>Patient Info</h3>
-      <input type="text" name="general-patient-name" placeholder="Patient Name" />
-      <input type="number" name="general-patient-age" placeholder="Age" />
-    </div>
+    <section>
+      <h2>Patient Info</h2>
+      <input type="text" name="general-name" placeholder="Name" required />
+      <input type="number" name="general-age" placeholder="Age" />
+      <select name="general-gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </section>
 
-    <div class="section">
-      <h3>Blood Tests</h3>
-      <input type="number" name="blood-creatinine" placeholder="Creatinine (mg/dL)" step="0.01" />
-      <input type="number" name="blood-egfr" placeholder="eGFR (ml/min/1.73m²)" step="0.1" />
-      <input type="number" name="blood-urea" placeholder="Urea (mg/dL)" step="1" />
-      <input type="number" name="blood-potassium" placeholder="Potassium (mmol/L)" step="0.1" />
-      <input type="number" name="blood-sodium" placeholder="Sodium (mmol/L)" step="1" />
-      <input type="number" name="blood-bicarbonate" placeholder="Bicarbonate (mEq/L)" step="0.1" />
-    </div>
+    <section>
+      <h2>Medical History</h2>
+      <label><input type="checkbox" name="medical-diabetes" /> Diabetes</label>
+      <label><input type="checkbox" name="medical-hypertension" /> Hypertension</label>
+      <label><input type="checkbox" name="medical-nsaid-use" /> NSAID Use</label>
+      <label><input type="checkbox" name="medical-past-stone-disease" /> Past Stone Disease</label>
+      <label><input type="checkbox" name="medical-family-ckd" /> Family History of CKD</label>
+    </section>
 
-    <div class="section">
-      <h3>Urine & Imaging</h3>
-      <input type="number" name="urine-acr" placeholder="Urine ACR (mg/g)" step="1" />
+    <section>
+      <h2>Symptoms</h2>
+      <label><input type="checkbox" name="symptoms-edema" /> Edema</label>
+      <label><input type="checkbox" name="symptoms-fatigue" /> Fatigue</label>
+      <label><input type="checkbox" name="symptoms-nausea" /> Nausea</label>
+    </section>
+
+    <section>
+      <h2>Blood Tests</h2>
+      <input type="number" name="blood-creatinine" placeholder="Creatinine" step="0.01" />
+      <input type="number" name="blood-egfr" placeholder="eGFR" />
+      <input type="number" name="blood-urea" placeholder="Urea" />
+      <input type="number" name="blood-potassium" placeholder="Potassium" step="0.01" />
+      <input type="number" name="blood-sodium" placeholder="Sodium" />
+      <input type="number" name="blood-bicarbonate" placeholder="Bicarbonate" step="0.1" />
+      <input type="number" name="blood-phosphate" placeholder="Phosphate" step="0.01" />
+      <input type="number" name="blood-calcium" placeholder="Calcium" step="0.01" />
+      <input type="number" name="blood-hemoglobin" placeholder="Hemoglobin" step="0.1" />
+      <input type="number" name="blood-albumin" placeholder="Albumin" step="0.1" />
+      <input type="number" name="blood-pth" placeholder="PTH" />
+    </section>
+
+    <section>
+      <h2>Urine Tests</h2>
+      <input type="number" name="urine-acr" placeholder="ACR" />
+      <input type="number" name="urine-urine-protein-24h" placeholder="24h Urine Protein" step="0.01" />
+    </section>
+
+    <section>
+      <h2>Ultrasound</h2>
       <select name="ultrasound-echogenicity">
         <option value="">Echogenicity</option>
         <option value="Normal">Normal</option>
         <option value="Mildly increased">Mildly increased</option>
         <option value="Markedly increased">Markedly increased</option>
       </select>
-    </div>
-
-    <div class="section">
-      <h3>Medical History</h3>
-      <label><input type="checkbox" name="medical-diabetes" /> Diabetes</label><br />
-      <label><input type="checkbox" name="medical-hypertension" /> Hypertension</label><br />
-      <label><input type="checkbox" name="medical-nsaid-use" /> NSAID Use</label>
-    </div>
+      <select name="ultrasound-kidney-size">
+        <option value="">Kidney Size</option>
+        <option value="Normal">Normal</option>
+        <option value="Decreased">Decreased</option>
+        <option value="Increased">Increased</option>
+      </select>
+    </section>
 
     <button type="submit">Generate Diagnosis</button>
   </form>
 
-  <div class="section">
+  <section>
     <h2>Diagnosis Output</h2>
-    <div id="diagnosis-output" class="output"></div>
-  </div>
+    <pre id="diagnosis-output"></pre>
+    <div id="missing-fields"></div>
+  </section>
 
-  <div class="section">
+  <section>
     <h2>Suggested Medicines</h2>
     <div id="medicine-output"></div>
-  </div>
+  </section>
 
-  <div class="section">
-    <h3>Recommended Tests or Missing Info</h3>
-    <div id="missing-fields"></div>
-  </div>
-
-  <div class="section">
+  <section>
     <button id="print-button">Download PDF</button>
-    <div id="pdf-content" style="display: none;">
-      <h2>NephroCare Diagnosis Report</h2>
-      <div id="pdf-diagnosis-output"></div>
-      <div id="pdf-medicine-output"></div>
+    <div id="pdf-content">
+      <h2>NephroCare Report</h2>
+      <div id="diagnosis-output"></div>
+      <div id="medicine-output"></div>
     </div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
+  </section>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script type="module" src="./js/app.js"></script>
 </body>
 </html>
