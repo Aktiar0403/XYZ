@@ -115,6 +115,29 @@
       </div>
     </div>
   </div>
+<!-- Diagnosis & Output Section -->
+<div class="bg-white mt-6 p-6 rounded shadow space-y-6">
+  <button id="generate-diagnosis" class="px-4 py-2 bg-green-600 text-white rounded">🧠 Generate Diagnosis</button>
+
+  <div id="missing-fields" class="text-red-600 font-medium"></div>
+
+  <div>
+    <h2 class="text-lg font-semibold text-green-700 mt-4">👨‍⚕️ Doctor’s Diagnosis</h2>
+    <textarea id="doctor-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-semibold text-blue-700 mt-4">👥 Patient-Friendly Explanation</h2>
+    <textarea id="patient-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
+  </div>
+
+  <div>
+    <h2 class="text-lg font-semibold text-purple-700 mt-4">💊 Suggested Medicines</h2>
+    <div id="medicine-output" class="bg-gray-100 p-4 rounded"></div>
+  </div>
+
+  <button id="print-button" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">🖨️ Print Prescription</button>
+</div>
 
   <style>
     .input {
