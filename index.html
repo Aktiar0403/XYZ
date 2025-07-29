@@ -22,7 +22,7 @@
       <!-- Tabs Navigation -->
       <div class="flex space-x-4 border-b pb-2 mb-6">
         <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
-          <button @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
+          <button type="button" @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
         </template>
       </div>
 
@@ -57,6 +57,19 @@
   </div>
 </div>
 
+<!-- Symptoms Tab -->
+<div x-show="tab === 'symptoms'" class="space-y-4">
+  <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
+      <label :for="sym">
+        <input type="checkbox" :id="sym">
+        <span x-text="sym.replace(/-/g, ' ')"></span>
+      </label>
+    </template>
+  </div>
+</div>
+
 <!-- Labs Tab -->
 <div x-show="tab === 'labs'" class="space-y-4">
   <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
@@ -75,20 +88,9 @@
     <div><label for="acr">ACR</label><input type="number" step="any" id="acr" class="w-full input"></div>
     <div><label for="urine-protein-24h">24h Urine Protein</label><input type="number" step="any" id="urine-protein-24h" class="w-full input"></div>
   </div>
-<!-- Symptoms Tab -->
-<div x-show="tab === 'symptoms'" class="space-y-4">
-  <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
-      <label :for="sym">
-        <input type="checkbox" :id="sym">
-        <span x-text="sym.replace(/-/g, ' ')"></span>
-      </label>
-    </template>
-  </div>
 </div>
 
-</div> <!-- History Tab -->
+<!-- History Tab -->
 <div x-show="tab === 'history'" class="space-y-4">
   <h2 class="text-xl font-semibold mb-4">Medical History</h2>
   <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -99,6 +101,8 @@
       </label>
     </template>
   </div>
+</div>
+
 <!-- Imaging Tab -->
 <div x-show="tab === 'imaging'" class="space-y-4">
   <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
@@ -134,7 +138,7 @@
   </div>
 </div>
 
-</div> <!-- Diagnosis & Output Section -->
+<!-- Diagnosis & Output Section -->
         <div class="bg-white mt-6 p-6 rounded shadow space-y-6">
           <button id="generate-diagnosis" type="button" class="px-4 py-2 bg-green-600 text-white rounded">🧠 Generate Diagnosis</button>
 
