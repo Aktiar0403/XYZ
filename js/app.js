@@ -1,4 +1,4 @@
-// app.js – NephroCare Pro: Enhanced Output Integration
+// app.js – Diagnosis Output Logic
 
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
@@ -27,21 +27,20 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (matches.length) {
       doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
       patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
-      if (medicineOutput) {
-        const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
-        medicineOutput.innerHTML = allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('');
-      }
+
+      const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
+      medicineOutput.innerHTML = allMeds.length
+        ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
+        : '<div class="text-gray-500">No medicines suggested.</div>';
     } else {
-      doctorOutput.value = "No diagnosis suggestions matched.";
-      patientOutput.value = "We couldn't identify a condition based on current inputs.";
-      if (medicineOutput) medicineOutput.innerHTML = "";
+      doctorOutput.value = "No diagnosis matched.";
+      patientOutput.value = "We couldn’t identify a clear condition from the inputs.";
+      medicineOutput.innerHTML = "";
     }
 
-    if (missingPrompt) {
-      missingPrompt.innerHTML = missing.length
-        ? `Please complete: <span class='text-red-500 font-semibold'>${missing.join(', ')}</span>`
-        : '';
-    }
+    missingPrompt.innerHTML = missing.length
+      ? `Please complete: <span class='text-red-500 font-semibold'>${missing.join(', ')}</span>`
+      : '';
   });
 
   document.getElementById('print-button')?.addEventListener('click', () => {
