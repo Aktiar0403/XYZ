@@ -20,6 +20,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   const medicineOutput = document.getElementById('medicine-output');
 
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
+    console.log("Collected visitData:", visitData);
+console.log("Matched Diagnoses:", matches);
+console.log("Missing Fields:", missing);
+
     visitData = collectVisitData();
     const matches = getMatchedDiagnoses(visitData);
     const missing = getMissingFields(visitData);
