@@ -20,13 +20,13 @@ window.addEventListener('DOMContentLoaded', async () => {
   const medicineOutput = document.getElementById('medicine-output');
 
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
-    console.log("Collected visitData:", visitData);
-console.log("Matched Diagnoses:", matches);
-console.log("Missing Fields:", missing);
-
     visitData = collectVisitData();
     const matches = getMatchedDiagnoses(visitData);
     const missing = getMissingFields(visitData);
+
+    console.log("Collected visitData:", visitData);
+    console.log("Matched Diagnoses:", matches);
+    console.log("Missing Fields:", missing);
 
     if (matches.length) {
       doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
@@ -50,8 +50,18 @@ console.log("Missing Fields:", missing);
   document.getElementById('print-button')?.addEventListener('click', () => {
     exportToPDF('pdf-content', 'NephroCare_Prescription.pdf');
   });
+
+  // ✅ SAVE button support
+  document.getElementById('save-visit')?.addEventListener('click', () => {
+    const visit = collectVisitData();
+    saveVisitToLocalStorage(visit);
+  });
+
+  // ✅ Load existing visits on startup
+  renderSavedVisits();
 });
 
+// ✅ Existing logic preserved
 function collectVisitData() {
   const data = {
     blood: {}, urine: {}, symptoms: {}, medical: {}, vitals: {}, ultrasound: {}, reports: {}, infection: {}
@@ -84,3 +94,55 @@ function getSectionName(fieldName) {
   if (document.getElementById(fieldName)?.closest('[x-show*=advanced]')) return 'reports';
   return null;
 }
+
+// ✅💾 Visit Save/Load Support
+function saveVisitToLocalStorage(visit) {
+  const visits = JSON.parse(localStorage.getItem("nephro_visits") || "[]");
+  visits.push({ date: new Date().toLocaleString(), data: visit });
+  localStorage.setItem("nephro_visits", JSON.stringify(visits));
+  renderSavedVisits();
+}
+
+function renderSavedVisits() {
+  const visits = JSON.parse(localStorage.getItem("nephro_visits") || "[]");
+  const list = document.getElementById("saved-records-list");
+  if (!list) return;
+  list.innerHTML = "";
+
+  visits.forEach((visit, index) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${visit.date}</strong>
+      <button onclick="loadVisitFromStorage(${index})" class="ml-2 bg-blue-600 text-white px-2 py-1 rounded">Load</button>
+      <button onclick="deleteVisit(${index})" class="ml-2 bg-red-600 text-white px-2 py-1 rounded">🗑️</button>
+    `;
+    list.appendChild(li);
+  });
+}
+
+window.loadVisitFromStorage = function(index) {
+  const visits = JSON.parse(localStorage.getItem("nephro_visits") || "[]");
+  if (!visits[index]) return;
+
+  const visit = visits[index].data;
+  for (const section in visit) {
+    for (const key in visit[section]) {
+      const el = document.getElementById(key);
+      if (!el) continue;
+      const value = visit[section][key];
+
+      if (el.type === "checkbox") {
+        el.checked = !!value;
+      } else {
+        el.value = value;
+      }
+    }
+  }
+};
+
+window.deleteVisit = function(index) {
+  const visits = JSON.parse(localStorage.getItem("nephro_visits") || "[]");
+  visits.splice(index, 1);
+  localStorage.setItem("nephro_visits", JSON.stringify(visits));
+  renderSavedVisits();
+};
