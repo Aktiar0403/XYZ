@@ -65,7 +65,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 function collectVisitData() {
-  const data = {
+  const data = { info: {},
     blood: {}, urine: {}, symptoms: {}, medical: {}, vitals: {}, ultrasound: {}, reports: {}, infection: {}
   };
 
