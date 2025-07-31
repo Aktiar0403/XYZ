@@ -1,7 +1,5 @@
 // app.js – Diagnosis Output Logic
 
-// app.js – Diagnosis Output Logic (Full Updated Version)
-
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
@@ -25,6 +23,20 @@ window.addEventListener('DOMContentLoaded', async () => {
     visitData = collectVisitData();
     const matches = getMatchedDiagnoses(visitData);
     const missing = getMissingFields(visitData);
+    
+    
+    const filledFields = Object.values(visitData).flatMap(section =>
+  Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
+);
+
+if (filledFields.length === 0) {
+  doctorOutput.value = "⚠️ No data entered.";
+  patientOutput.value = "Please fill in the patient's vitals, symptoms, or lab reports so the app can help analyze the condition.";
+  medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
+  missingPrompt.innerHTML = '';
+  return; // ⛔ stop here — skip diagnosis matching
+}
+
 
     console.log("Collected visitData:", visitData);
     console.log("Matched Diagnoses:", matches);
