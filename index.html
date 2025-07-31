@@ -33,10 +33,17 @@
         ? 'bg-green-600 text-white scale-105 shadow'
         : 'bg-gray-200 text-gray-700 hover:scale-105 hover:bg-green-100'"
     >
-      <span x-html="{
-        info: '👤', vitals: '🧍', symptoms: '😷', labs: '🧪',
-        history: '📜', imaging: '🖼️', advanced: '📊'
-      }[name]"></span>
+    <span x-text="{
+  info: '👤 Info',
+  vitals: '🧍 Vitals',
+  symptoms: '😷 Symptoms',
+  labs: '🧪 Labs',
+  history: '📜 History',
+  imaging: '🖼️ Imaging',
+  advanced: '📊 Advanced',
+  review: '📝 Review'
+}[name]"></span>
+
       <span x-text=\"name.charAt(0).toUpperCase() + name.slice(1)\"></span>
     </button>
   </template>
