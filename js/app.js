@@ -29,23 +29,29 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.log("Missing Fields:", missing);
 
     if (matches.length) {
-      doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
-      patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
+  doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
+  patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
 
-      const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
-      medicineOutput.innerHTML = allMeds.length
-        ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
-        : '<div class="text-gray-500">No medicines suggested.</div>';
-    } else {
-      doctorOutput.value = "No diagnosis matched.";
-      patientOutput.value = "We couldn’t identify a clear condition from the inputs.";
-      medicineOutput.innerHTML = "";
-    }
+  const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
+  medicineOutput.innerHTML = allMeds.length
+    ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
+    : '<div class="text-gray-500">No medicines suggested.</div>';
+} else {
+  const filledFields = Object.values(visitData).flatMap(section =>
+    Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
+  );
+  
+  if (filledFields.length < 5) {
+    doctorOutput.value = "No data received.";
+    patientOutput.value = "Please fill in relevant patient details (symptoms, labs, vitals) so the app can analyze and assist you better.";
+  } else {
+    doctorOutput.value = "No diagnosis matched based on the current inputs.";
+    patientOutput.value = "We couldn’t match a condition based on your provided data. Please review the inputs or consult a specialist.";
+  }
 
-    missingPrompt.innerHTML = missing.length
-      ? `Please complete: <span class='text-red-500 font-semibold'>${missing.join(', ')}</span>`
-      : '';
-  });
+  medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
+}
+
 
   document.getElementById('print-button')?.addEventListener('click', () => {
     exportToPDF('pdf-content', 'NephroCare_Prescription.pdf');
