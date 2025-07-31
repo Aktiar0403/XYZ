@@ -23,20 +23,18 @@ window.addEventListener('DOMContentLoaded', async () => {
     visitData = collectVisitData();
     const matches = getMatchedDiagnoses(visitData);
     const missing = getMissingFields(visitData);
-    
-    
+
     const filledFields = Object.values(visitData).flatMap(section =>
-  Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
-);
+      Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
+    );
 
-if (filledFields.length === 0) {
-  doctorOutput.value = "⚠️ No data entered.";
-  patientOutput.value = "Please fill in the patient's vitals, symptoms, or lab reports so the app can help analyze the condition.";
-  medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
-  missingPrompt.innerHTML = '';
-  return; // ⛔ stop here — skip diagnosis matching
-}
-
+    if (filledFields.length === 0) {
+      doctorOutput.value = "⚠️ No data entered.";
+      patientOutput.value = "Please fill in the patient's vitals, symptoms, or lab reports so the app can help analyze the condition.";
+      medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
+      missingPrompt.innerHTML = '';
+      return;
+    }
 
     console.log("Collected visitData:", visitData);
     console.log("Matched Diagnoses:", matches);
@@ -48,14 +46,22 @@ if (filledFields.length === 0) {
 
       const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
       medicineOutput.innerHTML = allMeds.length
-        ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
+        ? allMeds.map(m => `
+          <div class="mb-2 p-3 border-l-4 border-purple-400 bg-purple-50 text-purple-800 rounded shadow-sm transition hover:scale-[1.02]">
+            <div class="font-semibold">${m.name}</div>
+            <div class="text-sm text-gray-700">${m.purpose || ''}</div>
+          </div>
+        `).join('')
         : '<div class="text-gray-500">No medicines suggested.</div>';
-    } else {
-      const filledFields = Object.values(visitData).flatMap(section =>
-        Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
-      );
 
-      if (filledFields.length < 5) {
+    } else {
+      const filledFieldsCount = Object.values(visitData).reduce((total, section) => {
+        return total + Object.values(section || {}).filter(
+          v => v !== null && v !== '' && v !== false
+        ).length;
+      }, 0);
+
+      if (filledFieldsCount < 5) {
         doctorOutput.value = "No data received.";
         patientOutput.value = "Please fill in relevant patient details (symptoms, labs, vitals) so the app can analyze and assist you better.";
       } else {
@@ -77,8 +83,16 @@ if (filledFields.length === 0) {
 });
 
 function collectVisitData() {
-  const data = { info: {},
-    blood: {}, urine: {}, symptoms: {}, medical: {}, vitals: {}, ultrasound: {}, reports: {}, infection: {}
+  const data = {
+    info: {},
+    blood: {},
+    urine: {},
+    symptoms: {},
+    medical: {},
+    vitals: {},
+    ultrasound: {},
+    reports: {},
+    infection: {}
   };
 
   document.querySelectorAll('input, select, textarea').forEach(el => {
@@ -105,9 +119,7 @@ function getSectionName(fieldName) {
   return section?.getAttribute('data-section') || null;
 }
 
-//upto this//
-
-// ✅💾 Visit Save/Load Support
+// ✅🗂️ Visit Save/Load Support
 function saveVisitToLocalStorage(visit) {
   const visits = JSON.parse(localStorage.getItem("nephro_visits") || "[]");
   visits.push({ date: new Date().toLocaleString(), data: visit });

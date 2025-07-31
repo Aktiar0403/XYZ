@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NephroCare Pro – Tabbed Input</title>
+  <title>Nephro Care Prot</title>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script type="module" src="js/app.js"></script>
@@ -15,22 +15,39 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 text-gray-800">
+
   <form id="visit-form">
     <div class="max-w-6xl mx-auto p-6" x-data="{ tab: 'info' }">
-      <h1 class="text-3xl font-bold text-center mb-6 text-green-700">NephroCare Pro – Patient Entry</h1>
+      <h1 class="text-3xl font-bold text-center mb-6 text-green-700">Nephro Care Pro</h1>
 
       <!-- Tabs Navigation -->
-      <div class="flex space-x-4 border-b pb-2 mb-6">
-        <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
-          <button type="button" @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
-        </template>
-      </div>
+
+      <div class="flex flex-wrap gap-2 border-b pb-2 mb-6">
+  <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
+    <button
+      type="button"
+      @click="tab = name"
+      class="flex items-center gap-2 px-4 py-2 rounded-t font-semibold transition duration-300 transform"
+      :class="tab === name
+        ? 'bg-green-600 text-white scale-105 shadow'
+        : 'bg-gray-200 text-gray-700 hover:scale-105 hover:bg-green-100'"
+    >
+      <span x-html="{
+        info: '👤', vitals: '🧍', symptoms: '😷', labs: '🧪',
+        history: '📜', imaging: '🖼️', advanced: '📊'
+      }[name]"></span>
+      <span x-text=\"name.charAt(0).toUpperCase() + name.slice(1)\"></span>
+    </button>
+  </template>
+</div>
+
 
       <div class="bg-white p-6 rounded shadow">
 
         <!-- Info Tab -->
-        <div x-show="tab === 'info'" data-section="info" class="space-y-4">
+        <div x-show="tab === 'info'" x-transition.opacity.duration.300ms data-section="info" class="space-y-4">
+
           <h2 class="text-xl font-semibold mb-4">Patient Info</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div><label for="patient-name">Name</label><input type="text" id="patient-name" class="w-full input"></div>
@@ -41,7 +58,7 @@
         </div>
 
         <!-- Vitals Tab -->
-        <div x-show="tab === 'vitals'" data-section="vitals" class="space-y-4">
+        <div x-show="tab === 'vitals'" x-transition.opacity.duration.300ms data-section="vitals" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Vitals & Volume</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div><label for="sbp">SBP</label><input type="number" id="sbp" class="w-full input"></div>
@@ -59,7 +76,7 @@
         </div>
 
         <!-- Symptoms Tab -->
-        <div x-show="tab === 'symptoms'" data-section="symptoms" class="space-y-4">
+        <div x-show="tab === 'symptoms'" x-transition.opacity.duration.300ms data-section="symptoms" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
@@ -72,7 +89,7 @@
         </div>
 
         <!-- Labs Tab -->
-        <div x-show="tab === 'labs'" data-section="blood" class="space-y-4">
+       <div x-show="tab === 'labs'" x-transition.opacity.duration.300ms data-section="blood" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div><label for="egfr">eGFR</label><input type="number" step="any" id="egfr" class="w-full input"></div>
@@ -92,7 +109,7 @@
         </div>
 
         <!-- History Tab -->
-        <div x-show="tab === 'history'" data-section="medical" class="space-y-4">
+       <div x-show="tab === 'history'" x-transition.opacity.duration.300ms data-section="medical" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Medical History</h2>
           <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             <template x-for="hx in ['diabetes','hypertension','nsaid-use','past-stone-disease','family-ckd','tb','hiv','hepatitis','pregnancy-status','contrast-history','lithium-use']" :key="hx">
@@ -105,7 +122,7 @@
         </div>
 
         <!-- Imaging Tab -->
-        <div x-show="tab === 'imaging'" data-section="ultrasound" class="space-y-4">
+        <div x-show="tab === 'imaging'" x-transition.opacity.duration.300ms data-section="ultrasound" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div><label for="kidney-size">Kidney Size</label><select id="kidney-size" class="w-full input"><option>Normal</option><option>Decreased</option><option>Increased</option><option>Asymmetrical</option></select></div>
@@ -117,7 +134,7 @@
         </div>
 
         <!-- Advanced Tab -->
-        <div x-show="tab === 'advanced'" data-section="reports" class="space-y-4">
+       <div x-show="tab === 'advanced'" x-transition.opacity.duration.300ms data-section="reports" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div><label for="ana">ANA</label><input type="text" id="ana" class="w-full input"></div>
@@ -147,17 +164,26 @@
 
           <div>
             <h2 class="text-lg font-semibold text-green-700 mt-4">👨‍⚕️ Doctor’s Diagnosis</h2>
-            <textarea id="doctor-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
+        <textarea id="doctor-diagnosis"
+  class="w-full border border-green-500 bg-green-50 text-green-800 p-4 rounded-lg shadow-sm transition duration-300 ease-in-out h-32"
+  readonly></textarea>
+
           </div>
 
           <div>
             <h2 class="text-lg font-semibold text-blue-700 mt-4">👥 Patient-Friendly Explanation</h2>
-            <textarea id="patient-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
+           <textarea id="patient-diagnosis"
+  class="w-full border border-blue-400 bg-blue-50 text-blue-800 p-4 rounded-lg shadow-sm transition duration-300 ease-in-out h-32"
+  readonly></textarea>
+
           </div>
 
           <div>
             <h2 class="text-lg font-semibold text-purple-700 mt-4">💊 Suggested Medicines</h2>
-            <div id="medicine-output" class="bg-gray-100 p-4 rounded"></div>
+           <div id="medicine-output"
+  class="bg-purple-50 border-l-4 border-purple-400 text-purple-800 p-4 rounded shadow-sm transition-all duration-300 ease-in-out">
+</div>
+
           </div>
 
           <button id="print-button" type="button" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">🖨️ Print Prescription</button>
