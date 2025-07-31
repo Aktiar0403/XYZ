@@ -40,15 +40,19 @@ export function generateDiagnosisText(visit) {
     : "No diagnosis suggestions matched.";
 }
 
-// Return missing fields across all rules
+// Safe getMissingFields logic
 export function getMissingFields(visit) {
   const needed = new Set();
+  const validKeys = new Set(Object.keys(visit).flatMap(section =>
+    Object.keys(visit[section] || {})
+  ));
 
   for (const rule of diagnosisRules) {
     if (rule.missingFields) {
       for (const field of rule.missingFields) {
         const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-        if (!visit[section] || visit[section][key] === undefined) {
+        if (!visit[section] || !(key in visit[section])) {
+          if (!validKeys.has(key)) continue; // skip invalid field
           needed.add(field);
         }
       }
