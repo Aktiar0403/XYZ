@@ -1,5 +1,7 @@
 // app.js – Diagnosis Output Logic
 
+// app.js – Diagnosis Output Logic (Full Updated Version)
+
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
@@ -19,66 +21,49 @@ window.addEventListener('DOMContentLoaded', async () => {
   const missingPrompt = document.getElementById('missing-fields');
   const medicineOutput = document.getElementById('medicine-output');
 
- document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
-  visitData = collectVisitData();
-  const matches = getMatchedDiagnoses(visitData);
-  const missing = getMissingFields(visitData);
+  document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
+    visitData = collectVisitData();
+    const matches = getMatchedDiagnoses(visitData);
+    const missing = getMissingFields(visitData);
 
-  console.log("Collected visitData:", visitData);
-  console.log("Matched Diagnoses:", matches);
-  console.log("Missing Fields:", missing);
+    console.log("Collected visitData:", visitData);
+    console.log("Matched Diagnoses:", matches);
+    console.log("Missing Fields:", missing);
 
-  const doctorOutput = document.getElementById('doctor-diagnosis');
-  const patientOutput = document.getElementById('patient-diagnosis');
-  const medicineOutput = document.getElementById('medicine-output');
-  const missingPrompt = document.getElementById('missing-fields');
+    if (matches.length) {
+      doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
+      patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
 
-  if (matches.length) {
-    doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
-    patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
-
-    const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
-    medicineOutput.innerHTML = allMeds.length
-      ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
-      : '<div class="text-gray-500">No medicines suggested.</div>';
-  } else {
-    const filledFields = Object.values(visitData).flatMap(section =>
-      Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
-    );
-
-    if (filledFields.length < 5) {
-      doctorOutput.value = "No data received.";
-      patientOutput.value = "Please fill in relevant patient details (symptoms, labs, vitals) so the app can analyze and assist you better.";
+      const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
+      medicineOutput.innerHTML = allMeds.length
+        ? allMeds.map(m => `<div class='mb-2'>• <strong>${m.name}</strong>: ${m.purpose || ''}</div>`).join('')
+        : '<div class="text-gray-500">No medicines suggested.</div>';
     } else {
-      doctorOutput.value = "No diagnosis matched based on the current inputs.";
-      patientOutput.value = "We couldn’t match a condition based on your provided data. Please review the inputs or consult a specialist.";
+      const filledFields = Object.values(visitData).flatMap(section =>
+        Object.values(section || {}).filter(v => v !== null && v !== '' && v !== false)
+      );
+
+      if (filledFields.length < 5) {
+        doctorOutput.value = "No data received.";
+        patientOutput.value = "Please fill in relevant patient details (symptoms, labs, vitals) so the app can analyze and assist you better.";
+      } else {
+        doctorOutput.value = "No diagnosis matched based on the current inputs.";
+        patientOutput.value = "We couldn’t match a condition based on your provided data. Please review the inputs or consult a specialist.";
+      }
+
+      medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
     }
 
-    medicineOutput.innerHTML = '<div class="text-gray-500">No medicines suggested.</div>';
-  }
-
-  missingPrompt.innerHTML = missing.length
-    ? `Please complete: <span class='text-red-500 font-semibold'>${missing.join(', ')}</span>`
-    : '';
-});
-
-
+    missingPrompt.innerHTML = missing.length
+      ? `Please complete: <span class='text-red-500 font-semibold'>${missing.join(', ')}</span>`
+      : '';
+  });
 
   document.getElementById('print-button')?.addEventListener('click', () => {
     exportToPDF('pdf-content', 'NephroCare_Prescription.pdf');
   });
-
-  // ✅ SAVE button support
-  document.getElementById('save-visit')?.addEventListener('click', () => {
-    const visit = collectVisitData();
-    saveVisitToLocalStorage(visit);
-  });
-
-  // ✅ Load existing visits on startup
-  renderSavedVisits();
 });
 
-// ✅ Existing logic preserved
 function collectVisitData() {
   const data = {
     blood: {}, urine: {}, symptoms: {}, medical: {}, vitals: {}, ultrasound: {}, reports: {}, infection: {}
@@ -102,15 +87,13 @@ function collectVisitData() {
 }
 
 function getSectionName(fieldName) {
-  if (!fieldName) return null;
-  if (document.getElementById(fieldName)?.closest('[x-show*=vitals]')) return 'vitals';
-  if (document.getElementById(fieldName)?.closest('[x-show*=labs]')) return 'blood';
-  if (document.getElementById(fieldName)?.closest('[x-show*=symptoms]')) return 'symptoms';
-  if (document.getElementById(fieldName)?.closest('[x-show*=history]')) return 'medical';
-  if (document.getElementById(fieldName)?.closest('[x-show*=imaging]')) return 'ultrasound';
-  if (document.getElementById(fieldName)?.closest('[x-show*=advanced]')) return 'reports';
-  return null;
+  const el = document.getElementById(fieldName);
+  if (!el) return null;
+  const section = el.closest('[data-section]');
+  return section?.getAttribute('data-section') || null;
 }
+
+//upto this//
 
 // ✅💾 Visit Save/Load Support
 function saveVisitToLocalStorage(visit) {
