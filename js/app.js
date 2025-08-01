@@ -4,9 +4,12 @@ import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } fro
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
 
+let matched = [];
 
+
+let finalMeds = new Set();
+let finalTests = new Set();
 let visitData = {};
-
 window.addEventListener('DOMContentLoaded', async () => {
   await loadDiagnosisRulesFromFile();
   await loadMedicinesFromFile();
