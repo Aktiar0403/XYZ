@@ -96,7 +96,11 @@
       <div x-show="tab === 'advanced'">
         <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div><label for="ana">ANA</label><input type="text" id="ana" data-section="reports" class="w-full input"></div>
+          <div><label for="ana">ANA</label><select id="ana" data-section="reports" class="w-full input">
+          <option value="">Not Tested</option>
+           <option>Negative</option>
+           <option>Positive</option>
+                                    </select></div>
           <div><label for="aso">ASO</label><input type="number" id="aso" data-section="reports" class="w-full input"></div>
           <div><label for="vitamin-d">Vitamin D</label><input type="number" step="0.1" id="vitamin-d" data-section="reports" class="w-full input"></div>
           <div><label for="b12">B12</label><input type="number" id="b12" data-section="reports" class="w-full input"></div>
