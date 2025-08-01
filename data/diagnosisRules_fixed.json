@@ -1,0 +1,3676 @@
+[
+  {
+    "diagnosis": "CKD Stage 2",
+    "doctorReason": "eGFR between 60\u201389 mL/min indicates mildly reduced kidney function per KDIGO guidelines.",
+    "patientExplanation": "Your kidneys are filtering slightly slower than normal, but with proper care, we can maintain their function.",
+    "recommendedTests": [
+      "eGFR",
+      "Urine ACR",
+      "Blood Pressure"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Telmisartan",
+        "purpose": "Protects kidney and controls blood pressure"
+      }
+    ],
+    "followUpAdvice": "Recheck kidney function every 6\u201312 months. Maintain blood pressure and avoid painkillers.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "CKD Stage 3",
+    "doctorReason": "eGFR between 30\u201359 mL/min indicates moderate kidney dysfunction.",
+    "patientExplanation": "Your kidneys are working at a moderately low level. You should follow up regularly to slow any progression.",
+    "recommendedTests": [
+      "KFT",
+      "ACR",
+      "PTH",
+      "Vitamin D"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Telmisartan",
+        "purpose": "Helps protect kidney"
+      },
+      {
+        "name": "Rocaltrol",
+        "purpose": "Supports bone health in CKD"
+      }
+    ],
+    "followUpAdvice": "Avoid contrast dyes and nephrotoxic drugs. Monitor blood pressure and electrolytes closely.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "CKD Stage 4",
+    "doctorReason": "Severely reduced eGFR below 30, but not yet ESRD.",
+    "patientExplanation": "Your kidney function is quite low. Timely management can delay the need for dialysis.",
+    "recommendedTests": [
+      "eGFR",
+      "Calcium/Phosphate",
+      "Hemoglobin",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Helps with metabolic acidosis"
+      },
+      {
+        "name": "Erythropoietin",
+        "purpose": "Treats low hemoglobin"
+      }
+    ],
+    "followUpAdvice": "Start planning with a nephrologist. Dietary changes and medications are crucial.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "CKD Stage 5 (ESRD)",
+    "doctorReason": "eGFR < 15 mL/min suggests end-stage kidney disease needing renal replacement.",
+    "patientExplanation": "Your kidneys are severely damaged and cannot support your body well. We need to plan for dialysis or transplant.",
+    "recommendedTests": [
+      "KFT",
+      "Hb",
+      "PTH",
+      "Access for dialysis"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Renoalfa",
+        "purpose": "Supports anemia in ESRD"
+      },
+      {
+        "name": "Cinacalcet",
+        "purpose": "Manages bone mineral disorders"
+      }
+    ],
+    "followUpAdvice": "Consult a nephrologist immediately. Plan dialysis access and renal diet. Avoid all nephrotoxins.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "Microalbuminuria",
+    "doctorReason": "ACR > 30 mg/g indicates early kidney damage due to glomerular leakage.",
+    "patientExplanation": "There's a small amount of protein leaking in your urine, which is an early sign of kidney stress.",
+    "recommendedTests": [
+      "Urine ACR",
+      "eGFR",
+      "BP"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Telmikind",
+        "purpose": "Reduces protein loss and glomerular damage"
+      }
+    ],
+    "followUpAdvice": "Control blood sugar and pressure. Recheck ACR in 3\u20136 months.",
+    "missingFields": [
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "Nephrotic-Range Proteinuria",
+    "doctorReason": "ACR > 300 mg/g indicates heavy protein loss, suggestive of nephrotic syndrome.",
+    "patientExplanation": "There is a lot of protein in your urine. This might be due to a kidney disease needing further evaluation.",
+    "recommendedTests": [
+      "Urine ACR",
+      "24h Protein",
+      "Albumin",
+      "Creatinine",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Omnicortil",
+        "purpose": "Steroid to reduce protein leakage"
+      },
+      {
+        "name": "Lasix",
+        "purpose": "Reduces swelling"
+      }
+    ],
+    "followUpAdvice": "Avoid high salt intake. Consider nephrology referral and biopsy if persistent.",
+    "missingFields": [
+      "urine-acr",
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Hyperkalemia",
+    "doctorReason": "Potassium > 5.2 mEq/L may indicate impaired kidney excretion or acidosis.",
+    "patientExplanation": "Your potassium is high, which can affect your heart and muscles. We need to correct it quickly.",
+    "recommendedTests": [
+      "KFT",
+      "ECG",
+      "Bicarbonate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Veltassa",
+        "purpose": "Lowers potassium"
+      },
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Corrects acidosis if present"
+      }
+    ],
+    "followUpAdvice": "Restrict high potassium foods. If severe, emergency treatment may be needed.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Hypokalemia",
+    "doctorReason": "Potassium < 3.5 mEq/L can cause muscle weakness or arrhythmias.",
+    "patientExplanation": "Your body has low potassium levels. We can correct this with proper supplements.",
+    "recommendedTests": [
+      "Potassium",
+      "Sodium",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Potassium Chloride Oral Solution",
+        "purpose": "Replaces body potassium"
+      }
+    ],
+    "followUpAdvice": "Eat potassium-rich foods and take the supplement as advised.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Anemia of CKD",
+    "doctorReason": "Hemoglobin < 12 in CKD is typically due to reduced erythropoietin production.",
+    "patientExplanation": "Your blood level is low because the kidneys aren't making enough hormone to produce blood.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "Iron studies",
+      "Ferritin",
+      "TSAT"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Erythropoietin Alfa",
+        "purpose": "Stimulates blood formation"
+      },
+      {
+        "name": "Ferritas",
+        "purpose": "IV iron replenishment"
+      }
+    ],
+    "followUpAdvice": "Monitor hemoglobin monthly and continue iron supplementation.",
+    "missingFields": [
+      "blood-hemoglobin"
+    ]
+  },
+  {
+    "diagnosis": "Metabolic Acidosis in CKD",
+    "doctorReason": "Bicarbonate < 22 with CKD suggests acid buildup due to reduced renal buffering.",
+    "patientExplanation": "There\u2019s a build-up of acid in your blood because your kidneys are not filtering well.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "eGFR",
+      "Anion gap",
+      "Arterial Blood Gas (ABG)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Buffers the acid in blood"
+      }
+    ],
+    "followUpAdvice": "Take the tablet after meals. Avoid in patients with uncontrolled blood pressure.",
+    "missingFields": [
+      "blood-bicarbonate"
+    ]
+  },
+  {
+    "diagnosis": "Nephrotic Syndrome",
+    "doctorReason": "Massive proteinuria (>3.5 g/day) with edema suggests nephrotic syndrome.",
+    "patientExplanation": "You're losing a large amount of protein in your urine, which is causing swelling in your body.",
+    "recommendedTests": [
+      "24-hour Urine Protein",
+      "Albumin",
+      "Lipid Profile",
+      "Kidney Biopsy (if required)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Omnicortil",
+        "purpose": "Reduces inflammation and protein loss"
+      },
+      {
+        "name": "Lasix",
+        "purpose": "Treats fluid overload/swelling"
+      }
+    ],
+    "followUpAdvice": "Salt restriction is essential. You may need immunosuppressants depending on biopsy result.",
+    "missingFields": [
+      "symptoms-edema",
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Hypernatremia",
+    "doctorReason": "Sodium > 145 mEq/L may reflect dehydration or concentration issues.",
+    "patientExplanation": "Your sodium level is high, often due to dehydration or not drinking enough fluids.",
+    "recommendedTests": [
+      "Sodium",
+      "Plasma Osmolality",
+      "Volume Status Assessment"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Fluids",
+        "purpose": "Corrects dehydration"
+      }
+    ],
+    "followUpAdvice": "Increase fluid intake and monitor sodium regularly.",
+    "missingFields": [
+      "blood-sodium"
+    ]
+  },
+  {
+    "diagnosis": "Hyponatremia",
+    "doctorReason": "Sodium < 135 mEq/L suggests dilutional state or kidney water handling issue.",
+    "patientExplanation": "Your sodium level is low. This may cause confusion or weakness if not treated.",
+    "recommendedTests": [
+      "Serum Sodium",
+      "Urine Sodium",
+      "Plasma Osmolality"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tolvaptan",
+        "purpose": "Improves sodium levels in resistant cases"
+      }
+    ],
+    "followUpAdvice": "Avoid excess water. Further tests may be needed to find the exact cause.",
+    "missingFields": [
+      "blood-sodium"
+    ]
+  },
+  {
+    "diagnosis": "Hypocalcemia",
+    "doctorReason": "Calcium < 8.5 mg/dL in CKD may reflect vitamin D deficiency or CKD-MBD.",
+    "patientExplanation": "Your calcium is low, which may cause cramps or bone weakness.",
+    "recommendedTests": [
+      "Calcium",
+      "Vitamin D3",
+      "PTH",
+      "Phosphate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Supports calcium metabolism"
+      }
+    ],
+    "followUpAdvice": "Monitor levels monthly. Avoid excess phosphate intake.",
+    "missingFields": [
+      "blood-calcium"
+    ]
+  },
+  {
+    "diagnosis": "Hyperphosphatemia",
+    "doctorReason": "Phosphate > 4.5 mg/dL suggests reduced phosphate excretion due to CKD.",
+    "patientExplanation": "Your phosphate level is high. This can affect bones and vessels.",
+    "recommendedTests": [
+      "Phosphate",
+      "Calcium",
+      "PTH",
+      "Vitamin D"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sevelamer",
+        "purpose": "Binds phosphate in the intestine"
+      }
+    ],
+    "followUpAdvice": "Take medicine with meals. Avoid high-phosphorus foods.",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD-MBD (Mineral Bone Disorder)",
+    "doctorReason": "Abnormal calcium, phosphate, PTH in advanced CKD indicates mineral bone disorder.",
+    "patientExplanation": "Your kidney disease is affecting your bones and minerals.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "PTH",
+      "Vitamin D",
+      "X-ray Skull/Hips"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Cinacalcet",
+        "purpose": "Controls high PTH"
+      },
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Improves calcium and bone health"
+      }
+    ],
+    "followUpAdvice": "Bone health needs long-term monitoring. Diet and medications help slow down damage.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "Volume Overload State",
+    "doctorReason": "Breathlessness with hypervolemic status indicates fluid overload in CKD/heart failure.",
+    "patientExplanation": "Your body is retaining excess fluid, which is making it hard to breathe or causing swelling.",
+    "recommendedTests": [
+      "Weight",
+      "Volume Status",
+      "Creatinine",
+      "Chest X-ray (if needed)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Lasix",
+        "purpose": "Removes excess fluid"
+      },
+      {
+        "name": "Torsemide",
+        "purpose": "Longer-acting diuretic"
+      }
+    ],
+    "followUpAdvice": "Limit salt intake. May need dialysis if unresponsive to diuretics.",
+    "missingFields": [
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "Advanced Hypertensive Nephrosclerosis",
+    "doctorReason": "Long-standing hypertension with small, echogenic kidneys and low eGFR.",
+    "patientExplanation": "Your kidneys have been damaged by high blood pressure over time.",
+    "recommendedTests": [
+      "BP",
+      "Ultrasound",
+      "eGFR",
+      "Urinalysis"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Amlodipine",
+        "purpose": "Controls blood pressure"
+      },
+      {
+        "name": "Telma 40",
+        "purpose": "Protects kidneys from BP damage"
+      }
+    ],
+    "followUpAdvice": "Tight BP control is key. Continue nephrology follow-up.",
+    "missingFields": [
+      "blood-egfr",
+      "unknown-ultrasound"
+    ]
+  },
+  {
+    "diagnosis": "AKI on CKD from NSAID Use",
+    "doctorReason": "Creatinine rise + bicarbonate drop + NSAID use suggests acute insult over CKD.",
+    "patientExplanation": "A painkiller may have temporarily worsened your kidney function.",
+    "recommendedTests": [
+      "Creatinine",
+      "Bicarbonate",
+      "Urine Output",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop NSAIDs",
+        "purpose": "Avoid further kidney injury"
+      },
+      {
+        "name": "IV Fluids",
+        "purpose": "Help restore perfusion if needed"
+      }
+    ],
+    "followUpAdvice": "Discontinue NSAIDs. Monitor kidney function closely.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "blood-creatinine"
+    ]
+  },
+  {
+    "diagnosis": "Obstructive Uropathy due to Stones",
+    "doctorReason": "Hydronephrosis + flank pain + stones indicates post-renal obstruction.",
+    "patientExplanation": "You may have a stone that\u2019s blocking your urine and affecting the kidney.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Urine Routine",
+      "CT KUB (if severe)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Lasix",
+        "purpose": "Promotes urine flow"
+      },
+      {
+        "name": "Cystone",
+        "purpose": "Supports stone prevention"
+      }
+    ],
+    "followUpAdvice": "Increase hydration. Urology referral may be required.",
+    "missingFields": [
+      "flank-pain",
+      "ultrasound-hydronephrosis",
+      "ultrasound-stones"
+    ]
+  },
+  {
+    "diagnosis": "Suspected NSAID-Induced AKI",
+    "doctorReason": "Rising creatinine with history of NSAID use and oliguria indicates drug-induced kidney injury.",
+    "patientExplanation": "Your kidney function may have worsened due to painkiller usage.",
+    "recommendedTests": [
+      "Creatinine",
+      "Urine Output",
+      "Ultrasound",
+      "Urinalysis"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop NSAIDs",
+        "purpose": "Avoid further kidney damage"
+      },
+      {
+        "name": "IV Fluids",
+        "purpose": "Support kidney perfusion if needed"
+      }
+    ],
+    "followUpAdvice": "Avoid painkillers unless prescribed. Monitor kidney tests every 3\u20135 days.",
+    "missingFields": [
+      "blood-creatinine",
+      "nsaid-use"
+    ]
+  },
+  {
+    "diagnosis": "Azotemia",
+    "doctorReason": "High creatinine and urea suggest nitrogenous waste retention due to renal impairment.",
+    "patientExplanation": "Your body is accumulating waste products due to decreased kidney function.",
+    "recommendedTests": [
+      "Creatinine",
+      "Urea",
+      "eGFR",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Fluids (if pre-renal)",
+        "purpose": "Restore circulation to kidneys"
+      },
+      {
+        "name": "Protein restriction",
+        "purpose": "Reduce nitrogen waste"
+      }
+    ],
+    "followUpAdvice": "Evaluate cause of azotemia (pre-, intra-, or post-renal). Repeat labs in 48\u201372 hours.",
+    "missingFields": [
+      "blood-creatinine",
+      "blood-urea"
+    ]
+  },
+  {
+    "diagnosis": "Severe Hypoalbuminemia with Edema",
+    "doctorReason": "Low serum albumin with swelling suggests nephrotic syndrome or liver disease.",
+    "patientExplanation": "You have very low protein in your blood, which is causing swelling in the body.",
+    "recommendedTests": [
+      "Serum Albumin",
+      "Urine ACR",
+      "LFT",
+      "Ultrasound Abdomen"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Albumin Infusion",
+        "purpose": "Temporarily restores oncotic pressure"
+      },
+      {
+        "name": "Diuretics",
+        "purpose": "Remove excess fluid"
+      }
+    ],
+    "followUpAdvice": "Assess underlying cause. Consider biopsy if nephrotic suspected.",
+    "missingFields": [
+      "blood-albumin",
+      "symptoms-edema"
+    ]
+  },
+  {
+    "diagnosis": "Likely Polycystic Kidney Disease (ADPKD)",
+    "doctorReason": "Multiple bilateral kidney cysts with family history strongly suggests ADPKD.",
+    "patientExplanation": "Your ultrasound shows cysts in both kidneys, which can run in families.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Family history",
+      "Genetic testing (if needed)",
+      "BP monitoring"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tolvaptan",
+        "purpose": "May slow cyst growth in early ADPKD"
+      }
+    ],
+    "followUpAdvice": "Monitor BP and kidney function regularly. Avoid contact sports or trauma.",
+    "missingFields": [
+      "family-ckd",
+      "ultrasound-cysts"
+    ]
+  },
+  {
+    "diagnosis": "Severe Hypertension",
+    "doctorReason": "Systolic BP > 160 and/or DBP > 100 can cause progressive nephropathy.",
+    "patientExplanation": "Your blood pressure is very high, which can harm your kidneys and heart.",
+    "recommendedTests": [
+      "BP charting",
+      "Fundus exam",
+      "eGFR",
+      "ECG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Cilacar",
+        "purpose": "Lowers high blood pressure"
+      },
+      {
+        "name": "Ziblok",
+        "purpose": "Beta-blocker to reduce strain on heart"
+      }
+    ],
+    "followUpAdvice": "Immediate lifestyle changes. Monitor for end-organ damage.",
+    "missingFields": [
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "Nephrotic-Range Proteinuria in Diabetes",
+    "doctorReason": "Heavy proteinuria with low albumin in diabetes indicates severe glomerular damage.",
+    "patientExplanation": "Your diabetes has caused leakage of protein in urine. This is serious but manageable.",
+    "recommendedTests": [
+      "Urine ACR",
+      "Serum Albumin",
+      "HbA1c",
+      "Retinopathy screen"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "SGLT2 Inhibitor",
+        "purpose": "Protects kidneys in diabetics"
+      },
+      {
+        "name": "ARB/ACE inhibitor",
+        "purpose": "Reduces proteinuria and BP"
+      }
+    ],
+    "followUpAdvice": "Strict diabetes and BP control needed. Follow nephrologist advice closely.",
+    "missingFields": [
+      "blood-albumin",
+      "medical-diabetes",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "Chronic Renal Atrophy",
+    "doctorReason": "Small kidney size and high creatinine suggest chronic irreversible damage.",
+    "patientExplanation": "Your kidneys are small and underfunctioning, often due to long-term disease.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Creatinine",
+      "eGFR",
+      "BP profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Supportive care",
+        "purpose": "Control symptoms and progression"
+      }
+    ],
+    "followUpAdvice": "May require renal replacement therapy later. Maintain regular nephrology follow-up.",
+    "missingFields": [
+      "blood-creatinine",
+      "kidney-size"
+    ]
+  },
+  {
+    "diagnosis": "Severe Hyperkalemia with Hypotension",
+    "doctorReason": "Potassium > 6.0 with low BP is life-threatening and requires urgent attention.",
+    "patientExplanation": "You have dangerously high potassium and low blood pressure. This needs emergency treatment.",
+    "recommendedTests": [
+      "ECG",
+      "Serum Potassium",
+      "Bicarbonate",
+      "BP"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Calcium Gluconate",
+        "purpose": "Stabilizes heart"
+      },
+      {
+        "name": "Insulin with glucose",
+        "purpose": "Shifts potassium into cells"
+      }
+    ],
+    "followUpAdvice": "Hospital admission may be required. Avoid potassium-rich foods.",
+    "missingFields": [
+      "blood-potassium",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "Familial CKD Suspicion",
+    "doctorReason": "Family history with eGFR < 60 suggests hereditary nephropathy.",
+    "patientExplanation": "There may be a hereditary reason for your kidney issues. We\u2019ll investigate further.",
+    "recommendedTests": [
+      "Family history",
+      "eGFR",
+      "Ultrasound",
+      "Genetic testing (if indicated)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Regular Monitoring",
+        "purpose": "Early detection of progression"
+      }
+    ],
+    "followUpAdvice": "Screen family members. Periodic renal function check is advised.",
+    "missingFields": [
+      "blood-egfr",
+      "family-ckd"
+    ]
+  },
+  {
+    "diagnosis": "Uremic Symptoms with Acidosis",
+    "doctorReason": "Nausea, vomiting with low bicarbonate in CKD suggests metabolic acidosis and toxin accumulation.",
+    "patientExplanation": "You\u2019re experiencing symptoms due to toxin buildup in the blood. Your kidneys are not clearing waste properly.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "ABG",
+      "Creatinine",
+      "Urea"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Neutralizes blood acid"
+      }
+    ],
+    "followUpAdvice": "Might require dialysis planning. Reduce dietary protein if advised.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "symptoms-nausea",
+      "symptoms-vomiting"
+    ]
+  },
+  {
+    "diagnosis": "Hypernatremia with Oliguria",
+    "doctorReason": "Sodium > 150 with decreased urine output suggests volume depletion or renal concentration defect.",
+    "patientExplanation": "You have high sodium and reduced urine, likely due to dehydration or a kidney issue.",
+    "recommendedTests": [
+      "Serum Sodium",
+      "Urine Output",
+      "Volume Status",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Normal Saline (adjusted)",
+        "purpose": "Restore fluid balance"
+      }
+    ],
+    "followUpAdvice": "Hydration must be monitored closely. Avoid high-sodium foods.",
+    "missingFields": [
+      "blood-sodium",
+      "decreased-urine-output"
+    ]
+  },
+  {
+    "diagnosis": "Likely ADPKD (Autosomal Dominant Polycystic Kidney Disease)",
+    "doctorReason": "Multiple bilateral kidney cysts with low eGFR support ADPKD diagnosis.",
+    "patientExplanation": "Your kidneys have multiple cysts, likely inherited. This can affect kidney function over time.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Family history",
+      "eGFR",
+      "BP",
+      "CT KUB (if needed)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tolvaptan",
+        "purpose": "Slows cyst progression in early stages"
+      }
+    ],
+    "followUpAdvice": "Regular nephrology follow-up. Monitor kidney size and function.",
+    "missingFields": [
+      "blood-egfr",
+      "ultrasound-cysts"
+    ]
+  },
+  {
+    "diagnosis": "Metabolic Acidosis with Hyperkalemia",
+    "doctorReason": "Low bicarbonate and high potassium often occur in late-stage CKD.",
+    "patientExplanation": "There is a buildup of acid and potassium in your blood. This needs medical attention.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "Potassium",
+      "ABG",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Buffers blood acid"
+      },
+      {
+        "name": "Veltassa",
+        "purpose": "Reduces potassium safely"
+      }
+    ],
+    "followUpAdvice": "Dialysis may be required if severe or resistant.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Significant Proteinuria with Hypoalbuminemia",
+    "doctorReason": "High urinary albumin with low serum albumin suggests nephrotic protein loss.",
+    "patientExplanation": "You're losing protein in your urine, causing low blood protein levels and swelling.",
+    "recommendedTests": [
+      "ACR",
+      "24h Protein",
+      "Albumin",
+      "Lipid Profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "ACE/ARB",
+        "purpose": "Reduce protein loss"
+      },
+      {
+        "name": "Statins",
+        "purpose": "Control high cholesterol due to protein loss"
+      }
+    ],
+    "followUpAdvice": "Consider biopsy if persistent. Dietary protein may need adjustment.",
+    "missingFields": [
+      "blood-albumin",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "Severe Hypokalemia",
+    "doctorReason": "Potassium < 3.0 mEq/L can cause arrhythmias and severe muscle weakness.",
+    "patientExplanation": "Your potassium is dangerously low. This needs urgent correction.",
+    "recommendedTests": [
+      "Serum Potassium",
+      "ECG",
+      "Magnesium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Potassium Chloride",
+        "purpose": "Replenishes potassium levels"
+      }
+    ],
+    "followUpAdvice": "Avoid diuretics that waste potassium. Recheck blood tests in 1\u20132 days.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Advanced CKD Imaging Pattern",
+    "doctorReason": "Small kidneys with markedly increased echogenicity and low eGFR suggest chronic irreversible disease.",
+    "patientExplanation": "Your kidney scans show scarring and shrinkage, usually seen in advanced kidney disease.",
+    "recommendedTests": [
+      "Ultrasound",
+      "eGFR",
+      "BP",
+      "Urinalysis"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Supportive therapy",
+        "purpose": "Delay progression and manage symptoms"
+      }
+    ],
+    "followUpAdvice": "Avoid nephrotoxins. Prepare for renal replacement if progressing.",
+    "missingFields": [
+      "blood-egfr",
+      "kidney-size",
+      "ultrasound-echogenicity"
+    ]
+  },
+  {
+    "diagnosis": "Obstructive Uropathy",
+    "doctorReason": "Hydronephrosis with stones or flank pain indicates post-renal obstruction.",
+    "patientExplanation": "Your kidney seems blocked, possibly due to stones. This needs further evaluation.",
+    "recommendedTests": [
+      "Ultrasound",
+      "KUB X-ray",
+      "Creatinine",
+      "Urine Output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tamsulosin",
+        "purpose": "Relaxes bladder/prostate muscles to ease flow"
+      },
+      {
+        "name": "Painkillers (short-term)",
+        "purpose": "Relieve discomfort due to stones"
+      }
+    ],
+    "followUpAdvice": "Increase fluids. Urologist opinion may be needed.",
+    "missingFields": [
+      "flank-pain",
+      "ultrasound-hydronephrosis",
+      "ultrasound-stones"
+    ]
+  },
+  {
+    "diagnosis": "Anemia and Hypoalbuminemia",
+    "doctorReason": "Combined low hemoglobin and albumin may reflect nephrotic syndrome, chronic inflammation, or malnutrition.",
+    "patientExplanation": "You may be tired and weak due to low blood and protein levels. This could be due to kidney disease or poor nutrition.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "Albumin",
+      "Iron Profile",
+      "Urine ACR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Erythropoietin",
+        "purpose": "Improves anemia in CKD"
+      },
+      {
+        "name": "High-protein diet",
+        "purpose": "Improves nutritional status"
+      }
+    ],
+    "followUpAdvice": "Treat the underlying cause. Monitor labs monthly.",
+    "missingFields": [
+      "blood-albumin",
+      "blood-hemoglobin"
+    ]
+  },
+  {
+    "diagnosis": "Severe Proteinuria Confirmed by 24h Test",
+    "doctorReason": "24-hour protein > 3.5 g/day is diagnostic of nephrotic-range proteinuria.",
+    "patientExplanation": "You've lost a significant amount of protein in your urine, which can affect your health.",
+    "recommendedTests": [
+      "24h Urine Protein",
+      "Serum Albumin",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Steroids or Immunosuppressants",
+        "purpose": "Control kidney inflammation (if biopsy suggests)"
+      }
+    ],
+    "followUpAdvice": "Biopsy might be needed to guide treatment. Salt restriction is key.",
+    "missingFields": [
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Hyperkalemia Alert",
+    "doctorReason": "Potassium > 5.5 mEq/L increases cardiac risk especially in CKD.",
+    "patientExplanation": "Your potassium is high, which may disturb your heart rhythm. We'll fix it safely.",
+    "recommendedTests": [
+      "Potassium",
+      "ECG",
+      "eGFR",
+      "Bicarbonate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Veltassa",
+        "purpose": "Lowers potassium safely"
+      }
+    ],
+    "followUpAdvice": "Avoid high-potassium foods. Repeat test in 48 hours.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Secondary Hyperparathyroidism",
+    "doctorReason": "High phosphate with low calcium suggests compensatory PTH elevation in CKD.",
+    "patientExplanation": "Your calcium and phosphate imbalance is making your body release more PTH, which affects your bones.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "PTH",
+      "Vitamin D"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Cinacalcet",
+        "purpose": "Suppresses PTH secretion"
+      },
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Improves calcium levels"
+      }
+    ],
+    "followUpAdvice": "Bone protection is key in CKD. Monitor labs monthly.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "Diabetic Kidney Disease (Severe)",
+    "doctorReason": "eGFR < 45 with heavy proteinuria and diabetes indicates advanced DKD.",
+    "patientExplanation": "Your diabetes has seriously affected your kidney filtering ability.",
+    "recommendedTests": [
+      "HbA1c",
+      "Urine ACR",
+      "eGFR",
+      "Fundoscopy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "SGLT2 Inhibitor",
+        "purpose": "Slows DKD progression"
+      },
+      {
+        "name": "ARB",
+        "purpose": "Reduces protein leakage"
+      }
+    ],
+    "followUpAdvice": "Strict sugar and BP control is critical. Recheck tests every 3 months.",
+    "missingFields": [
+      "blood-egfr",
+      "medical-diabetes",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "Obstructive Uropathy from Stones",
+    "doctorReason": "Severe hydronephrosis with visible stones confirms mechanical obstruction.",
+    "patientExplanation": "A kidney stone is blocking urine flow, leading to swelling in the kidney.",
+    "recommendedTests": [
+      "Ultrasound",
+      "CT KUB",
+      "Creatinine",
+      "Urine Output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tamsulosin",
+        "purpose": "Helps relax urinary tract"
+      },
+      {
+        "name": "Pain relief (NSAID short course)",
+        "purpose": "Relieves discomfort during stone passage"
+      }
+    ],
+    "followUpAdvice": "Drink plenty of water. Urologist referral is advised.",
+    "missingFields": [
+      "ultrasound-hydronephrosis",
+      "ultrasound-stones"
+    ]
+  },
+  {
+    "diagnosis": "Early CKD Stage 2 Alert",
+    "doctorReason": "eGFR 60\u201389 indicates mildly reduced renal function, needs monitoring.",
+    "patientExplanation": "Your kidney function is mildly reduced. With care, we can prevent further damage.",
+    "recommendedTests": [
+      "eGFR",
+      "BP",
+      "ACR",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Telmisartan",
+        "purpose": "Protects kidneys if proteinuria present"
+      }
+    ],
+    "followUpAdvice": "Recheck kidney tests in 6 months. Maintain hydration and avoid painkillers.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "Hypertension-Induced Kidney Damage",
+    "doctorReason": "Persistent high BP with small, scarred kidneys on imaging suggests hypertensive nephrosclerosis.",
+    "patientExplanation": "Long-term high blood pressure has damaged your kidney structure.",
+    "recommendedTests": [
+      "BP",
+      "Kidney Ultrasound",
+      "eGFR",
+      "Urine ACR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Amlodipine",
+        "purpose": "Lowers blood pressure"
+      },
+      {
+        "name": "ARB/ACEi",
+        "purpose": "Protects kidney from pressure damage"
+      }
+    ],
+    "followUpAdvice": "BP control is crucial. Nephrology referral may be needed.",
+    "missingFields": [
+      "kidney-size",
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD Stage 5 with Complications",
+    "doctorReason": "Very low eGFR with anemia, acidosis, and hyperkalemia indicates ESRD with metabolic burden.",
+    "patientExplanation": "Your kidneys are failing to filter wastes, leading to blood and electrolyte issues.",
+    "recommendedTests": [
+      "eGFR",
+      "Hemoglobin",
+      "Bicarbonate",
+      "Potassium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Erythropoietin",
+        "purpose": "Improves anemia"
+      },
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Corrects blood acidity"
+      }
+    ],
+    "followUpAdvice": "Dialysis preparation is advised. Close nephrologist monitoring needed.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "blood-egfr",
+      "blood-hemoglobin",
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Uremic Neuropathy",
+    "doctorReason": "CKD with neurological symptoms and high urea indicates toxin-induced nerve damage.",
+    "patientExplanation": "Your kidney condition is affecting your nerves and causing weakness or numbness.",
+    "recommendedTests": [
+      "Urea",
+      "eGFR",
+      "Neurological exam",
+      "Vitamin B12"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Methylcobalamin",
+        "purpose": "Supports nerve repair"
+      },
+      {
+        "name": "Gabapentin",
+        "purpose": "Relieves nerve pain"
+      }
+    ],
+    "followUpAdvice": "Consider dialysis if worsening. Supportive meds help symptoms.",
+    "missingFields": [
+      "blood-urea"
+    ]
+  },
+  {
+    "diagnosis": "Refractory Edema in CKD",
+    "doctorReason": "Persistent fluid overload despite diuretics, often seen in CKD stage 4\u20135.",
+    "patientExplanation": "You're retaining fluid despite medications. We may need stronger drugs or dialysis.",
+    "recommendedTests": [
+      "Weight",
+      "Volume Status",
+      "eGFR",
+      "Electrolytes"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Metolazone",
+        "purpose": "Boosts loop diuretic effect"
+      },
+      {
+        "name": "Torsemide",
+        "purpose": "Strong fluid remover"
+      }
+    ],
+    "followUpAdvice": "Watch for low potassium. May need hospitalization if unresponsive.",
+    "missingFields": [
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "Post-Renal AKI",
+    "doctorReason": "Creatinine elevation with ultrasound evidence of obstruction suggests post-renal cause.",
+    "patientExplanation": "Your kidneys may not be draining well due to a blockage. Fixing that may reverse the damage.",
+    "recommendedTests": [
+      "Creatinine",
+      "Ultrasound",
+      "Urine Output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Urgent urology referral",
+        "purpose": "Relieve obstruction"
+      }
+    ],
+    "followUpAdvice": "Early treatment can restore function. Delay may lead to permanent damage.",
+    "missingFields": [
+      "blood-creatinine",
+      "ultrasound-hydronephrosis"
+    ]
+  },
+  {
+    "diagnosis": "Kidney Stone Pain with AKI",
+    "doctorReason": "Stone obstruction + flank pain + rising creatinine suggests acute obstructive nephropathy.",
+    "patientExplanation": "A stone is blocking your kidney, causing pain and reducing function. This must be treated quickly.",
+    "recommendedTests": [
+      "Creatinine",
+      "CT KUB",
+      "Urine Output",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tamsulosin",
+        "purpose": "Relaxes urinary tract"
+      },
+      {
+        "name": "Pain relief (short term)",
+        "purpose": "Eases stone passage pain"
+      }
+    ],
+    "followUpAdvice": "Don\u2019t delay urology evaluation. Push fluids. Avoid NSAIDs in CKD.",
+    "missingFields": [
+      "blood-creatinine",
+      "flank-pain",
+      "ultrasound-stones"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Uncontrolled Hypertension",
+    "doctorReason": "Chronic kidney disease with elevated BP indicates poor renal perfusion and risk of progression.",
+    "patientExplanation": "Your blood pressure is high despite medications, which may worsen your kidney disease.",
+    "recommendedTests": [
+      "BP Log",
+      "eGFR",
+      "ACR",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Amlodac AT",
+        "purpose": "Combination therapy for resistant BP"
+      },
+      {
+        "name": "Telmikind",
+        "purpose": "Protects kidneys and lowers pressure"
+      }
+    ],
+    "followUpAdvice": "Limit salt, monitor BP daily, and consult your nephrologist regularly.",
+    "missingFields": [
+      "blood-egfr",
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Volume Overload and Hyperkalemia",
+    "doctorReason": "CKD with hypervolemia and potassium > 5.5 may need urgent diuresis or dialysis.",
+    "patientExplanation": "Your body is retaining fluid and potassium is high. We may need to remove excess fluid quickly.",
+    "recommendedTests": [
+      "Potassium",
+      "eGFR",
+      "Weight",
+      "Volume Status"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Torsemide",
+        "purpose": "Removes excess fluid"
+      },
+      {
+        "name": "Patiromer",
+        "purpose": "Lowers potassium"
+      }
+    ],
+    "followUpAdvice": "Avoid potassium-rich foods. Fluid restriction may be needed.",
+    "missingFields": [
+      "blood-potassium",
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "Dialysis-Related Anemia",
+    "doctorReason": "CKD stage 5 on dialysis with Hb < 10 indicates erythropoietin deficiency or iron loss.",
+    "patientExplanation": "Your hemoglobin is low due to kidney failure. We'll use injections and iron to treat it.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "Iron Studies",
+      "Ferritin",
+      "TSAT"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Zyrop",
+        "purpose": "Boosts red blood cell production"
+      },
+      {
+        "name": "Ferritas",
+        "purpose": "Provides iron stores"
+      }
+    ],
+    "followUpAdvice": "Continue weekly injections. Monitor blood count regularly.",
+    "missingFields": [
+      "blood-hemoglobin"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Peripheral Neuropathy",
+    "doctorReason": "CKD + numbness/tingling symptoms indicates uremic or nutritional neuropathy.",
+    "patientExplanation": "Your nerves are affected likely due to kidney-related toxin buildup or vitamin loss.",
+    "recommendedTests": [
+      "Vitamin B12",
+      "eGFR",
+      "Neuro exam"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Optineuron",
+        "purpose": "Supports nerve repair"
+      },
+      {
+        "name": "Sensitone",
+        "purpose": "Reduces nerve pain"
+      }
+    ],
+    "followUpAdvice": "Treat vitamin deficiencies. Avoid toxins. Dialysis may help in advanced cases.",
+    "missingFields": [
+      "unknown-symptoms"
+    ]
+  },
+  {
+    "diagnosis": "Early Diabetic Nephropathy",
+    "doctorReason": "Presence of microalbuminuria with normal eGFR in diabetes suggests early nephropathy.",
+    "patientExplanation": "Your diabetes is starting to affect your kidneys, though function is still okay.",
+    "recommendedTests": [
+      "Urine ACR",
+      "HbA1c",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Telmikind",
+        "purpose": "Reduces kidney pressure and protein loss"
+      },
+      {
+        "name": "SGLT2 Inhibitor",
+        "purpose": "Protects kidneys in early diabetes"
+      }
+    ],
+    "followUpAdvice": "Tight sugar control and lifestyle are key. Repeat tests every 3\u20136 months.",
+    "missingFields": [
+      "medical-diabetes",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "Renal Osteodystrophy",
+    "doctorReason": "CKD with PTH elevation and calcium-phosphate imbalance leads to bone weakening.",
+    "patientExplanation": "Your kidney disease is affecting bone strength. We'll manage minerals to protect bones.",
+    "recommendedTests": [
+      "PTH",
+      "Calcium",
+      "Phosphate",
+      "Vitamin D"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Supports calcium levels"
+      },
+      {
+        "name": "Sevelamer",
+        "purpose": "Reduces phosphate buildup"
+      }
+    ],
+    "followUpAdvice": "Bone health must be monitored. Follow diet and medicine instructions closely.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate",
+      "blood-pth"
+    ]
+  },
+  {
+    "diagnosis": "CKD with High Cardiovascular Risk",
+    "doctorReason": "CKD with dyslipidemia or diabetes increases CV events and mortality.",
+    "patientExplanation": "Your kidney disease also raises your risk for heart problems. We must manage all risk factors.",
+    "recommendedTests": [
+      "Lipid Profile",
+      "HbA1c",
+      "ECG",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Rosuvas",
+        "purpose": "Lowers bad cholesterol"
+      },
+      {
+        "name": "Clopitab",
+        "purpose": "Prevents clot formation"
+      }
+    ],
+    "followUpAdvice": "Strict control of cholesterol, sugar, and BP. Avoid smoking. Daily walks help.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "Nephrotic Syndrome Relapse",
+    "doctorReason": "Reappearance of edema and proteinuria in known nephrotic patient suggests relapse.",
+    "patientExplanation": "Your kidney disease has relapsed. We may restart treatment to control it.",
+    "recommendedTests": [
+      "24h Protein",
+      "ACR",
+      "Albumin",
+      "Weight tracking"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Decdak",
+        "purpose": "Steroid for relapse control"
+      },
+      {
+        "name": "Lasix",
+        "purpose": "Reduces swelling"
+      }
+    ],
+    "followUpAdvice": "Monitor urine protein at home. Report swelling or weight gain quickly.",
+    "missingFields": [
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Contrast-Induced Nephropathy Risk",
+    "doctorReason": "Patient undergoing imaging with CKD has elevated risk of AKI from contrast.",
+    "patientExplanation": "You are at risk of kidney injury due to contrast dye used in scans. We\u2019ll protect kidneys.",
+    "recommendedTests": [
+      "Creatinine",
+      "eGFR",
+      "Urine Output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Acetylcysteine",
+        "purpose": "Prevents contrast-related kidney injury"
+      },
+      {
+        "name": "IV hydration",
+        "purpose": "Protects kidney perfusion"
+      }
+    ],
+    "followUpAdvice": "Avoid contrast unless necessary. Pre-treat before scan and monitor kidney function after.",
+    "missingFields": [
+      "blood-creatinine"
+    ]
+  },
+  {
+    "diagnosis": "Recurrent UTI in CKD",
+    "doctorReason": "Frequent urinary tract infections in CKD increase the risk of permanent kidney damage.",
+    "patientExplanation": "You\u2019ve had repeated urinary infections, which may harm your kidneys if not managed properly.",
+    "recommendedTests": [
+      "Urine Culture",
+      "Ultrasound KUB",
+      "eGFR",
+      "Urinalysis"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Nitrofurantoin",
+        "purpose": "Prevents recurrent UTIs"
+      },
+      {
+        "name": "Nefrotec",
+        "purpose": "Ayurvedic support for urinary health"
+      }
+    ],
+    "followUpAdvice": "Maintain hydration, urinate regularly, and avoid holding urine. Consider prophylactic antibiotics if needed.",
+    "missingFields": [
+      "unknown-recurrent infections"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Dyslipidemia",
+    "doctorReason": "CKD often leads to abnormal cholesterol levels, increasing CV risk.",
+    "patientExplanation": "Your cholesterol is high, and that may worsen heart and kidney outcomes if untreated.",
+    "recommendedTests": [
+      "Lipid Profile",
+      "eGFR",
+      "LFT"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tonact",
+        "purpose": "Statin to reduce cholesterol"
+      },
+      {
+        "name": "Rosuvas",
+        "purpose": "Alternative statin option"
+      }
+    ],
+    "followUpAdvice": "Avoid fried foods. Regular walking and lifestyle control help improve lipid levels.",
+    "missingFields": [
+      "unknown-lipid profile"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Osteopenia",
+    "doctorReason": "CKD-MBD leads to calcium and vitamin D deficiency, causing weak bones.",
+    "patientExplanation": "Your bones are weakening due to kidney-related calcium imbalance.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "Vitamin D",
+      "DEXA scan"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Shelcal HD",
+        "purpose": "Supports bone strength with calcium and D3"
+      },
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Vitamin D analogue for CKD"
+      }
+    ],
+    "followUpAdvice": "Avoid phosphate-rich foods. Exercise and sunlight help bone health.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Fatigue",
+    "doctorReason": "Chronic kidney disease may cause persistent fatigue due to anemia or toxin buildup.",
+    "patientExplanation": "Your tiredness may be due to your kidney disease. We\u2019ll check for low blood or other causes.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "Iron Studies",
+      "eGFR",
+      "B12",
+      "TSH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Becosules",
+        "purpose": "Supports energy and micronutrient balance"
+      },
+      {
+        "name": "Erythropoietin",
+        "purpose": "Treats anemia"
+      }
+    ],
+    "followUpAdvice": "Track energy level and check iron or thyroid if fatigue persists.",
+    "missingFields": [
+      "blood-hemoglobin",
+      "reports-b12"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Muscle Cramps",
+    "doctorReason": "Electrolyte disturbances or low magnesium in CKD may lead to cramping.",
+    "patientExplanation": "Your kidney disease is likely causing mineral imbalance, resulting in cramps.",
+    "recommendedTests": [
+      "Magnesium",
+      "Potassium",
+      "eGFR",
+      "Calcium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Renolog",
+        "purpose": "Replenishes potassium and magnesium"
+      },
+      {
+        "name": "Evion",
+        "purpose": "Vitamin E for cramp relief"
+      }
+    ],
+    "followUpAdvice": "Stretch regularly. Take supplements as advised and monitor labs monthly.",
+    "missingFields": [
+      "blood-potassium",
+      "reports-magnesium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Protein Deficiency",
+    "doctorReason": "Protein-energy wasting in CKD occurs due to diet restrictions or inflammation.",
+    "patientExplanation": "You may not be getting enough protein, leading to weakness and weight loss.",
+    "recommendedTests": [
+      "Albumin",
+      "Pre-albumin",
+      "Body weight",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Ketosteril",
+        "purpose": "Essential amino acid support in low protein diets"
+      },
+      {
+        "name": "Renoalfa",
+        "purpose": "Nutritional supplement for CKD"
+      }
+    ],
+    "followUpAdvice": "Consult dietitian for personalized CKD diet. Monitor weight monthly.",
+    "missingFields": [
+      "blood-albumin"
+    ]
+  },
+  {
+    "diagnosis": "Hyperkalemia in ESRD",
+    "doctorReason": "Potassium retention in ESRD can cause cardiac toxicity.",
+    "patientExplanation": "Your potassium is dangerously high due to kidney failure. Urgent action may be required.",
+    "recommendedTests": [
+      "Potassium",
+      "ECG",
+      "eGFR",
+      "ABG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Polystyrene Sulfonate",
+        "purpose": "Removes potassium from gut"
+      },
+      {
+        "name": "Dialysis",
+        "purpose": "Removes excess potassium in ESRD"
+      }
+    ],
+    "followUpAdvice": "Restrict high-K foods. Dialysis might be required in resistant cases.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "Severe Acidosis in AKI",
+    "doctorReason": "Bicarbonate < 15 with high creatinine suggests AKI-related acidemia needing ICU care.",
+    "patientExplanation": "Your blood is too acidic due to kidney failure. You may need hospital treatment.",
+    "recommendedTests": [
+      "ABG",
+      "Creatinine",
+      "Potassium",
+      "Lactate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "NaHCO3 IV",
+        "purpose": "Corrects severe acidosis rapidly"
+      }
+    ],
+    "followUpAdvice": "Immediate ICU care may be required. Avoid nephrotoxins.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "blood-creatinine"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Depression or Neuropathy",
+    "doctorReason": "CKD may be associated with psychological stress or nerve pain.",
+    "patientExplanation": "You may be feeling low or experiencing nerve pain. This can happen with kidney disease.",
+    "recommendedTests": [
+      "Depression screen",
+      "Neuro exam",
+      "B12",
+      "Thyroid"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Symbal",
+        "purpose": "Manages both pain and mood symptoms"
+      },
+      {
+        "name": "Methylcobal",
+        "purpose": "Supports nerve repair"
+      }
+    ],
+    "followUpAdvice": "Counseling may help. Sleep and mood tracking advised.",
+    "missingFields": [
+      "unknown-symptoms"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hyperuricemia",
+    "doctorReason": "Elevated uric acid levels are common in CKD and may worsen kidney function.",
+    "patientExplanation": "Your uric acid level is high. Lowering it may help protect your kidneys.",
+    "recommendedTests": [
+      "Serum Uric Acid",
+      "eGFR",
+      "Joint symptoms (for gout)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Febuxostat",
+        "purpose": "Lowers uric acid levels"
+      }
+    ],
+    "followUpAdvice": "Hydrate well. Avoid high-purine foods. Monitor uric acid monthly.",
+    "missingFields": [
+      "unknown-uric acid"
+    ]
+  },
+  {
+    "diagnosis": "CKD in Pregnancy (High Risk)",
+    "doctorReason": "Pregnancy with CKD requires tight BP, creatinine, and proteinuria control to avoid fetal risk.",
+    "patientExplanation": "Pregnancy with kidney disease is risky but manageable with close follow-up.",
+    "recommendedTests": [
+      "Serum Creatinine",
+      "BP",
+      "Urine ACR",
+      "Ultrasound for fetal growth"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alphadopa",
+        "purpose": "Safe BP control in pregnancy"
+      },
+      {
+        "name": "Low-dose Aspirin",
+        "purpose": "Prevents preeclampsia"
+      }
+    ],
+    "followUpAdvice": "Frequent nephrology and obstetrics visits. Avoid ACE/ARBs.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-pregnancy status"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Resistant Hypertension",
+    "doctorReason": "Elevated BP despite 3+ medications in CKD suggests volume overload or arterial stiffness.",
+    "patientExplanation": "Your blood pressure is hard to control. This can worsen kidney function if not managed.",
+    "recommendedTests": [
+      "BP Chart",
+      "Weight",
+      "Volume Status",
+      "Renal Doppler (if needed)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Moxovas",
+        "purpose": "Central antihypertensive for difficult BP"
+      },
+      {
+        "name": "Lasilactone",
+        "purpose": "Diuretic combo to reduce volume"
+      }
+    ],
+    "followUpAdvice": "Check BP twice daily. Consider ABPM or secondary cause evaluation.",
+    "missingFields": [
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hormonal Imbalance (Hyperprolactinemia)",
+    "doctorReason": "CKD affects dopamine metabolism, leading to high prolactin levels.",
+    "patientExplanation": "Your hormone levels are affected due to kidney condition, which may cause menstrual or sexual issues.",
+    "recommendedTests": [
+      "Prolactin",
+      "TSH",
+      "Liver function",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Proctinal",
+        "purpose": "Lowers prolactin levels"
+      }
+    ],
+    "followUpAdvice": "Report symptoms like breast discharge or missed periods. Repeat labs in 2\u20134 weeks.",
+    "missingFields": [
+      "reports-prolactin"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Gastritis from NSAIDs",
+    "doctorReason": "Long-term NSAIDs in CKD increase risk of gastric erosion and bleeding.",
+    "patientExplanation": "Painkillers can irritate your stomach lining, especially if you have kidney issues.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "LFT",
+      "Endoscopy (if bleeding)",
+      "Stool occult blood"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Esomepra",
+        "purpose": "Protects stomach lining"
+      },
+      {
+        "name": "Aciloc",
+        "purpose": "Alternative acid reducer"
+      }
+    ],
+    "followUpAdvice": "Avoid NSAIDs unless necessary. Use paracetamol or consult before any medication.",
+    "missingFields": [
+      "nsaid-use"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Itching (Uremic Pruritus)",
+    "doctorReason": "Uremic toxins and phosphate retention in CKD may lead to generalized itching.",
+    "patientExplanation": "Kidney waste buildup may be making your skin itchy.",
+    "recommendedTests": [
+      "Phosphate",
+      "Urea",
+      "eGFR",
+      "Skin exam"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Antihistamines",
+        "purpose": "Relieves itching"
+      },
+      {
+        "name": "Phosphate binders",
+        "purpose": "Control mineral imbalance"
+      }
+    ],
+    "followUpAdvice": "Use emollients. Dialysis may help if severe.",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "Severe Hypertension with Proteinuria",
+    "doctorReason": "BP >160/100 and ACR >300 suggest glomerular damage due to high pressure.",
+    "patientExplanation": "Your blood pressure is very high and causing your kidneys to leak protein.",
+    "recommendedTests": [
+      "BP",
+      "Urine ACR",
+      "Fundus exam",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Ziblok",
+        "purpose": "Beta-blocker for pressure control"
+      },
+      {
+        "name": "Telma 40",
+        "purpose": "ARB to reduce proteinuria"
+      }
+    ],
+    "followUpAdvice": "Urgent BP control needed. Eye and heart screening advised.",
+    "missingFields": [
+      "urine-acr",
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Malnutrition (Protein Energy Wasting)",
+    "doctorReason": "Weight loss, low albumin, and weakness in CKD suggest PEW syndrome.",
+    "patientExplanation": "You may be undernourished. Kidney disease increases energy needs.",
+    "recommendedTests": [
+      "Albumin",
+      "Weight trend",
+      "CRP",
+      "Dietary recall"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Ketosteril",
+        "purpose": "Provides amino acid support"
+      },
+      {
+        "name": "Nephrofit",
+        "purpose": "Ayurvedic tonic for CKD nourishment"
+      }
+    ],
+    "followUpAdvice": "Work with a renal dietitian. Monitor weight monthly.",
+    "missingFields": [
+      "blood-albumin"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Hyperphosphatemia",
+    "doctorReason": "Phosphate > 6.0 mg/dL leads to vascular calcification and bone disease.",
+    "patientExplanation": "Your phosphate is too high and may harm bones and vessels.",
+    "recommendedTests": [
+      "Phosphate",
+      "Calcium",
+      "PTH",
+      "Vitamin D"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Renvela",
+        "purpose": "Binds phosphate in food"
+      },
+      {
+        "name": "Lanthonate",
+        "purpose": "Non-calcium phosphate binder"
+      }
+    ],
+    "followUpAdvice": "Take phosphate binders with meals. Avoid dairy and cola drinks.",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Recurrent Stone Disease",
+    "doctorReason": "CKD with history of renal stones increases the risk of obstruction and infections.",
+    "patientExplanation": "You have had kidney stones before, which may harm your kidney function if they recur.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Urine pH",
+      "Stone analysis",
+      "24h Urine Calcium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Cystone",
+        "purpose": "Prevents stone formation"
+      },
+      {
+        "name": "Potassium Citrate",
+        "purpose": "Alkalinizes urine"
+      }
+    ],
+    "followUpAdvice": "Drink at least 2\u20133L of water daily. Avoid high-oxalate foods. Recheck imaging yearly.",
+    "missingFields": [
+      "past-stone-disease"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Low Bicarbonate (Chronic Acidosis)",
+    "doctorReason": "Bicarbonate < 22 in CKD suggests chronic metabolic acidosis needing alkali therapy.",
+    "patientExplanation": "Your body is retaining acid because your kidneys can't remove it well.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "ABG",
+      "eGFR",
+      "Potassium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodamint",
+        "purpose": "Neutralizes blood acidity"
+      },
+      {
+        "name": "Nodosis",
+        "purpose": "Alkali replacement for chronic acidosis"
+      }
+    ],
+    "followUpAdvice": "Take tablets after food. Avoid high-protein and high-acid diets.",
+    "missingFields": [
+      "blood-bicarbonate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Thyroid Dysfunction",
+    "doctorReason": "CKD is associated with altered thyroid metabolism, particularly hypothyroidism.",
+    "patientExplanation": "Your thyroid hormone levels are affected, which may contribute to fatigue and weight changes.",
+    "recommendedTests": [
+      "TSH",
+      "T3",
+      "T4",
+      "eGFR",
+      "Lipid Profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Thyronorm",
+        "purpose": "Replaces thyroid hormone"
+      }
+    ],
+    "followUpAdvice": "Take on empty stomach in morning. Avoid iron/calcium within 4 hours of dose.",
+    "missingFields": [
+      "reports-tsh"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Uremia",
+    "doctorReason": "High urea and creatinine with symptoms like nausea/vomiting indicate severe uremia.",
+    "patientExplanation": "Your body is not able to filter waste, and the toxin buildup is causing sickness.",
+    "recommendedTests": [
+      "Urea",
+      "Creatinine",
+      "BUN/Creat ratio",
+      "ABG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Dialysis",
+        "purpose": "Removes uremic toxins quickly"
+      }
+    ],
+    "followUpAdvice": "Start dialysis preparation if not already done. Monitor labs twice weekly.",
+    "missingFields": [
+      "blood-creatinine",
+      "blood-urea"
+    ]
+  },
+  {
+    "diagnosis": "CKD with High Risk for Stroke or CAD",
+    "doctorReason": "CKD with diabetes, hypertension, or high lipids increases cardiovascular risk.",
+    "patientExplanation": "Your kidney condition along with other health risks increases your chance of stroke or heart problems.",
+    "recommendedTests": [
+      "ECG",
+      "Lipid Profile",
+      "BP",
+      "eGFR",
+      "Echocardiogram (if needed)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Rosuvas",
+        "purpose": "Reduces cholesterol"
+      },
+      {
+        "name": "Clopitab",
+        "purpose": "Prevents blood clots"
+      }
+    ],
+    "followUpAdvice": "Quit smoking, walk daily, and keep BP/sugar/lipids under tight control.",
+    "missingFields": [
+      "unknown-lipid profile",
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Edema and Hypoalbuminemia",
+    "doctorReason": "Very low albumin (<2.5) with anasarca indicates nephrotic or liver-related volume overload.",
+    "patientExplanation": "You're experiencing swelling due to very low blood protein levels.",
+    "recommendedTests": [
+      "Albumin",
+      "LFT",
+      "Urine ACR",
+      "Ultrasound abdomen"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alburel",
+        "purpose": "Replenishes albumin"
+      },
+      {
+        "name": "Lasix",
+        "purpose": "Reduces fluid overload"
+      }
+    ],
+    "followUpAdvice": "Avoid salt. Consider IV therapy if oral meds are not effective.",
+    "missingFields": [
+      "blood-albumin"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Low Calcium and Vitamin D",
+    "doctorReason": "Calcium <8.0 and low vitamin D are common in advanced CKD-MBD.",
+    "patientExplanation": "Your calcium and vitamin D are low. We\u2019ll replace them to protect bones.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "Vitamin D",
+      "PTH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Calcimax",
+        "purpose": "Replaces calcium and D3"
+      },
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Active vitamin D support"
+      }
+    ],
+    "followUpAdvice": "Take calcium after food. Avoid excess phosphate intake.",
+    "missingFields": [
+      "blood-calcium",
+      "unknown-vitamin d"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Electrolyte Imbalance (Multiple)",
+    "doctorReason": "Combined potassium, calcium, phosphate derangements are common in stage 4\u20135 CKD.",
+    "patientExplanation": "Your blood salt levels are disturbed due to kidney failure. We'll correct each imbalance.",
+    "recommendedTests": [
+      "Potassium",
+      "Calcium",
+      "Phosphate",
+      "Sodium",
+      "ABG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Corrects acidosis"
+      },
+      {
+        "name": "Sevelamer",
+        "purpose": "Reduces phosphate"
+      },
+      {
+        "name": "Potassium Binders",
+        "purpose": "Manages potassium"
+      }
+    ],
+    "followUpAdvice": "Frequent blood monitoring needed. Follow diet strictly.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate",
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Intractable Symptoms \u2192 Dialysis Planning",
+    "doctorReason": "CKD with symptoms like breathlessness, fatigue, vomiting, and biochemical abnormalities indicates dialysis need.",
+    "patientExplanation": "Your symptoms and kidney test results suggest it may be time to consider dialysis.",
+    "recommendedTests": [
+      "eGFR",
+      "Urea",
+      "Potassium",
+      "Hemoglobin",
+      "Bicarbonate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Start dialysis prep",
+        "purpose": "Insert AV fistula or catheter as per plan"
+      }
+    ],
+    "followUpAdvice": "Talk to your nephrologist. Dialysis can improve your quality of life.",
+    "missingFields": [
+      "blood-egfr",
+      "unknown-symptoms"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Recurrent Stone Disease",
+    "doctorReason": "CKD with history of renal stones increases the risk of obstruction and infections.",
+    "patientExplanation": "You have had kidney stones before, which may harm your kidney function if they recur.",
+    "recommendedTests": [
+      "Ultrasound",
+      "Urine pH",
+      "Stone analysis",
+      "24h Urine Calcium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Cystone",
+        "purpose": "Prevents stone formation"
+      },
+      {
+        "name": "Potassium Citrate",
+        "purpose": "Alkalinizes urine"
+      }
+    ],
+    "followUpAdvice": "Drink at least 2\u20133L of water daily. Avoid high-oxalate foods. Recheck imaging yearly.",
+    "missingFields": [
+      "past-stone-disease"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Low Bicarbonate (Chronic Acidosis)",
+    "doctorReason": "Bicarbonate < 22 in CKD suggests chronic metabolic acidosis needing alkali therapy.",
+    "patientExplanation": "Your body is retaining acid because your kidneys can't remove it well.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "ABG",
+      "eGFR",
+      "Potassium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodamint",
+        "purpose": "Neutralizes blood acidity"
+      },
+      {
+        "name": "Nodosis",
+        "purpose": "Alkali replacement for chronic acidosis"
+      }
+    ],
+    "followUpAdvice": "Take tablets after food. Avoid high-protein and high-acid diets.",
+    "missingFields": [
+      "blood-bicarbonate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Thyroid Dysfunction",
+    "doctorReason": "CKD is associated with altered thyroid metabolism, particularly hypothyroidism.",
+    "patientExplanation": "Your thyroid hormone levels are affected, which may contribute to fatigue and weight changes.",
+    "recommendedTests": [
+      "TSH",
+      "T3",
+      "T4",
+      "eGFR",
+      "Lipid Profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Thyronorm",
+        "purpose": "Replaces thyroid hormone"
+      }
+    ],
+    "followUpAdvice": "Take on empty stomach in morning. Avoid iron/calcium within 4 hours of dose.",
+    "missingFields": [
+      "reports-tsh"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Uremia",
+    "doctorReason": "High urea and creatinine with symptoms like nausea/vomiting indicate severe uremia.",
+    "patientExplanation": "Your body is not able to filter waste, and the toxin buildup is causing sickness.",
+    "recommendedTests": [
+      "Urea",
+      "Creatinine",
+      "BUN/Creat ratio",
+      "ABG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Dialysis",
+        "purpose": "Removes uremic toxins quickly"
+      }
+    ],
+    "followUpAdvice": "Start dialysis preparation if not already done. Monitor labs twice weekly.",
+    "missingFields": [
+      "blood-creatinine",
+      "blood-urea"
+    ]
+  },
+  {
+    "diagnosis": "CKD with High Risk for Stroke or CAD",
+    "doctorReason": "CKD with diabetes, hypertension, or high lipids increases cardiovascular risk.",
+    "patientExplanation": "Your kidney condition along with other health risks increases your chance of stroke or heart problems.",
+    "recommendedTests": [
+      "ECG",
+      "Lipid Profile",
+      "BP",
+      "eGFR",
+      "Echocardiogram (if needed)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Rosuvas",
+        "purpose": "Reduces cholesterol"
+      },
+      {
+        "name": "Clopitab",
+        "purpose": "Prevents blood clots"
+      }
+    ],
+    "followUpAdvice": "Quit smoking, walk daily, and keep BP/sugar/lipids under tight control.",
+    "missingFields": [
+      "unknown-lipid profile",
+      "vitals-dbp",
+      "vitals-sbp"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Edema and Hypoalbuminemia",
+    "doctorReason": "Very low albumin (<2.5) with anasarca indicates nephrotic or liver-related volume overload.",
+    "patientExplanation": "You're experiencing swelling due to very low blood protein levels.",
+    "recommendedTests": [
+      "Albumin",
+      "LFT",
+      "Urine ACR",
+      "Ultrasound abdomen"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alburel",
+        "purpose": "Replenishes albumin"
+      },
+      {
+        "name": "Lasix",
+        "purpose": "Reduces fluid overload"
+      }
+    ],
+    "followUpAdvice": "Avoid salt. Consider IV therapy if oral meds are not effective.",
+    "missingFields": [
+      "blood-albumin"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Low Calcium and Vitamin D",
+    "doctorReason": "Calcium <8.0 and low vitamin D are common in advanced CKD-MBD.",
+    "patientExplanation": "Your calcium and vitamin D are low. We\u2019ll replace them to protect bones.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "Vitamin D",
+      "PTH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Calcimax",
+        "purpose": "Replaces calcium and D3"
+      },
+      {
+        "name": "Alfacalcidol",
+        "purpose": "Active vitamin D support"
+      }
+    ],
+    "followUpAdvice": "Take calcium after food. Avoid excess phosphate intake.",
+    "missingFields": [
+      "blood-calcium",
+      "unknown-vitamin d"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Electrolyte Imbalance (Multiple)",
+    "doctorReason": "Combined potassium, calcium, phosphate derangements are common in stage 4\u20135 CKD.",
+    "patientExplanation": "Your blood salt levels are disturbed due to kidney failure. We'll correct each imbalance.",
+    "recommendedTests": [
+      "Potassium",
+      "Calcium",
+      "Phosphate",
+      "Sodium",
+      "ABG"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Corrects acidosis"
+      },
+      {
+        "name": "Sevelamer",
+        "purpose": "Reduces phosphate"
+      },
+      {
+        "name": "Potassium Binders",
+        "purpose": "Manages potassium"
+      }
+    ],
+    "followUpAdvice": "Frequent blood monitoring needed. Follow diet strictly.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate",
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Intractable Symptoms \u2192 Dialysis Planning",
+    "doctorReason": "CKD with symptoms like breathlessness, fatigue, vomiting, and biochemical abnormalities indicates dialysis need.",
+    "patientExplanation": "Your symptoms and kidney test results suggest it may be time to consider dialysis.",
+    "recommendedTests": [
+      "eGFR",
+      "Urea",
+      "Potassium",
+      "Hemoglobin",
+      "Bicarbonate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Start dialysis prep",
+        "purpose": "Insert AV fistula or catheter as per plan"
+      }
+    ],
+    "followUpAdvice": "Talk to your nephrologist. Dialysis can improve your quality of life.",
+    "missingFields": [
+      "blood-egfr",
+      "unknown-symptoms"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hyperchloremic Acidosis",
+    "doctorReason": "Normal anion gap metabolic acidosis (bicarbonate < 22) common in tubulointerstitial disease.",
+    "patientExplanation": "Your blood is acidic due to kidney function decline. We'll fix it using alkalinizing medicine.",
+    "recommendedTests": [
+      "Bicarbonate",
+      "Chloride",
+      "ABG",
+      "Anion Gap"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Bicarbonate",
+        "purpose": "Buffers excess acid in blood"
+      }
+    ],
+    "followUpAdvice": "Avoid acid-rich food. Take bicarbonate after meals and monitor levels monthly.",
+    "missingFields": [
+      "blood-bicarbonate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Pulmonary Congestion",
+    "doctorReason": "Volume overload in CKD may lead to pulmonary edema and breathlessness.",
+    "patientExplanation": "Your lungs are retaining fluid due to kidney problems. It needs urgent attention.",
+    "recommendedTests": [
+      "Chest X-ray",
+      "BNP",
+      "Weight",
+      "Volume status",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Lasix IV",
+        "purpose": "Rapid fluid removal from lungs"
+      }
+    ],
+    "followUpAdvice": "Restrict fluid. Hospitalization may be required if breathing worsens.",
+    "missingFields": [
+      "symptoms-breathlessness",
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Refractory Hyperphosphatemia",
+    "doctorReason": "High phosphate despite binders suggests non-compliance or inadequate dosing.",
+    "patientExplanation": "Your phosphate remains high, which may damage bones and blood vessels.",
+    "recommendedTests": [
+      "Phosphate",
+      "Adherence Review",
+      "Calcium",
+      "PTH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Lanthonate",
+        "purpose": "Non-calcium phosphate binder"
+      },
+      {
+        "name": "Renvela",
+        "purpose": "Phosphate binder"
+      }
+    ],
+    "followUpAdvice": "Take binders with meals. Reduce phosphorus in food (cola, dairy, processed).",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Risk of AKI (NSAID Exposure)",
+    "doctorReason": "NSAID use in CKD can lead to pre-renal or acute-on-chronic injury.",
+    "patientExplanation": "Painkillers may hurt your kidneys. We\u2019ll monitor and stop risky meds.",
+    "recommendedTests": [
+      "Creatinine",
+      "eGFR",
+      "NSAID history",
+      "Urine Output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop NSAIDs",
+        "purpose": "Prevent further renal injury"
+      }
+    ],
+    "followUpAdvice": "Use paracetamol or consult doctor for pain. Avoid over-the-counter NSAIDs.",
+    "missingFields": [
+      "nsaid-use"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Electrolyte-Sensitive Arrhythmia Risk",
+    "doctorReason": "Low/high potassium, calcium, or sodium may cause ECG changes in CKD.",
+    "patientExplanation": "Your blood salts are out of range and may cause heart rhythm problems.",
+    "recommendedTests": [
+      "Electrolytes",
+      "ECG",
+      "eGFR",
+      "Bicarbonate"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Electrolyte correction",
+        "purpose": "Normalize potassium/calcium"
+      }
+    ],
+    "followUpAdvice": "Check ECG with every major change in electrolytes. Monitor closely in ESRD.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-potassium",
+      "blood-sodium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Dehydration Risk",
+    "doctorReason": "Hypovolemia in CKD leads to pre-renal AKI or worsening symptoms.",
+    "patientExplanation": "You may be dehydrated, which puts strain on your kidneys.",
+    "recommendedTests": [
+      "Volume Status",
+      "BP",
+      "Weight",
+      "Urea/Creatinine Ratio"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Oral rehydration",
+        "purpose": "Replaces mild fluid loss"
+      },
+      {
+        "name": "IV Fluids",
+        "purpose": "For significant volume depletion"
+      }
+    ],
+    "followUpAdvice": "Increase fluids as advised. Monitor urine output and dizziness.",
+    "missingFields": [
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "Suspected CKD with Incomplete Data",
+    "doctorReason": "Symptoms suggest kidney disease but labs are incomplete for staging.",
+    "patientExplanation": "Your symptoms suggest kidney issues, but we need a few more tests to confirm.",
+    "recommendedTests": [
+      "eGFR",
+      "Creatinine",
+      "Urine ACR",
+      "Ultrasound KUB"
+    ],
+    "suggestedMedicines": [],
+    "followUpAdvice": "Please complete required labs to allow diagnosis and staging.",
+    "missingFields": [
+      "blood-creatinine",
+      "blood-egfr",
+      "unknown-ultrasound",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Subclinical Hypocalcemia",
+    "doctorReason": "Calcium 8.0\u20138.5 may be early sign of CKD-MBD or Vitamin D deficiency.",
+    "patientExplanation": "Your calcium is at the lower edge. We'll monitor and supplement if needed.",
+    "recommendedTests": [
+      "Calcium",
+      "Vitamin D3",
+      "PTH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Alfa D3",
+        "purpose": "Mild Vitamin D support"
+      }
+    ],
+    "followUpAdvice": "Take with food. Avoid taking iron or phosphate binders at same time.",
+    "missingFields": [
+      "blood-calcium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with High Risk of Drug Toxicity",
+    "doctorReason": "Impaired kidney clearance may lead to accumulation of renally-excreted drugs.",
+    "patientExplanation": "Your kidneys may not clear medicines well. We\u2019ll adjust doses or switch drugs.",
+    "recommendedTests": [
+      "eGFR",
+      "Serum drug levels (if applicable)",
+      "LFT",
+      "CBC"
+    ],
+    "suggestedMedicines": [],
+    "followUpAdvice": "Review all medications with your doctor. Use nephro-safe options only.",
+    "missingFields": [
+      "blood-egfr"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Early Neurological Changes",
+    "doctorReason": "Mild cognitive changes or tremors in CKD may be early signs of uremic encephalopathy.",
+    "patientExplanation": "You may feel foggy or confused due to kidney toxins. Let\u2019s rule out serious causes.",
+    "recommendedTests": [
+      "Urea",
+      "Ammonia",
+      "Electrolytes",
+      "ABG",
+      "Neuro exam"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Dialysis (if advanced)",
+        "purpose": "Removes uremic toxins"
+      }
+    ],
+    "followUpAdvice": "Do not delay evaluation. Maintain regular dialysis and review symptoms.",
+    "missingFields": [
+      "blood-urea"
+    ]
+  },
+  {
+    "diagnosis": "Lupus Nephritis Suspicion",
+    "doctorReason": "Young female with proteinuria, hematuria, or low C3/C4 may have lupus nephritis.",
+    "patientExplanation": "We suspect an immune disease like lupus is affecting your kidneys.",
+    "recommendedTests": [
+      "Urine ACR",
+      "ANA",
+      "dsDNA",
+      "Complement C3/C4",
+      "Kidney biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Steroids",
+        "purpose": "Reduce immune inflammation"
+      },
+      {
+        "name": "Mycophenolate",
+        "purpose": "Suppress autoimmunity"
+      }
+    ],
+    "followUpAdvice": "Work closely with a rheumatologist. Kidney biopsy will confirm type.",
+    "missingFields": [
+      "reports-ana",
+      "unknown-proteinuria"
+    ]
+  },
+  {
+    "diagnosis": "Acute Interstitial Nephritis",
+    "doctorReason": "Fever, rash, eosinophilia, and creatinine rise suggest AIN from drugs or infection.",
+    "patientExplanation": "Your kidney may be inflamed due to a drug or infection reaction.",
+    "recommendedTests": [
+      "Creatinine",
+      "Urinalysis",
+      "Eosinophils",
+      "Drug history"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop offending agent",
+        "purpose": "Reverse damage source"
+      },
+      {
+        "name": "Steroids (short course)",
+        "purpose": "Reduce inflammation"
+      }
+    ],
+    "followUpAdvice": "Monitor creatinine closely. Avoid nephrotoxic drugs.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-drug history"
+    ]
+  },
+  {
+    "diagnosis": "Hemolytic Uremic Syndrome (HUS)",
+    "doctorReason": "Anemia, thrombocytopenia, AKI after diarrhea in children may indicate HUS.",
+    "patientExplanation": "This may be a rare cause of kidney damage linked to a blood problem after infection.",
+    "recommendedTests": [
+      "CBC",
+      "LDH",
+      "Creatinine",
+      "Peripheral smear",
+      "Stool culture"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Supportive care",
+        "purpose": "Maintain hydration and perfusion"
+      }
+    ],
+    "followUpAdvice": "Needs pediatric nephrology care. Dialysis may be required temporarily.",
+    "missingFields": [
+      "blood-creatinine",
+      "reports-cbc"
+    ]
+  },
+  {
+    "diagnosis": "Renal Artery Stenosis",
+    "doctorReason": "Refractory hypertension with asymmetric kidney size or abdominal bruit suggests RAS.",
+    "patientExplanation": "A narrowing in kidney blood supply may be raising your blood pressure.",
+    "recommendedTests": [
+      "Doppler renal arteries",
+      "CTA renal",
+      "Serum creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "BP control",
+        "purpose": "Protect kidneys while awaiting intervention"
+      }
+    ],
+    "followUpAdvice": "Interventional radiology or stenting may help. Avoid ACEi if creatinine rises.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-ultrasound"
+    ]
+  },
+  {
+    "diagnosis": "Uremic Pericarditis",
+    "doctorReason": "Chest pain, pericardial rub, and high BUN in ESRD suggest uremic pericarditis.",
+    "patientExplanation": "Waste buildup in kidney failure may inflame the heart lining.",
+    "recommendedTests": [
+      "Urea",
+      "ECG",
+      "Echocardiogram"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Dialysis",
+        "purpose": "Removes toxins and fluid"
+      }
+    ],
+    "followUpAdvice": "Urgent dialysis needed. Avoid NSAIDs.",
+    "missingFields": [
+      "blood-urea",
+      "reports-ecg"
+    ]
+  },
+  {
+    "diagnosis": "Calciphylaxis (CKD-related Skin Necrosis)",
+    "doctorReason": "Painful skin lesions with high phosphate/calcium/PTH in dialysis patient suggests calciphylaxis.",
+    "patientExplanation": "Your skin changes may be due to calcium deposits in blood vessels.",
+    "recommendedTests": [
+      "Calcium",
+      "Phosphate",
+      "PTH",
+      "Skin biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Sodium Thiosulfate",
+        "purpose": "Treats calciphylaxis"
+      },
+      {
+        "name": "Phosphate binders",
+        "purpose": "Reduce phosphate load"
+      }
+    ],
+    "followUpAdvice": "Wound care is critical. Specialist care required.",
+    "missingFields": [
+      "blood-calcium",
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "FSGS (Focal Segmental Glomerulosclerosis)",
+    "doctorReason": "Nephrotic syndrome in adults with no systemic disease suggests FSGS.",
+    "patientExplanation": "Your kidney filters are damaged in specific areas. A biopsy will confirm this.",
+    "recommendedTests": [
+      "24h Protein",
+      "Serum Albumin",
+      "Kidney biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Steroids",
+        "purpose": "Reduce immune-mediated damage"
+      },
+      {
+        "name": "ARB",
+        "purpose": "Control protein leakage"
+      }
+    ],
+    "followUpAdvice": "Biopsy confirms diagnosis. Long-term follow-up needed.",
+    "missingFields": [
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Rhabdomyolysis-Induced AKI",
+    "doctorReason": "Muscle injury, dark urine, and high CK leading to AKI indicates rhabdomyolysis.",
+    "patientExplanation": "Muscle breakdown may be harming your kidneys.",
+    "recommendedTests": [
+      "CPK",
+      "Creatinine",
+      "Urine myoglobin",
+      "Potassium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV fluids",
+        "purpose": "Flush out muscle toxins"
+      }
+    ],
+    "followUpAdvice": "Avoid further injury. Monitor kidneys and electrolytes closely.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-ck"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Tuberculosis",
+    "doctorReason": "Weight loss, night sweats, or granulomas on biopsy in CKD suggest TB.",
+    "patientExplanation": "Your symptoms and test results may suggest tuberculosis affecting kidneys.",
+    "recommendedTests": [
+      "Mantoux test",
+      "Urine AFB",
+      "GeneXpert TB",
+      "Chest X-ray"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Anti-TB therapy",
+        "purpose": "Treat tuberculosis infection"
+      }
+    ],
+    "followUpAdvice": "Adhere to full course of TB treatment. Dose adjust for kidney function.",
+    "missingFields": [
+      "medical-tb",
+      "unknown-urinalysis"
+    ]
+  },
+  {
+    "diagnosis": "Post-Streptococcal Glomerulonephritis (PSGN)",
+    "doctorReason": "Child with cola-colored urine, edema, and recent sore throat suggests PSGN.",
+    "patientExplanation": "Your child may have kidney inflammation due to a past throat infection.",
+    "recommendedTests": [
+      "ASO titre",
+      "Urinalysis",
+      "Complement C3",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Supportive care",
+        "purpose": "Manage BP and swelling"
+      }
+    ],
+    "followUpAdvice": "Usually resolves with time. Monitor BP and kidney function.",
+    "missingFields": [
+      "blood-creatinine",
+      "reports-aso"
+    ]
+  },
+  {
+    "diagnosis": "Ischemic ATN (Acute Tubular Necrosis)",
+    "doctorReason": "Prolonged hypotension or shock causing AKI with granular casts indicates ischemic ATN.",
+    "patientExplanation": "Your kidneys were temporarily deprived of blood supply, causing some injury.",
+    "recommendedTests": [
+      "Creatinine",
+      "Urinalysis",
+      "Urine sodium",
+      "Fractional excretion of sodium (FENa)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Fluids (as guided)",
+        "purpose": "Restore perfusion"
+      }
+    ],
+    "followUpAdvice": "Most cases recover with support. Monitor creatinine daily.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-urine output"
+    ]
+  },
+  {
+    "diagnosis": "Hepatorenal Syndrome (HRS)",
+    "doctorReason": "Cirrhosis + oliguria + low BP without shock points to HRS.",
+    "patientExplanation": "Liver dysfunction has affected your kidney circulation.",
+    "recommendedTests": [
+      "LFT",
+      "Creatinine",
+      "Ultrasound",
+      "Urine output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Albumin + Terlipressin",
+        "purpose": "Improve renal perfusion"
+      }
+    ],
+    "followUpAdvice": "Urgent hepatology consult. Often requires ICU care.",
+    "missingFields": [
+      "blood-creatinine",
+      "reports-lft"
+    ]
+  },
+  {
+    "diagnosis": "Myeloma Kidney (Cast Nephropathy)",
+    "doctorReason": "Elderly with back pain, anemia, proteinuria without albumin, and AKI suggests myeloma.",
+    "patientExplanation": "A bone marrow disorder may be affecting your kidneys.",
+    "recommendedTests": [
+      "Serum Free Light Chains",
+      "SPEP",
+      "Bence-Jones Protein",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Chemotherapy",
+        "purpose": "Treats underlying myeloma"
+      }
+    ],
+    "followUpAdvice": "Refer to hematology urgently. Early treatment preserves kidney function.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-proteinuria"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Anemia (EPO Resistance)",
+    "doctorReason": "Hb < 9 despite EPO therapy suggests iron deficiency or inflammation.",
+    "patientExplanation": "Your red cell levels are low despite treatment. We\u2019ll recheck iron and inflammation markers.",
+    "recommendedTests": [
+      "Hemoglobin",
+      "Ferritin",
+      "TSAT",
+      "CRP",
+      "B12"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Iron",
+        "purpose": "Restore iron stores"
+      },
+      {
+        "name": "Vitamin B12",
+        "purpose": "Support blood cell production"
+      }
+    ],
+    "followUpAdvice": "Optimize dialysis and nutrition. Repeat iron studies monthly.",
+    "missingFields": [
+      "blood-hemoglobin"
+    ]
+  },
+  {
+    "diagnosis": "Tumor Lysis Syndrome (TLS)",
+    "doctorReason": "Elevated uric acid, potassium, phosphate, and AKI post-chemotherapy suggests TLS.",
+    "patientExplanation": "After cancer treatment, breakdown of tumor cells may harm kidneys.",
+    "recommendedTests": [
+      "Uric Acid",
+      "Phosphate",
+      "Creatinine",
+      "Potassium",
+      "LDH"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Rasburicase",
+        "purpose": "Reduces uric acid"
+      },
+      {
+        "name": "IV fluids",
+        "purpose": "Flushes kidneys"
+      }
+    ],
+    "followUpAdvice": "Requires ICU care and electrolyte monitoring. Preventive hydration is key.",
+    "missingFields": [
+      "blood-potassium",
+      "unknown-uric acid"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hypermagnesemia",
+    "doctorReason": "Advanced CKD with antacid/laxative use may cause magnesium accumulation.",
+    "patientExplanation": "Your magnesium is too high. It may slow heart rate or cause confusion.",
+    "recommendedTests": [
+      "Serum Magnesium",
+      "ECG",
+      "Renal Function"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV calcium",
+        "purpose": "Counteracts magnesium effects"
+      }
+    ],
+    "followUpAdvice": "Avoid magnesium-containing meds. Dialysis may be needed.",
+    "missingFields": [
+      "reports-magnesium"
+    ]
+  },
+  {
+    "diagnosis": "Nephritic Syndrome",
+    "doctorReason": "Hematuria, hypertension, oliguria, and proteinuria suggest nephritic pattern.",
+    "patientExplanation": "Your kidneys are inflamed, causing blood in urine and pressure issues.",
+    "recommendedTests": [
+      "Urinalysis",
+      "RBC casts",
+      "Creatinine",
+      "BP",
+      "C3/C4"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Steroids",
+        "purpose": "Suppress inflammation"
+      }
+    ],
+    "followUpAdvice": "Biopsy may be needed. Blood pressure control is essential.",
+    "missingFields": [
+      "symptoms-hematuria",
+      "unknown-bp"
+    ]
+  },
+  {
+    "diagnosis": "Ureteric Obstruction Post Surgery",
+    "doctorReason": "Unilateral hydronephrosis after pelvic surgery suggests ureteric injury.",
+    "patientExplanation": "Your recent surgery may have caused a block in your urinary tube.",
+    "recommendedTests": [
+      "Ultrasound KUB",
+      "CT Urography",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Urologic stent",
+        "purpose": "Relieve obstruction"
+      }
+    ],
+    "followUpAdvice": "Refer to urology. Fix early to save kidney.",
+    "missingFields": [
+      "ultrasound-hydronephrosis",
+      "unknown-history of surgery"
+    ]
+  },
+  {
+    "diagnosis": "Rapidly Progressive Glomerulonephritis (RPGN)",
+    "doctorReason": "Rising creatinine with hematuria and systemic symptoms indicates RPGN.",
+    "patientExplanation": "Your kidney function is worsening quickly. We'll investigate immune causes.",
+    "recommendedTests": [
+      "ANCA",
+      "Anti-GBM",
+      "C3",
+      "Urinalysis",
+      "Biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Pulse steroids + Cyclophosphamide",
+        "purpose": "Slow immune attack on kidney"
+      }
+    ],
+    "followUpAdvice": "Requires urgent hospitalization. Delay can cause irreversible failure.",
+    "missingFields": [
+      "blood-creatinine",
+      "symptoms-hematuria"
+    ]
+  },
+  {
+    "diagnosis": "Kidney Involvement in Sepsis",
+    "doctorReason": "Sepsis-induced hypotension leads to AKI via prerenal or ischemic mechanisms.",
+    "patientExplanation": "Infection is reducing kidney perfusion. We\u2019ll support with fluids and antibiotics.",
+    "recommendedTests": [
+      "Creatinine",
+      "Lactate",
+      "Blood cultures",
+      "Urine output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Broad-spectrum antibiotics",
+        "purpose": "Treat underlying infection"
+      },
+      {
+        "name": "IV fluids",
+        "purpose": "Support kidney circulation"
+      }
+    ],
+    "followUpAdvice": "Monitor urine hourly. ICU care may be required.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-blood pressure"
+    ]
+  },
+  {
+    "diagnosis": "NSAID-induced Papillary Necrosis",
+    "doctorReason": "Flank pain + hematuria + NSAID use + imaging calcifications suggest papillary necrosis.",
+    "patientExplanation": "A painkiller may have damaged part of the kidney internally.",
+    "recommendedTests": [
+      "CT IVP",
+      "Urinalysis",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Discontinue NSAIDs",
+        "purpose": "Stop further damage"
+      }
+    ],
+    "followUpAdvice": "Avoid nephrotoxic meds. Repeat imaging to confirm recovery.",
+    "missingFields": [
+      "blood-creatinine",
+      "nsaid-use"
+    ]
+  },
+  {
+    "diagnosis": "Hematuria Evaluation in CKD",
+    "doctorReason": "Gross or microscopic hematuria in CKD needs workup for glomerular or urologic cause.",
+    "patientExplanation": "There is blood in your urine. We need tests to find the exact source.",
+    "recommendedTests": [
+      "Urinalysis",
+      "Ultrasound",
+      "PSA (if male >50)",
+      "CT Urography"
+    ],
+    "suggestedMedicines": [],
+    "followUpAdvice": "Biopsy or cystoscopy may be needed based on results.",
+    "missingFields": [
+      "symptoms-hematuria"
+    ]
+  },
+  {
+    "diagnosis": "Drug-induced Electrolyte Disturbances in CKD",
+    "doctorReason": "Diuretics, ACEi, ARBs, or supplements may alter sodium, potassium, or magnesium in CKD.",
+    "patientExplanation": "Some of your medications may be disturbing your salt levels.",
+    "recommendedTests": [
+      "Drug history",
+      "Electrolytes",
+      "Creatinine",
+      "ECG"
+    ],
+    "suggestedMedicines": [],
+    "followUpAdvice": "Adjust or stop medicines after consulting doctor. Recheck labs weekly.",
+    "missingFields": [
+      "unknown-drug history",
+      "unknown-electrolytes"
+    ]
+  },
+  {
+    "diagnosis": "Diabetic Nephropathy with Retinopathy",
+    "doctorReason": "Presence of diabetic retinopathy strengthens diagnosis of diabetic kidney disease.",
+    "patientExplanation": "Your diabetes has affected both eyes and kidneys. These changes are often linked.",
+    "recommendedTests": [
+      "Fundus exam",
+      "Urine ACR",
+      "eGFR",
+      "HbA1c"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "SGLT2 inhibitor",
+        "purpose": "Protects kidneys in diabetes"
+      },
+      {
+        "name": "ARB",
+        "purpose": "Reduces protein leakage and protects kidneys"
+      }
+    ],
+    "followUpAdvice": "Control sugar, BP, and cholesterol aggressively. Regular eye and kidney monitoring is essential.",
+    "missingFields": [
+      "unknown-fundus",
+      "urine-acr"
+    ]
+  },
+  {
+    "diagnosis": "IgA Nephropathy",
+    "doctorReason": "Hematuria with mild proteinuria post-URI in young adults suggests IgA nephropathy.",
+    "patientExplanation": "Your kidneys may be inflamed due to an immune response after an infection.",
+    "recommendedTests": [
+      "Urinalysis",
+      "24h Protein",
+      "Creatinine",
+      "Kidney biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "ARB",
+        "purpose": "Reduce proteinuria"
+      },
+      {
+        "name": "Steroids (if persistent)",
+        "purpose": "Control immune activity"
+      }
+    ],
+    "followUpAdvice": "Kidney biopsy helps confirm diagnosis. Long-term follow-up required.",
+    "missingFields": [
+      "blood-creatinine",
+      "symptoms-hematuria"
+    ]
+  },
+  {
+    "diagnosis": "Secondary Amyloidosis (AA) with Renal Involvement",
+    "doctorReason": "Chronic inflammatory disease with nephrotic proteinuria may indicate AA amyloidosis.",
+    "patientExplanation": "A long-standing inflammation in your body may have deposited proteins in your kidneys.",
+    "recommendedTests": [
+      "24h Protein",
+      "Abdominal fat pad biopsy",
+      "Serum Amyloid A",
+      "Liver enzymes"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Colchicine",
+        "purpose": "Reduces amyloid production in FMF"
+      },
+      {
+        "name": "Steroids",
+        "purpose": "Control underlying inflammation"
+      }
+    ],
+    "followUpAdvice": "Treat the underlying disease (e.g., TB, RA). Monitor kidney function regularly.",
+    "missingFields": [
+      "unknown-proteinuria"
+    ]
+  },
+  {
+    "diagnosis": "Pregnancy-Induced AKI (Preeclampsia/HELLP)",
+    "doctorReason": "Hypertension, proteinuria, elevated LFTs in pregnancy suggests preeclampsia or HELLP.",
+    "patientExplanation": "Pregnancy is stressing your kidneys and blood vessels. Hospitalization may be needed.",
+    "recommendedTests": [
+      "BP",
+      "Urine Protein",
+      "LFT",
+      "CBC",
+      "Ultrasound (fetus + KUB)"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Labetalol",
+        "purpose": "Safe BP control in pregnancy"
+      },
+      {
+        "name": "IV Magnesium",
+        "purpose": "Prevents seizures in severe cases"
+      }
+    ],
+    "followUpAdvice": "Frequent fetal and maternal monitoring. Early delivery may be needed if worsening.",
+    "missingFields": [
+      "reports-lft",
+      "unknown-pregnancy"
+    ]
+  },
+  {
+    "diagnosis": "Acute Pyelonephritis",
+    "doctorReason": "Fever, flank pain, dysuria, and WBC casts in urine suggest upper UTI.",
+    "patientExplanation": "You likely have a kidney infection. We\u2019ll treat with strong antibiotics.",
+    "recommendedTests": [
+      "Urine Culture",
+      "CBC",
+      "Ultrasound KUB",
+      "CRP"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Ceftriaxone",
+        "purpose": "Treats serious kidney infection"
+      }
+    ],
+    "followUpAdvice": "Hydration and complete antibiotic course are critical. Re-scan if not improving.",
+    "missingFields": [
+      "flank-pain",
+      "symptoms-fever"
+    ]
+  },
+  {
+    "diagnosis": "Post-Transplant Rejection Suspicion",
+    "doctorReason": "Rising creatinine post-transplant with no obstruction suggests acute rejection.",
+    "patientExplanation": "Your new kidney may be under attack by the immune system. We\u2019ll investigate further.",
+    "recommendedTests": [
+      "Creatinine",
+      "Ultrasound (for flow)",
+      "Tacrolimus level",
+      "Biopsy"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Pulse steroids",
+        "purpose": "Suppress rejection episode"
+      }
+    ],
+    "followUpAdvice": "Continue immunosuppressants strictly. Report swelling, fever, or low urine immediately.",
+    "missingFields": [
+      "blood-creatinine"
+    ]
+  },
+  {
+    "diagnosis": "Volume-Responsive Pre-Renal AKI",
+    "doctorReason": "Elevated urea/creatinine with hypotension and dry mucosa suggests pre-renal AKI.",
+    "patientExplanation": "You may be dehydrated or low on blood volume, reducing kidney perfusion.",
+    "recommendedTests": [
+      "Urea",
+      "Creatinine",
+      "BP",
+      "Volume status"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Normal Saline",
+        "purpose": "Restore circulating volume"
+      }
+    ],
+    "followUpAdvice": "Monitor urine output. Avoid nephrotoxic drugs until recovered.",
+    "missingFields": [
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Peripheral Arterial Disease (PAD)",
+    "doctorReason": "Claudication, low ABI, and diabetes with CKD suggest vascular compromise.",
+    "patientExplanation": "Your blood circulation in the legs is reduced, which may be linked to kidney disease.",
+    "recommendedTests": [
+      "ABI",
+      "Doppler legs",
+      "HbA1c",
+      "eGFR",
+      "Lipid profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Clopidogrel",
+        "purpose": "Improves blood flow"
+      },
+      {
+        "name": "Atorvastatin",
+        "purpose": "Stabilizes vascular disease"
+      }
+    ],
+    "followUpAdvice": "Walk daily, avoid smoking, control diabetes strictly.",
+    "missingFields": [
+      "blood-egfr",
+      "unknown-abi"
+    ]
+  },
+  {
+    "diagnosis": "Hypokalemia-Induced Muscle Weakness",
+    "doctorReason": "Potassium < 3.0 with cramps or paralysis indicates severe deficiency.",
+    "patientExplanation": "Low potassium can cause muscle weakness and irregular heartbeat.",
+    "recommendedTests": [
+      "Serum Potassium",
+      "ECG",
+      "Magnesium",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Potassium Chloride",
+        "purpose": "Replenish potassium"
+      }
+    ],
+    "followUpAdvice": "Avoid high-sugar or diuretic misuse. Repeat blood tests in 48 hrs.",
+    "missingFields": [
+      "blood-potassium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Sleep Apnea",
+    "doctorReason": "Daytime sleepiness, snoring, and HTN in CKD suggest OSA contributing to BP control issues.",
+    "patientExplanation": "Sleep issues may be affecting your blood pressure and kidney health.",
+    "recommendedTests": [
+      "Sleep Study",
+      "BP profile",
+      "eGFR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "CPAP therapy",
+        "purpose": "Improves oxygen during sleep"
+      }
+    ],
+    "followUpAdvice": "Weight loss and sleep support are essential.",
+    "missingFields": [
+      "unknown-sleep history"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hyperviscosity Symptoms",
+    "doctorReason": "CKD with fatigue, blurry vision, high hematocrit may indicate PV or dehydration.",
+    "patientExplanation": "Your blood may be thicker than normal, possibly due to overproduction or poor fluid balance.",
+    "recommendedTests": [
+      "CBC",
+      "Serum Viscosity",
+      "JAK2 mutation",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Aspirin",
+        "purpose": "Reduce clot risk"
+      }
+    ],
+    "followUpAdvice": "May need phlebotomy or hematology referral.",
+    "missingFields": [
+      "reports-cbc"
+    ]
+  },
+  {
+    "diagnosis": "Drug-Induced Nephrotic Syndrome (NSAIDs, Gold, Lithium)",
+    "doctorReason": "Sudden-onset proteinuria with drug exposure suggests drug-induced nephropathy.",
+    "patientExplanation": "A medicine you\u2019ve taken may be causing your kidneys to leak protein.",
+    "recommendedTests": [
+      "24h Protein",
+      "Drug history",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop offending drug",
+        "purpose": "Reverse protein leakage"
+      }
+    ],
+    "followUpAdvice": "Recovery may take weeks. Monitor protein and creatinine monthly.",
+    "missingFields": [
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "Nephrogenic DI (Diabetes Insipidus)",
+    "doctorReason": "Polyuria, hypernatremia, low urine osmolality in CKD or lithium users suggest DI.",
+    "patientExplanation": "Your body is losing too much water due to a kidney hormone issue.",
+    "recommendedTests": [
+      "Urine Osmolality",
+      "Serum Sodium",
+      "Desmopressin test"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Thiazide diuretic",
+        "purpose": "Reduces urine volume"
+      }
+    ],
+    "followUpAdvice": "Fluid intake monitoring critical. Confirm cause with endocrinologist.",
+    "missingFields": [
+      "blood-sodium",
+      "symptoms-polyuria"
+    ]
+  },
+  {
+    "diagnosis": "Lithium-Induced Nephropathy",
+    "doctorReason": "Chronic lithium use may cause CKD, nephrogenic DI, or interstitial nephritis.",
+    "patientExplanation": "A medicine used for mood may be damaging your kidneys over time.",
+    "recommendedTests": [
+      "Creatinine",
+      "Lithium levels",
+      "Urine output",
+      "Ultrasound"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Stop lithium",
+        "purpose": "Prevent further kidney injury"
+      }
+    ],
+    "followUpAdvice": "Psychiatric coordination needed to adjust medications.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-lithium use"
+    ]
+  },
+  {
+    "diagnosis": "Contrast-Induced Nephropathy (CIN)",
+    "doctorReason": "Rise in creatinine within 48\u201372h of contrast exposure suggests CIN.",
+    "patientExplanation": "A scan dye may have temporarily affected your kidney function.",
+    "recommendedTests": [
+      "Creatinine pre/post",
+      "eGFR",
+      "Urine output"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV hydration",
+        "purpose": "Protect kidneys from dye effects"
+      },
+      {
+        "name": "N-acetylcysteine (optional)",
+        "purpose": "Reduces oxidative damage"
+      }
+    ],
+    "followUpAdvice": "Always inform radiologist about kidney status before scans.",
+    "missingFields": [
+      "blood-creatinine",
+      "unknown-contrast history"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Gout Flare",
+    "doctorReason": "CKD reduces uric acid clearance, increasing gout flare risk.",
+    "patientExplanation": "You may have joint pain from uric acid buildup due to kidney issues.",
+    "recommendedTests": [
+      "Uric Acid",
+      "Joint exam",
+      "eGFR",
+      "ESR/CRP"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Colchicine",
+        "purpose": "Relieves gout inflammation"
+      },
+      {
+        "name": "Febuxostat (maintenance)",
+        "purpose": "Lowers uric acid"
+      }
+    ],
+    "followUpAdvice": "Avoid high-purine foods, alcohol. Don\u2019t stop urate-lowering meds abruptly.",
+    "missingFields": [
+      "unknown-uric acid"
+    ]
+  },
+  {
+    "diagnosis": "Ureterocele with Hydronephrosis",
+    "doctorReason": "Congenital ureterocele may cause obstructive nephropathy and recurrent UTI.",
+    "patientExplanation": "A birth defect may be blocking urine and stressing the kidney.",
+    "recommendedTests": [
+      "Ultrasound KUB",
+      "MCUG",
+      "CT Urography"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Urology referral",
+        "purpose": "Repair or correct ureteral defect"
+      }
+    ],
+    "followUpAdvice": "Early detection preserves kidney function. Follow up with imaging.",
+    "missingFields": [
+      "ultrasound-hydronephrosis",
+      "unknown-ultrasound"
+    ]
+  },
+  {
+    "diagnosis": "Hypernatremia from Dehydration",
+    "doctorReason": "Serum sodium >150 with low urine output or fluid loss suggests volume depletion.",
+    "patientExplanation": "Your body has lost water, making your sodium levels rise dangerously.",
+    "recommendedTests": [
+      "Serum Sodium",
+      "Urine output",
+      "Volume status",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV 0.45% NaCl (slow)",
+        "purpose": "Correct dehydration and sodium"
+      }
+    ],
+    "followUpAdvice": "Monitor sodium every 4\u20136 hours. Rapid correction can cause brain swelling.",
+    "missingFields": [
+      "blood-sodium",
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Hypophosphatemia",
+    "doctorReason": "Phosphate < 2.0 with muscle weakness or refeeding syndrome risk.",
+    "patientExplanation": "Your phosphate is too low, which may cause muscle or breathing weakness.",
+    "recommendedTests": [
+      "Phosphate",
+      "Calcium",
+      "Vitamin D",
+      "Creatinine"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Phosphosoda (oral/IV)",
+        "purpose": "Restore phosphate levels"
+      }
+    ],
+    "followUpAdvice": "Avoid phosphate binders temporarily. Watch for muscle cramps, arrhythmias.",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hepatitis B Co-infection",
+    "doctorReason": "Hepatitis B may lead to membranous GN or contribute to CKD in endemic areas.",
+    "patientExplanation": "You have a viral infection that may be affecting your kidneys and liver.",
+    "recommendedTests": [
+      "HBsAg",
+      "HBV DNA",
+      "LFT",
+      "Urine ACR"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Entecavir or Tenofovir",
+        "purpose": "Control viral replication"
+      }
+    ],
+    "followUpAdvice": "Hepatitis B must be treated before immunosuppressive therapy or transplant.",
+    "missingFields": [
+      "reports-hbsag"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Refractory Hyponatremia",
+    "doctorReason": "Serum Na < 125 not improving despite restriction may need tolvaptan.",
+    "patientExplanation": "Your sodium is too low and not improving. A special drug may help correct it safely.",
+    "recommendedTests": [
+      "Serum Sodium",
+      "Serum Osmolality",
+      "Urine Osmolality"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Tolvaptan",
+        "purpose": "Increases water excretion without sodium loss"
+      }
+    ],
+    "followUpAdvice": "Monitor sodium every 6h. Avoid fluid overload or rapid correction.",
+    "missingFields": [
+      "blood-sodium"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Protein-Energy Wasting (Severe)",
+    "doctorReason": "Low albumin + weight loss + muscle wasting suggest malnutrition in ESRD.",
+    "patientExplanation": "You are undernourished due to advanced kidney disease. Nutrition support is needed.",
+    "recommendedTests": [
+      "Albumin",
+      "Weight",
+      "Dietary recall",
+      "CRP"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Renal protein supplements",
+        "purpose": "Provide calories and amino acids"
+      }
+    ],
+    "followUpAdvice": "Meet renal dietitian. Monitor albumin and weight weekly.",
+    "missingFields": [
+      "blood-albumin"
+    ]
+  },
+  {
+    "diagnosis": "Alport Syndrome",
+    "doctorReason": "Family history of hearing loss + hematuria suggests hereditary nephritis.",
+    "patientExplanation": "You may have a genetic condition that affects kidneys, hearing, and eyes.",
+    "recommendedTests": [
+      "Urinalysis",
+      "Audiometry",
+      "Ophthalmic exam",
+      "Genetic testing"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "ACE inhibitors",
+        "purpose": "Delay kidney scarring progression"
+      }
+    ],
+    "followUpAdvice": "Family screening recommended. Biopsy/genetic confirmation helps guide care.",
+    "missingFields": [
+      "symptoms-hematuria",
+      "unknown-family history"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Refractory Fluid Overload",
+    "doctorReason": "Weight gain, edema, breathlessness despite dual diuretics may require dialysis.",
+    "patientExplanation": "You're retaining too much fluid. Medications alone may not be enough now.",
+    "recommendedTests": [
+      "Weight",
+      "Volume status",
+      "Creatinine",
+      "Potassium"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Add Metolazone",
+        "purpose": "Enhances diuretic effect"
+      }
+    ],
+    "followUpAdvice": "May need urgent dialysis. Restrict salt and fluid strictly.",
+    "missingFields": [
+      "vitals-weight",
+      "volume-status"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Hypercoagulability",
+    "doctorReason": "CKD and nephrotic range proteinuria increase thrombosis risk (esp. renal vein).",
+    "patientExplanation": "You are at high risk for blood clots due to protein loss in urine.",
+    "recommendedTests": [
+      "D-Dimer",
+      "Ultrasound Doppler",
+      "24h Protein",
+      "Coagulation profile"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Anticoagulants",
+        "purpose": "Prevent or treat blood clots"
+      }
+    ],
+    "followUpAdvice": "Avoid dehydration. Monitor leg swelling, chest pain urgently.",
+    "missingFields": [
+      "urine-protein-24h"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Prurigo Nodularis",
+    "doctorReason": "Chronic itching in ESRD may cause nodular skin lesions with secondary infection.",
+    "patientExplanation": "Your kidney condition is making your skin itchy and bumpy.",
+    "recommendedTests": [
+      "Skin exam",
+      "Phosphate",
+      "LFT"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "Antihistamines",
+        "purpose": "Reduce itching"
+      },
+      {
+        "name": "Moisturizers",
+        "purpose": "Repair skin barrier"
+      }
+    ],
+    "followUpAdvice": "Avoid scratching. Skin care and phosphate control are key.",
+    "missingFields": [
+      "blood-phosphate"
+    ]
+  },
+  {
+    "diagnosis": "CKD with Severe Anion Gap Acidosis",
+    "doctorReason": "Elevated AG metabolic acidosis with low bicarbonate needs urgent dialysis.",
+    "patientExplanation": "Your blood is very acidic. It could be life-threatening without dialysis.",
+    "recommendedTests": [
+      "ABG",
+      "Bicarbonate",
+      "Lactate",
+      "Anion gap"
+    ],
+    "suggestedMedicines": [
+      {
+        "name": "IV Bicarbonate",
+        "purpose": "Stabilize pH temporarily"
+      }
+    ],
+    "followUpAdvice": "Initiate dialysis urgently. Avoid acidic foods and medications.",
+    "missingFields": [
+      "blood-bicarbonate",
+      "reports-abg"
+    ]
+  }
+]
