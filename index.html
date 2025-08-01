@@ -13,13 +13,45 @@
       <h1 class="text-3xl font-bold text-center mb-6 text-green-700">NephroCare Pro – Patient Entry</h1>
 
       <div class="flex space-x-4 border-b pb-2 mb-6">
-        <template x-for="name in ['labs', 'vitals', 'symptoms', 'history', 'imaging', 'advanced']" :key="name">
+        <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
           <button type="button" @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
         </template>
       </div>
 
-      <!-- Tab: Labs -->
-      <div x-show="tab === 'labs'" class="space-y-4">
+      <!-- Tabs Content Start -->
+      <div x-show="tab === 'info'">
+        <h2 class="text-xl font-semibold mb-4">Patient Info</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div><label for="patient-name">Name</label><input type="text" id="patient-name" class="w-full input"></div>
+          <div><label for="patient-age">Age</label><input type="number" id="patient-age" class="w-full input"></div>
+          <div><label for="patient-gender">Gender</label><select id="patient-gender" class="w-full input"><option>Male</option><option>Female</option><option>Other</option></select></div>
+          <div><label for="patient-location">Location</label><input type="text" id="patient-location" class="w-full input"></div>
+        </div>
+      </div>
+
+      <div x-show="tab === 'vitals'">
+        <h2 class="text-xl font-semibold mb-4">Vitals</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label for="sbp">SBP</label><input type="number" id="sbp" data-section="vitals" class="w-full input"></div>
+          <div><label for="dbp">DBP</label><input type="number" id="dbp" data-section="vitals" class="w-full input"></div>
+          <div><label for="weight">Weight</label><input type="number" id="weight" data-section="vitals" class="w-full input"></div>
+          <div><label for="volume-status">Volume Status</label><select id="volume-status" data-section="vitals" class="w-full input"><option value="">Select</option><option>Normal</option><option>Hypervolemic</option><option>Hypovolemic</option></select></div>
+        </div>
+      </div>
+
+      <div x-show="tab === 'symptoms'">
+        <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
+            <label :for="sym">
+              <input type="checkbox" :id="sym" :data-section="'symptoms'">
+              <span x-text="sym.replace(/-/g, ' ')"></span>
+            </label>
+          </template>
+        </div>
+      </div>
+
+      <div x-show="tab === 'labs'">
         <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div><label for="egfr">eGFR</label><input type="number" id="egfr" data-section="blood" class="w-full input"></div>
@@ -38,6 +70,45 @@
         </div>
       </div>
 
+      <div x-show="tab === 'history'">
+        <h2 class="text-xl font-semibold mb-4">Medical History</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <template x-for="hx in ['diabetes','hypertension','nsaid-use','past-stone-disease','family-ckd','tb','hiv','hepatitis','pregnancy-status','contrast-history','lithium-use']" :key="hx">
+            <label :for="hx">
+              <input type="checkbox" :id="hx" :data-section="'medical'">
+              <span x-text="hx.replace(/-/g, ' ')"></span>
+            </label>
+          </template>
+        </div>
+      </div>
+
+      <div x-show="tab === 'imaging'">
+        <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label for="kidney-size">Kidney Size</label><select id="kidney-size" data-section="ultrasound" class="w-full input"><option>Normal</option><option>Decreased</option><option>Increased</option><option>Asymmetrical</option></select></div>
+          <div><label for="echogenicity">Echogenicity</label><select id="echogenicity" data-section="ultrasound" class="w-full input"><option>Normal</option><option>Mildly increased</option><option>Markedly increased</option></select></div>
+          <div><label for="hydronephrosis">Hydronephrosis</label><select id="hydronephrosis" data-section="ultrasound" class="w-full input"><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
+          <div><label for="stones">Stones</label><select id="stones" data-section="ultrasound" class="w-full input"><option>None</option><option>Single</option><option>Multiple</option><option>Bilateral</option></select></div>
+          <div><label for="cysts">Cysts</label><select id="cysts" data-section="ultrasound" class="w-full input"><option>None</option><option>Single</option><option>Multiple unilateral</option><option>Multiple bilateral</option></select></div>
+        </div>
+      </div>
+
+      <div x-show="tab === 'advanced'">
+        <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div><label for="ana">ANA</label><input type="text" id="ana" data-section="reports" class="w-full input"></div>
+          <div><label for="aso">ASO</label><input type="number" id="aso" data-section="reports" class="w-full input"></div>
+          <div><label for="vitamin-d">Vitamin D</label><input type="number" step="0.1" id="vitamin-d" data-section="reports" class="w-full input"></div>
+          <div><label for="b12">B12</label><input type="number" id="b12" data-section="reports" class="w-full input"></div>
+          <div><label for="uric-acid">Uric Acid</label><input type="number" id="uric-acid" data-section="reports" class="w-full input"></div>
+          <div><label for="magnesium">Magnesium</label><input type="number" id="magnesium" data-section="reports" class="w-full input"></div>
+          <div><label for="tsh">TSH</label><input type="number" id="tsh" data-section="reports" class="w-full input"></div>
+          <div><label for="prolactin">Prolactin</label><input type="number" id="prolactin" data-section="reports" class="w-full input"></div>
+          <div><label for="hbsag">HBsAg</label><select id="hbsag" data-section="reports" class="w-full input"><option>Negative</option><option>Positive</option></select></div>
+        </div>
+      </div>
+
+      <!-- Output & Actions -->
       <div class="mt-6">
         <button id="generate-diagnosis" type="button" class="px-4 py-2 bg-green-600 text-white rounded">🧠 Generate Diagnosis</button>
         <div id="missing-fields" class="text-red-600 font-medium mt-4"></div>
@@ -57,7 +128,7 @@
       </div>
     </div>
   </form>
- <script type="module" src="js/app.js"></script> 
-   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+  <script type="module" src="js/app.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </body>
 </html>
