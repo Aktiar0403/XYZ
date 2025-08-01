@@ -9,12 +9,11 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
   <form id="visit-form">
-    <div class="max-w-6xl mx-auto p-6" x-data="{ tab: 'info' }">
+    <div class="max-w-6xl mx-auto p-6" x-data="{ tab: 'labs' }">
       <h1 class="text-3xl font-bold text-center mb-6 text-green-700">NephroCare Pro – Patient Entry</h1>
 
-      <!-- Tabs Navigation -->
       <div class="flex space-x-4 border-b pb-2 mb-6">
-        <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
+        <template x-for="name in ['labs', 'vitals', 'symptoms', 'history', 'imaging', 'advanced']" :key="name">
           <button type="button" @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
         </template>
       </div>
@@ -23,99 +22,22 @@
       <div x-show="tab === 'labs'" class="space-y-4">
         <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <input type="number" step="any" id="egfr" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="creatinine" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="urea" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="potassium" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="sodium" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="calcium" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="phosphate" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="bicarbonate" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="hemoglobin" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="albumin" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="pth" data-section="blood" class="w-full input">
-          <input type="number" step="any" id="acr" data-section="urine" class="w-full input">
-          <input type="number" step="any" id="urine-protein-24h" data-section="urine" class="w-full input">
+          <div><label for="egfr">eGFR</label><input type="number" id="egfr" data-section="blood" class="w-full input"></div>
+          <div><label for="creatinine">Creatinine</label><input type="number" id="creatinine" data-section="blood" class="w-full input"></div>
+          <div><label for="urea">Urea</label><input type="number" id="urea" data-section="blood" class="w-full input"></div>
+          <div><label for="potassium">Potassium</label><input type="number" id="potassium" data-section="blood" class="w-full input"></div>
+          <div><label for="sodium">Sodium</label><input type="number" id="sodium" data-section="blood" class="w-full input"></div>
+          <div><label for="calcium">Calcium</label><input type="number" id="calcium" data-section="blood" class="w-full input"></div>
+          <div><label for="phosphate">Phosphate</label><input type="number" id="phosphate" data-section="blood" class="w-full input"></div>
+          <div><label for="bicarbonate">Bicarbonate</label><input type="number" id="bicarbonate" data-section="blood" class="w-full input"></div>
+          <div><label for="hemoglobin">Hemoglobin</label><input type="number" id="hemoglobin" data-section="blood" class="w-full input"></div>
+          <div><label for="albumin">Albumin</label><input type="number" id="albumin" data-section="blood" class="w-full input"></div>
+          <div><label for="pth">PTH</label><input type="number" id="pth" data-section="blood" class="w-full input"></div>
+          <div><label for="acr">ACR</label><input type="number" id="acr" data-section="urine" class="w-full input"></div>
+          <div><label for="urine-protein-24h">24h Urine Protein</label><input type="number" id="urine-protein-24h" data-section="urine" class="w-full input"></div>
         </div>
       </div>
 
-      <!-- Tab: Vitals -->
-      <div x-show="tab === 'vitals'" class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Vitals & Volume</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <input type="number" id="sbp" data-section="vitals" class="w-full input">
-          <input type="number" id="dbp" data-section="vitals" class="w-full input">
-          <input type="number" id="weight" data-section="vitals" class="w-full input">
-          <select id="volume-status" data-section="vitals" class="w-full input">
-            <option value="">Select</option>
-            <option value="Normal">Normal</option>
-            <option value="Hypervolemic">Hypervolemic</option>
-            <option value="Hypovolemic">Hypovolemic</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Tab: Symptoms -->
-      <div x-show="tab === 'symptoms'" class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
-            <label :for="sym">
-              <input type="checkbox" :id="sym" :data-section="'symptoms'">
-              <span x-text="sym.replace(/-/g, ' ')"></span>
-            </label>
-          </template>
-        </div>
-      </div>
-
-      <!-- Tab: History -->
-      <div x-show="tab === 'history'" class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Medical History</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <template x-for="hx in ['diabetes','hypertension','nsaid-use','past-stone-disease','family-ckd','tb','hiv','hepatitis','pregnancy-status','contrast-history','lithium-use']" :key="hx">
-            <label :for="hx">
-              <input type="checkbox" :id="hx" :data-section="'medical'">
-              <span x-text="hx.replace(/-/g, ' ')"></span>
-            </label>
-          </template>
-        </div>
-      </div>
-
-      <!-- Tab: Imaging -->
-      <div x-show="tab === 'imaging'" class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <select id="kidney-size" data-section="ultrasound" class="w-full input">...</select>
-          <select id="echogenicity" data-section="ultrasound" class="w-full input">...</select>
-          <select id="hydronephrosis" data-section="ultrasound" class="w-full input">...</select>
-          <select id="stones" data-section="ultrasound" class="w-full input">...</select>
-          <select id="cysts" data-section="ultrasound" class="w-full input">...</select>
-        </div>
-      </div>
-
-      <!-- Tab: Advanced -->
-      <div x-show="tab === 'advanced'" class="space-y-4">
-        <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <input type="text" id="ana" data-section="reports" class="w-full input">
-          <input type="number" id="aso" data-section="reports" class="w-full input">
-          <input type="number" step="0.1" id="vitamin-d" data-section="reports" class="w-full input">
-          <input type="number" id="b12" data-section="reports" class="w-full input">
-          <input type="number" id="uric-acid" data-section="reports" class="w-full input">
-          <input type="number" id="magnesium" data-section="reports" class="w-full input">
-          <input type="number" id="tsh" data-section="reports" class="w-full input">
-          <input type="number" id="prolactin" data-section="reports" class="w-full input">
-          <select id="hbsag" data-section="reports" class="w-full input">...</select>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <textarea id="cbc" data-section="reports" class="w-full input"></textarea>
-          <textarea id="ecg" data-section="reports" class="w-full input"></textarea>
-          <textarea id="lft" data-section="reports" class="w-full input"></textarea>
-          <textarea id="abg" data-section="reports" class="w-full input"></textarea>
-        </div>
-      </div>
-
-      <!-- Generate Button & Output -->
       <div class="mt-6">
         <button id="generate-diagnosis" type="button" class="px-4 py-2 bg-green-600 text-white rounded">🧠 Generate Diagnosis</button>
         <div id="missing-fields" class="text-red-600 font-medium mt-4"></div>
@@ -135,7 +57,5 @@
       </div>
     </div>
   </form>
-  <script type="module" src="js/app.js"></script>  
-  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </body>
 </html>
