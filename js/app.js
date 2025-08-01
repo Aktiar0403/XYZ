@@ -114,9 +114,10 @@ function collectVisitData() {
 
 function getSectionName(fieldName) {
   const el = document.getElementById(fieldName);
-  return el?.dataset?.section || null;
+  if (!el) return null;
+  const section = el.closest('[data-section]');
+  return section?.getAttribute('data-section') || null;
 }
-
 
 // ✅🗂️ Visit Save/Load Support
 function saveVisitToLocalStorage(visit) {
