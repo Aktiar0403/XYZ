@@ -54,15 +54,21 @@ export function renderFields(data) {
     .map(([key, value]) => {
       if (!value) value = 'Not provided';
       let style = '';
-      if (referenceRanges[key]) {
-        const { min, max } = referenceRanges[key];
-        const num = parseFloat(value);
-        if (!isNaN(num)) {
-          if (num < min) style = 'color: orange;';
-          else if (num > max) style = 'color: red;';
-          else style = 'color: green;';
-        }
-      }
+     if (referenceRanges[key]) {
+  const { min, max, values } = referenceRanges[key];
+  const num = parseFloat(value);
+
+  if (!isNaN(num) && min !== undefined && max !== undefined) {
+    if (num < min) style = 'color: orange;';
+    else if (num > max) style = 'color: red;';
+    else style = 'color: green;';
+  } else if (values?.includes(value)) {
+    if (value === 'Positive') style = 'color: red;';
+    else if (value === 'Negative') style = 'color: green;';
+    else style = 'color: gray;';
+  }
+}
+ 
       return `<li><strong>${key}:</strong> <span style="${style}">${value}</span></li>`;
     })
     .join('');
