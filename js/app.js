@@ -42,6 +42,21 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (matches.length) {
       doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
+      const testAdvice = matched
+  .filter(m => m.recommendedTests?.length)
+  .map(m => `🧪 For ${m.diagnosis}: ${m.recommendedTests.join(', ')}`)
+  .join('\n');
+
+if (testAdvice) {
+  const testBlock = document.createElement('div');
+  testBlock.className = 'mt-4';
+  testBlock.innerHTML = `
+    <h2 class="text-lg font-semibold text-indigo-700">🧪 Recommended Tests</h2>
+    <div class="bg-white p-3 rounded border text-sm whitespace-pre-wrap">${testAdvice}</div>
+  `;
+  doctorOutput.parentNode.insertBefore(testBlock, doctorOutput.nextSibling);
+}
+
       patientOutput.value = matches.map(d => `• ${d.patientExplanation}`).join('\n\n');
 
       const allMeds = matches.flatMap(m => m.suggestedMedicines || []);
