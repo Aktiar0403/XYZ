@@ -10,7 +10,20 @@ export const referenceRanges = {
   albumin: { min: 3.5, max: 5.5 },
   sbp: { min: 90, max: 140 },
   dbp: { min: 60, max: 90 },
-  weight: { min: 30, max: 200 }
+  weight: { min: 30, max: 200 },
+  bicarbonate: { min: 22, max: 29, unit: 'mmol/L' },
+pth: { min: 10, max: 65, unit: 'pg/mL' },
+acr: { min: 0, max: 30, unit: 'mg/g' }, // 30–300 = microalbuminuria
+
+// ADVANCED/REPORTS
+vitamin_d: { min: 30, max: 100, unit: 'ng/mL' },
+uric_acid: { min: 3.5, max: 7.2, unit: 'mg/dL' },
+magnesium: { min: 1.7, max: 2.4, unit: 'mg/dL' },
+b12: { min: 200, max: 900, unit: 'pg/mL' },
+tsh: { min: 0.4, max: 4.0, unit: 'µIU/mL' },
+prolactin: { min: 4.0, max: 23.0, unit: 'ng/mL' },
+aso: { max: 200, unit: 'IU/mL' }
+
 };
 
 export function evaluateCondition(cond, visit) {
