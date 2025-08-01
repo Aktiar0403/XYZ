@@ -46,6 +46,69 @@ window.addEventListener('DOMContentLoaded', async () => {
   .filter(m => m.recommendedTests?.length)
   .map(m => `🧪 For ${m.diagnosis}: ${m.recommendedTests.join(', ')}`)
   .join('\n');
+  const finalMeds = new Set();
+const finalTests = new Set();
+
+const suggestedMedsBlock = document.getElementById('suggested-meds');
+suggestedMedsBlock.innerHTML = '<h3 class="text-sm font-medium text-gray-700">AI Suggested Medicines:</h3>';
+
+// Loop over matched diagnoses to get suggestions
+matched.forEach(m => {
+  m.suggestedMedicines?.forEach(med => {
+    if (finalMeds.has(med)) return;
+
+    const id = `med-${med.replace(/\s+/g, '-')}`;
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = id;
+    checkbox.value = med;
+    checkbox.classList.add('mr-2');
+    checkbox.addEventListener('change', e => {
+      if (e.target.checked) finalMeds.add(med);
+      else finalMeds.delete(med);
+      renderFinalMeds();
+    });
+
+    const label = document.createElement('label');
+    label.htmlFor = id;
+    label.innerText = med;
+    label.classList.add('block', 'text-sm');
+    label.prepend(checkbox);
+
+    suggestedMedsBlock.appendChild(label);
+  });
+
+  m.recommendedTests?.forEach(test => {
+    finalTests.add(test); // add tests directly
+  });
+});
+
+document.getElementById('add-manual-medicine')?.addEventListener('click', () => {
+  const val = document.getElementById('manual-medicine').value.trim();
+  if (val) {
+    finalMeds.add(val);
+    document.getElementById('manual-medicine').value = '';
+    renderFinalMeds();
+  }
+});
+
+document.getElementById('add-manual-test')?.addEventListener('click', () => {
+  const val = document.getElementById('manual-test').value.trim();
+  if (val) {
+    finalTests.add(val);
+    document.getElementById('manual-test').value = '';
+    renderFinalTests();
+  }
+});
+
+function renderFinalMeds() {
+  document.getElementById('final-medicines').innerText = Array.from(finalMeds).join('\n');
+}
+
+function renderFinalTests() {
+  document.getElementById('final-tests').innerText = Array.from(finalTests).join('\n');
+}
+
 
 if (testAdvice) {
   const testBlock = document.createElement('div');
@@ -93,6 +156,18 @@ if (testAdvice) {
   });
 
   document.getElementById('print-button')?.addEventListener('click', () => {
+   document.getElementById('print-date').innerText = new Date().toLocaleDateString();
+document.getElementById('print-patient-name').innerText = visitData?.info?.['patient-name'] || '';
+document.getElementById('print-patient-age').innerText = visitData?.info?.['patient-age'] || '';
+document.getElementById('print-patient-location').innerText = visitData?.info?.['patient-location'] || '';
+
+document.getElementById('print-doctor-diagnosis').innerText = doctorOutput.value;
+document.getElementById('print-patient-diagnosis').innerText = patientOutput.value;
+document.getElementById('print-medicine-output').innerText = Array.from(finalMeds).join('\n');
+document.getElementById('print-test-output').innerText = Array.from(finalTests).join('\n');
+
+exportToPDF('printable-prescription');
+ 
     exportToPDF('pdf-content', 'NephroCare_Prescription.pdf');
   });
 });

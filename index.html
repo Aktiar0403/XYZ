@@ -133,10 +133,62 @@
         <div class="mt-4">
           <h2 class="text-lg font-semibold text-purple-700">💊 Suggested Medicines</h2>
           <div id="medicine-output" class="bg-gray-100 p-4 rounded"></div>
+          <div id="prescription-builder" class="mt-6">
+  <h2 class="text-xl font-semibold mb-2">💊 Doctor's Prescription</h2>
+
+  <!-- Suggested medicines will be inserted here -->
+  <div id="suggested-meds" class="mb-3">
+    <h3 class="text-sm font-medium text-gray-700">AI Suggested Medicines:</h3>
+    <!-- JS will inject checkboxes here -->
+  </div>
+
+  <!-- Manually Add Medicine -->
+  <div class="mb-3">
+    <label class="block text-sm font-medium text-gray-700">Add More Medicines:</label>
+    <input type="text" id="manual-medicine" placeholder="e.g. Tab Paracetamol 500mg" class="w-full border rounded p-2 mt-1">
+    <button type="button" id="add-manual-medicine" class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">➕ Add Medicine</button>
+  </div>
+
+  <!-- Manually Add Test -->
+  <div class="mb-3">
+    <label class="block text-sm font-medium text-gray-700">Add Recommended Tests:</label>
+    <input type="text" id="manual-test" placeholder="e.g. Serum Ferritin" class="w-full border rounded p-2 mt-1">
+    <button type="button" id="add-manual-test" class="mt-2 px-3 py-1 bg-indigo-600 text-white rounded">➕ Add Test</button>
+  </div>
+
+  <!-- Output Preview -->
+  <div>
+    <h3 class="text-sm font-medium text-gray-700">Final Prescription:</h3>
+    <div id="final-medicines" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap"></div>
+    <div id="final-tests" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap mt-2"></div>
+  </div>
+</div>
+
         </div>
         <button id="print-button" type="button" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">🖨️ Print Prescription</button>
       </div>
     </div>
+    <!-- Hidden Printable Prescription -->
+<div id="printable-prescription" class="hidden p-4 text-sm">
+  <h2 class="text-xl font-bold mb-2">📝 Prescription Summary</h2>
+
+  <p><strong>Date:</strong> <span id="print-date"></span></p>
+  <p><strong>Patient:</strong> <span id="print-patient-name"></span>, <span id="print-patient-age"></span> y/o</p>
+  <p><strong>Location:</strong> <span id="print-patient-location"></span></p>
+
+  <h3 class="mt-4 text-lg font-semibold">Doctor's Diagnosis</h3>
+  <div id="print-doctor-diagnosis" class="whitespace-pre-wrap"></div>
+
+  <h3 class="mt-4 text-lg font-semibold">Patient Explanation</h3>
+  <div id="print-patient-diagnosis" class="whitespace-pre-wrap"></div>
+
+  <h3 class="mt-4 text-lg font-semibold">Medicines</h3>
+  <div id="print-medicine-output" class="whitespace-pre-wrap"></div>
+
+  <h3 class="mt-4 text-lg font-semibold">Recommended Tests</h3>
+  <div id="print-test-output" class="whitespace-pre-wrap"></div>
+</div>
+
   </form>
   <script type="module" src="js/app.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
