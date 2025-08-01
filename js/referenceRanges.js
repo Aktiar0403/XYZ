@@ -13,7 +13,9 @@ export const referenceRanges = {
   weight: { min: 30, max: 200 },
   bicarbonate: { min: 22, max: 29, unit: 'mmol/L' },
 pth: { min: 10, max: 65, unit: 'pg/mL' },
-acr: { min: 0, max: 30, unit: 'mg/g' }, // 30–300 = microalbuminuria
+acr: { min: 0, max: 30, unit: 'mg/g' },
+"urine-protein-24h": { min: 0, max: 150, unit: "mg/day" },
+ // 30–300 = microalbuminuria
 
 // ADVANCED/REPORTS
 
