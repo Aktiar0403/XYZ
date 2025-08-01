@@ -16,13 +16,22 @@ pth: { min: 10, max: 65, unit: 'pg/mL' },
 acr: { min: 0, max: 30, unit: 'mg/g' }, // 30–300 = microalbuminuria
 
 // ADVANCED/REPORTS
-vitamin_d: { min: 30, max: 100, unit: 'ng/mL' },
-uric_acid: { min: 3.5, max: 7.2, unit: 'mg/dL' },
-magnesium: { min: 1.7, max: 2.4, unit: 'mg/dL' },
+
+
+
 b12: { min: 200, max: 900, unit: 'pg/mL' },
 tsh: { min: 0.4, max: 4.0, unit: 'µIU/mL' },
 prolactin: { min: 4.0, max: 23.0, unit: 'ng/mL' },
-aso: { max: 200, unit: 'IU/mL' }
+
+ana: { values: ['Negative', 'Positive'] },
+
+aso: { max: 200, unit: 'IU/mL' }, // ideally <200
+
+vitamin_d: { min: 30, max: 100, unit: 'ng/mL' },
+
+uric_acid: { min: 3.5, max: 7.2, unit: 'mg/dL' },
+
+magnesium: { min: 1.7, max: 2.4, unit: 'mg/dL' },
 
 };
 
