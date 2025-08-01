@@ -3,7 +3,7 @@
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
-import { exportToPDF } from './html2pdf.js';
+import { exportToPDF } from '.js/html2pdf.js';
 
 let visitData = {};
 
