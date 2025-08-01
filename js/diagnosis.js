@@ -29,8 +29,34 @@ export function isRuleApplicable(rule, visit) {
 
 // Generate diagnosis objects (not just text) for rendering in doctor & patient view
 export function getMatchedDiagnoses(visit) {
-  return diagnosisRules.filter(rule => isRuleApplicable(rule, visit));
+  const matches = [];
+
+  // Step 1: Group rules by exclusiveGroup (if any)
+  const grouped = {};
+  const ungrouped = [];
+
+  for (const rule of diagnosisRules) {
+    if (!isRuleApplicable(rule, visit)) continue;
+
+    if (rule.exclusiveGroup) {
+      if (!grouped[rule.exclusiveGroup]) grouped[rule.exclusiveGroup] = [];
+      grouped[rule.exclusiveGroup].push(rule);
+    } else {
+      ungrouped.push(rule);
+    }
+  }
+
+  // Step 2: From each exclusiveGroup, pick only the first match (or customize logic)
+  for (const group of Object.values(grouped)) {
+    matches.push(group[0]); // use first matched rule (you can sort or rank if needed)
+  }
+
+  // Step 3: Add all ungrouped matches
+  matches.push(...ungrouped);
+
+  return matches;
 }
+
 
 // For doctor panel display
 export function generateDiagnosisText(visit) {
