@@ -44,7 +44,7 @@
   review: '📝 Review'
 }[name]"></span>
 
-      <span x-text=\"name.charAt(0).toUpperCase() + name.slice(1)\"></span>
+      <span x-text="name.charAt(0).toUpperCase() + name.slice(1)"></span>
     </button>
   </template>
 </div>
@@ -99,7 +99,8 @@
        <div x-show="tab === 'labs'" x-transition.opacity.duration.300ms data-section="blood" class="space-y-4">
           <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div><label for="egfr">eGFR</label><input type="number" step="any" id="egfr" class="w-full input"></div>
+          <input type="number" step="any" id="egfr" data-section="blood" class="w-full input">
+
             <div><label for="creatinine">Creatinine</label><input type="number" step="any" id="creatinine" class="w-full input"></div>
             <div><label for="urea">Urea</label><input type="number" step="any" id="urea" class="w-full input"></div>
             <div><label for="potassium">Potassium</label><input type="number" step="any" id="potassium" class="w-full input"></div>
