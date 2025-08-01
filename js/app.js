@@ -4,6 +4,7 @@
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
 import { loadMedicinesFromFile, getAutofillDetails } from './medicines.js';
 import { applyReferenceTooltips } from './inputhints.js';
+import { setupAutocomplete } from './autocomplete.js';
 
 let visitData = {};
 let matched = [];
