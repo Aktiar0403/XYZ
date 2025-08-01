@@ -5,10 +5,9 @@ import { loadMedicinesFromFile, getMedicinesForDiagnosis, getAutofillDetails } f
 import { applyReferenceTooltips } from './inputhints.js';
 
 let matched = [];
-
-
 let finalMeds = new Set();
 let finalTests = new Set();
+
 let visitData = {};
 window.addEventListener('DOMContentLoaded', async () => {
   await loadDiagnosisRulesFromFile();
