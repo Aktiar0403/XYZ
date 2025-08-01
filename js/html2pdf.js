@@ -2,10 +2,8 @@ function exportToPDF(containerId) {
   const el = document.getElementById(containerId);
   if (!el) return;
 
-  // Show the section temporarily
   el.classList.remove('hidden');
 
-  // Set basic PDF options (A4 portrait)
   const opt = {
     margin:       0.5,
     filename:     'Prescription.pdf',
@@ -15,10 +13,8 @@ function exportToPDF(containerId) {
   };
 
   html2pdf().set(opt).from(el).save().then(() => {
-    // Hide again after print
     el.classList.add('hidden');
   });
 }
 
-// Make available globally
 window.exportToPDF = exportToPDF;
