@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     if (matches.length) {
       doctorOutput.value = matches.map(d => `• ${d.diagnosis}: ${d.doctorReason}`).join('\n\n');
-      const testAdvice = matched
+      const testAdvice = matches
   .filter(m => m.recommendedTests?.length)
   .map(m => `🧪 For ${m.diagnosis}: ${m.recommendedTests.join(', ')}`)
   .join('\n');
