@@ -30,6 +30,8 @@ export const referenceRanges = {
   vitamin_d:      { min: 30,   max: 100,   unit: 'ng/mL' },
   aso:            { max: 200,             unit: 'IU/mL' },
   ana:            { values: ['Negative', 'Positive'] }
+  hbsag: { values: ['Not Tested', 'Negative', 'Positive'] }
+
 };
 
 
