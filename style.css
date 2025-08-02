@@ -320,3 +320,11 @@ input[type="number"].abnormal-range {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
+#medicine-suggestions, #test-suggestions {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  max-height: 150px;
+  overflow-y: auto;
+}

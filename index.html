@@ -142,19 +142,22 @@
     <!-- JS will inject checkboxes here -->
   </div>
 
-  <!-- Manually Add Medicine -->
-  <div class="mb-3">
-    <label class="block text-sm font-medium text-gray-700">Add More Medicines:</label>
-    <input type="text" id="manual-medicine" placeholder="e.g. Tab Paracetamol 500mg" class="w-full border rounded p-2 mt-1">
-    <button type="button" id="add-manual-medicine" class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">➕ Add Medicine</button>
-  </div>
+ <!-- Add Manual Medicine -->
+<div class="relative mb-4">
+  <label for="medicine-search" class="block text-sm font-medium text-gray-700">Add More Medicines:</label>
+  <input type="text" id="medicine-search" placeholder="e.g. Telmisartan" class="w-full border p-2 rounded">
+  <div id="medicine-suggestions" class="hidden absolute bg-white border mt-1 shadow-lg rounded w-full z-10"></div>
+  <button id="add-manual-medicine" class="mt-2 bg-blue-500 text-white px-3 py-1 rounded">Add Medicine</button>
+</div>
 
-  <!-- Manually Add Test -->
-  <div class="mb-3">
-    <label class="block text-sm font-medium text-gray-700">Add Recommended Tests:</label>
-    <input type="text" id="manual-test" placeholder="e.g. Serum Ferritin" class="w-full border rounded p-2 mt-1">
-    <button type="button" id="add-manual-test" class="mt-2 px-3 py-1 bg-indigo-600 text-white rounded">➕ Add Test</button>
-  </div>
+<!-- Add Manual Test -->
+<div class="relative mb-4">
+  <label for="test-search" class="block text-sm font-medium text-gray-700">Add More Tests:</label>
+  <input type="text" id="test-search" placeholder="e.g. Renal Panel" class="w-full border p-2 rounded">
+  <div id="test-suggestions" class="hidden absolute bg-white border mt-1 shadow-lg rounded w-full z-10"></div>
+  <button id="add-manual-test" class="mt-2 bg-green-500 text-white px-3 py-1 rounded">Add Test</button>
+</div>
+
 
   <!-- Output Preview -->
   <div>
