@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const form = document.querySelector('#visit-form');
   if (form) applyReferenceTooltips(form);
-
+  setupAutocomplete();
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
     visitData = collectVisitData();
     matched = getMatchedDiagnoses(visitData);
