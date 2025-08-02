@@ -1,10 +1,10 @@
 
 // app.js – Updated with Diagnosis Picker + Prescription Builder
-import { setupAutocomplete } from './autocomplete.js';
-import { loadMedicinesFromFile, getAutofillDetails } from './medicines.js';
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
+import { setupAutocomplete } from './js/autocomplete.js';
+import { loadMedicinesFromFile, getAutofillDetails } from './js/medicines.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './js/diagnosis.js';
 
-import { applyReferenceTooltips } from './inputhints.js';
+import { applyReferenceTooltips } from './js/inputhints.js';
 
 
 let visitData = {};
