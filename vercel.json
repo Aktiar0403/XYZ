@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
+    }
+  ]
+}
