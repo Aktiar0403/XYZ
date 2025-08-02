@@ -1,12 +1,6 @@
 {
   "version": 2,
-  "rewrites": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/$1"
-    }
-  ]
+  "public": true,
+  "cleanUrls": true,
+  "trailingSlash": false
 }
