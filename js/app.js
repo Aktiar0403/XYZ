@@ -148,4 +148,7 @@ function renderFinalTests() {
     pill.appendChild(close);
     container.appendChild(pill);
   });
+// 👇 Make these accessible to autocomplete.js
+export { renderFinalMeds, renderFinalTests, finalMeds, finalTests };
+
 }
