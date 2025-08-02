@@ -1,10 +1,11 @@
 
 // app.js – Updated with Diagnosis Picker + Prescription Builder
-
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
-import { loadMedicinesFromFile, getAutofillDetails } from './medicines.js';
-import { applyReferenceTooltips } from './inputhints.js';
 import { setupAutocomplete } from './autocomplete.js';
+import { loadMedicinesFromFile, getAutofillDetails } from './medicines.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
+
+import { applyReferenceTooltips } from './inputhints.js';
+
 
 let visitData = {};
 let matched = [];
@@ -18,7 +19,9 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const form = document.querySelector('#visit-form');
   if (form) applyReferenceTooltips(form);
+
   setupAutocomplete();
+
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
     visitData = collectVisitData();
     matched = getMatchedDiagnoses(visitData);
