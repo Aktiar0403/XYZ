@@ -1,5 +1,6 @@
 
 import { getAutofillDetails } from './medicines.js';
+import { renderFinalMeds, renderFinalTests, finalMeds, finalTests } from './app.js';
 
 export function setupAutocomplete() {
   const medInput = document.getElementById('medicine-search');
@@ -12,18 +13,23 @@ export function setupAutocomplete() {
     'PTH', 'Creatinine Clearance', 'ANA', 'HIV', 'HBsAg', 'TSH', 'B12', 'ASO', 'Lipid Profile'
   ];
 
-  medInput?.addEventListener('input', async () => {
+  medInput?.addEventListener('input', () => {
     const term = medInput.value.trim().toLowerCase();
     if (!term) return (medDropdown.innerHTML = '', medDropdown.classList.add('hidden'));
 
-    const matches = getAutofillDetails(term).slice(0, 5); // Top 5 matches
+    const matches = getAutofillDetails(term).slice(0, 5);
     medDropdown.innerHTML = '';
     matches.forEach(med => {
+      const label = `${med.brand} (${med.composition})`;
       const div = document.createElement('div');
-      div.textContent = `${med.brand} (${med.composition})`;
+      div.textContent = label;
       div.className = 'p-2 cursor-pointer hover:bg-gray-100';
       div.addEventListener('click', () => {
-        document.getElementById('medicine-search').value = med.brand;
+        if (!finalMeds.has(label)) {
+          finalMeds.add(label);
+          renderFinalMeds();
+        }
+        medInput.value = '';
         medDropdown.innerHTML = '';
         medDropdown.classList.add('hidden');
       });
@@ -43,7 +49,11 @@ export function setupAutocomplete() {
       div.textContent = test;
       div.className = 'p-2 cursor-pointer hover:bg-gray-100';
       div.addEventListener('click', () => {
-        document.getElementById('test-search').value = test;
+        if (!finalTests.has(test)) {
+          finalTests.add(test);
+          renderFinalTests();
+        }
+        testInput.value = '';
         testDropdown.innerHTML = '';
         testDropdown.classList.add('hidden');
       });
