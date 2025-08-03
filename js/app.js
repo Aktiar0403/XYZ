@@ -1,8 +1,8 @@
 
 // app.js – Updated with Diagnosis Picker + Prescription Builder
-import { loadMedicinesFromFile, medicines } from './js/medicines.js'; // ✅ include 'medicines' for datalist
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './js/diagnosis.js';
-import { applyReferenceTooltips } from './js/inputhints.js';
+import { loadMedicinesFromFile, medicines } from './medicines.js'; // ✅ include 'medicines' for datalist
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
+import { applyReferenceTooltips } from './inputhints.js';
 
 
 let visitData = {};
