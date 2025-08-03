@@ -11,7 +11,7 @@ let finalDiagnosis = "";
 
 window.addEventListener('DOMContentLoaded', async () => {
   await loadDiagnosisRulesFromFile();
-  console.log(diagnosisRules)
+  console.log("Loaded rules:", diagnosisRules);
   await loadMedicinesFromFile();
 
   const form = document.querySelector('#visit-form');
