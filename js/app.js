@@ -1,6 +1,6 @@
 
 // app.js – Updated with Diagnosis Picker + Prescription Builder
-import { setupAutocomplete } from './js/autocomplete.js';
+
 import { loadMedicinesFromFile, getAutofillDetails } from './js/medicines.js';
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './js/diagnosis.js';
 
@@ -19,8 +19,24 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const form = document.querySelector('#visit-form');
   if (form) applyReferenceTooltips(form);
+  
+    // ✅ Add manual medicine
+  document.getElementById('add-manual-medicine')?.addEventListener('click', () => {
+    const val = document.getElementById('manual-medicine').value.trim();
+    if (val) finalMeds.add(val);
+    document.getElementById('manual-medicine').value = '';
+    renderFinalMeds();
+  });
 
-  setupAutocomplete();
+  // ✅ Add manual test
+  document.getElementById('add-manual-test')?.addEventListener('click', () => {
+    const val = document.getElementById('manual-test').value.trim();
+    if (val) finalTests.add(val);
+    document.getElementById('manual-test').value = '';
+    renderFinalTests();
+  });
+
+
 
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
     visitData = collectVisitData();
@@ -151,7 +167,6 @@ function renderFinalTests() {
     pill.appendChild(close);
     container.appendChild(pill);
   });
-// 👇 Make these accessible to autocomplete.js
-export { renderFinalMeds, renderFinalTests, finalMeds, finalTests };
+;
 
 }
