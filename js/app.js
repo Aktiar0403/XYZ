@@ -1,9 +1,7 @@
-
-// app.js – Updated with Diagnosis Picker + Prescription Builder
-import { loadMedicinesFromFile, medicines } from './medicines.js'; // ✅ include 'medicines' for datalist
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
-import { applyReferenceTooltips } from './inputhints.js';
-
+// app.js – Updated with Datalist Medicine/Test Picker
+import { loadMedicinesFromFile, medicines } from './js/medicines.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './js/diagnosis.js';
+import { applyReferenceTooltips } from './js/inputhints.js';
 
 let visitData = {};
 let matched = [];
@@ -17,14 +15,39 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   const form = document.querySelector('#visit-form');
   if (form) applyReferenceTooltips(form);
-  
-    // ✅ Add manual medicine
+
+  populateDatalists();
+document.getElementById('manual-medicine')?.addEventListener('change', (e) => {
+  const val = e.target.value.trim();
+  const found = medicines.find(m => m.name === val || m.composition === val || `${m.name} (${m.composition})` === val);
+  if (found) {
+    document.getElementById('dose-field').value = found.dose || '';
+    document.getElementById('instruction-field').value = found.instructions || '';
+  }
+});
+
+  // ✅ Add manual medicine
   document.getElementById('add-manual-medicine')?.addEventListener('click', () => {
-    const val = document.getElementById('manual-medicine').value.trim();
-    if (val) finalMeds.add(val);
-    document.getElementById('manual-medicine').value = '';
-    renderFinalMeds();
-  });
+  const val = document.getElementById('manual-medicine').value.trim();
+  const dose = document.getElementById('dose-field').value.trim();
+  const instruction = document.getElementById('instruction-field').value.trim();
+
+  if (val) {
+    // Combine into one string (optional customization)
+    const medText = dose || instruction
+      ? `${val} - ${dose || ''} ${instruction || ''}`.trim()
+      : val;
+
+    finalMeds.add(medText);
+  }
+
+  // Clear fields
+  document.getElementById('manual-medicine').value = '';
+  document.getElementById('dose-field').value = '';
+  document.getElementById('instruction-field').value = '';
+  renderFinalMeds();
+});
+
 
   // ✅ Add manual test
   document.getElementById('add-manual-test')?.addEventListener('click', () => {
@@ -33,8 +56,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('manual-test').value = '';
     renderFinalTests();
   });
-
-
 
   document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
     visitData = collectVisitData();
@@ -53,20 +74,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('patient-diagnosis').value = matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
     document.getElementById('missing-fields').innerText = missing.length
       ? `Please complete: ${missing.join(', ')}` : '';
-  });
-
-  document.getElementById('add-manual-medicine')?.addEventListener('click', () => {
-    const val = document.getElementById('medicine-search').value.trim();
-    if (val) finalMeds.add(val);
-    document.getElementById('medicine-search').value = '';
-    renderFinalMeds();
-  });
-
-  document.getElementById('add-manual-test')?.addEventListener('click', () => {
-    const val = document.getElementById('test-search').value.trim();
-    if (val) finalTests.add(val);
-    document.getElementById('test-search').value = '';
-    renderFinalTests();
   });
 
   document.getElementById('print-button')?.addEventListener('click', () => {
@@ -165,6 +172,37 @@ function renderFinalTests() {
     pill.appendChild(close);
     container.appendChild(pill);
   });
-;
+}
 
+function populateDatalists() {
+  const medList = document.getElementById('medicine-list');
+  const testList = document.getElementById('test-list');
+
+  const seen = new Set();
+  medicines.forEach(m => {
+    [m.name, m.composition, `${m.name} (${m.composition})`].forEach(val => {
+      if (val && !seen.has(val)) {
+        const option = document.createElement('option');
+        option.value = val;
+        medList.appendChild(option);
+        seen.add(val);
+      }
+    });
+  });
+
+  const tests = [
+    'eGFR', 'Creatinine', 'Urea', 'Potassium', 'Sodium', 'Calcium', 'Phosphate',
+    'Bicarbonate', 'Hemoglobin', 'Albumin', 'PTH',
+    'Urine ACR', '24h Urine Protein',
+    'Ultrasound KUB', 'Kidney Size', 'Echogenicity', 'Hydronephrosis', 'Stones', 'Cysts',
+    'ANA', 'ASO', 'Vitamin D', 'B12', 'Uric Acid', 'Magnesium', 'TSH', 'Prolactin', 'HBsAg',
+    'Lipid Profile', 'Urinalysis', 'Chest X-ray', 'CT KUB', 'Fundus Exam', 'Ferritin', 'Iron Studies',
+    'Arterial Blood Gas (ABG)', 'ECG', 'CBC', 'Mantoux Test'
+  ];
+
+  tests.forEach(t => {
+    const option = document.createElement('option');
+    option.value = t;
+    testList.appendChild(option);
+  });
 }
