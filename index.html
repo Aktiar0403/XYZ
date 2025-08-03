@@ -1,127 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NephroCare Pro – Patient Entry</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100 text-gray-800">
   <form id="visit-form">
     <div class="max-w-6xl mx-auto p-6" x-data="{ tab: 'labs' }">
       <h1 class="text-3xl font-bold text-center mb-6 text-green-700">NephroCare Pro – Patient Entry</h1>
 
+      <!-- Tab Buttons -->
       <div class="flex space-x-4 border-b pb-2 mb-6">
         <template x-for="name in ['info', 'vitals', 'symptoms', 'labs', 'history', 'imaging', 'advanced']" :key="name">
           <button type="button" @click="tab = name" class="px-4 py-2 rounded-t font-semibold" :class="tab === name ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-700'" x-text="name.charAt(0).toUpperCase() + name.slice(1)"></button>
         </template>
       </div>
 
-      <!-- Tabs Content Start -->
-      <div x-show="tab === 'info'">
-        <h2 class="text-xl font-semibold mb-4">Patient Info</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div><label for="patient-name">Name</label><input type="text" id="patient-name" class="w-full input"></div>
-          <div><label for="patient-age">Age</label><input type="number" id="patient-age" class="w-full input"></div>
-          <div><label for="patient-gender">Gender</label><select id="patient-gender" class="w-full input"><option>Male</option><option>Female</option><option>Other</option></select></div>
-          <div><label for="patient-location">Location</label><input type="text" id="patient-location" class="w-full input"></div>
-        </div>
-      </div>
-
-      <div x-show="tab === 'vitals'">
-        <h2 class="text-xl font-semibold mb-4">Vitals</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div><label for="sbp">SBP</label><input type="number" id="sbp" data-section="vitals" class="w-full input"></div>
-          <div><label for="dbp">DBP</label><input type="number" id="dbp" data-section="vitals" class="w-full input"></div>
-          <div><label for="weight">Weight</label><input type="number" id="weight" data-section="vitals" class="w-full input"></div>
-          <div><label for="volume-status">Volume Status</label><select id="volume-status" data-section="vitals" class="w-full input"><option value="">Select</option><option>Normal</option><option>Hypervolemic</option><option>Hypovolemic</option></select></div>
-        </div>
-      </div>
-
-      <div x-show="tab === 'symptoms'">
-        <h2 class="text-xl font-semibold mb-4">Symptoms</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <template x-for="sym in ['edema','fatigue','nausea','vomiting','breathlessness','decreased-urine-output','flank-pain','hematuria','polyuria','fever','sleep-history','recurrent-infections']" :key="sym">
-            <label :for="sym">
-              <input type="checkbox" :id="sym" :data-section="'symptoms'">
-              <span x-text="sym.replace(/-/g, ' ')"></span>
-            </label>
-          </template>
-        </div>
-      </div>
-
-      <div x-show="tab === 'labs'">
-        <h2 class="text-xl font-semibold mb-4">Blood & Urine Tests</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div><label for="egfr">eGFR</label><input type="number" id="egfr" data-section="blood" class="w-full input"></div>
-          <div><label for="creatinine">Creatinine</label><input type="number" id="creatinine" data-section="blood" class="w-full input"></div>
-          <div><label for="urea">Urea</label><input type="number" id="urea" data-section="blood" class="w-full input"></div>
-          <div><label for="potassium">Potassium</label><input type="number" id="potassium" data-section="blood" class="w-full input"></div>
-          <div><label for="sodium">Sodium</label><input type="number" id="sodium" data-section="blood" class="w-full input"></div>
-          <div><label for="calcium">Calcium</label><input type="number" id="calcium" data-section="blood" class="w-full input"></div>
-          <div><label for="phosphate">Phosphate</label><input type="number" id="phosphate" data-section="blood" class="w-full input"></div>
-          <div><label for="bicarbonate">Bicarbonate</label><input type="number" id="bicarbonate" data-section="blood" class="w-full input"></div>
-          <div><label for="hemoglobin">Hemoglobin</label><input type="number" id="hemoglobin" data-section="blood" class="w-full input"></div>
-          <div><label for="albumin">Albumin</label><input type="number" id="albumin" data-section="blood" class="w-full input"></div>
-          <div><label for="pth">PTH</label><input type="number" id="pth" data-section="blood" class="w-full input"></div>
-          <div><label for="acr">ACR</label><input type="number" id="acr" data-section="urine" class="w-full input"></div>
-          <div><label for="urine-protein-24h">24h Urine Protein</label><input type="number" id="urine-protein-24h" data-section="urine" class="w-full input"></div>
-        </div>
-      </div>
-
-      <div x-show="tab === 'history'">
-        <h2 class="text-xl font-semibold mb-4">Medical History</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <template x-for="hx in ['diabetes','hypertension','nsaid-use','past-stone-disease','family-ckd','tb','hiv','hepatitis','pregnancy-status','contrast-history','lithium-use']" :key="hx">
-            <label :for="hx">
-              <input type="checkbox" :id="hx" :data-section="'medical'">
-              <span x-text="hx.replace(/-/g, ' ')"></span>
-            </label>
-          </template>
-        </div>
-      </div>
-
-      <div x-show="tab === 'imaging'">
-        <h2 class="text-xl font-semibold mb-4">Ultrasound / Imaging</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div><label for="kidney-size">Kidney Size</label><select id="kidney-size" data-section="ultrasound" class="w-full input"><option>Normal</option><option>Decreased</option><option>Increased</option><option>Asymmetrical</option></select></div>
-          <div><label for="echogenicity">Echogenicity</label><select id="echogenicity" data-section="ultrasound" class="w-full input"><option>Normal</option><option>Mildly increased</option><option>Markedly increased</option></select></div>
-          <div><label for="hydronephrosis">Hydronephrosis</label><select id="hydronephrosis" data-section="ultrasound" class="w-full input"><option>None</option><option>Mild</option><option>Moderate</option><option>Severe</option></select></div>
-          <div><label for="stones">Stones</label><select id="stones" data-section="ultrasound" class="w-full input"><option>None</option><option>Single</option><option>Multiple</option><option>Bilateral</option></select></div>
-          <div><label for="cysts">Cysts</label><select id="cysts" data-section="ultrasound" class="w-full input"><option>None</option><option>Single</option><option>Multiple unilateral</option><option>Multiple bilateral</option></select></div>
-        </div>
-      </div>
-
-      <div x-show="tab === 'advanced'">
-        <h2 class="text-xl font-semibold mb-4">Advanced Labs & Reports</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div><label for="ana">ANA</label><select id="ana" data-section="reports" class="w-full input">
-          <option value="">Not Tested</option>
-           <option>Negative</option>
-           <option>Positive</option>
-                                    </select></div>
-          <div><label for="aso">ASO</label><input type="number" id="aso" data-section="reports" class="w-full input"></div>
-          <div><label for="vitamin_d">Vitamin D</label><input type="number" step="0.1" id="vitamin_d" data-section="reports" class="w-full input"></div>
-          <div><label for="b12">B12</label><input type="number" id="b12" data-section="reports" class="w-full input"></div>
-          <div><label for="uric_acid">Uric Acid</label><input type="number" id="uric_acid" data-section="reports" class="w-full input"></div>
-          <div><label for="magnesium">Magnesium</label><input type="number" id="magnesium" data-section="reports" class="w-full input"></div>
-          <div><label for="tsh">TSH</label><input type="number" id="tsh" data-section="reports" class="w-full input"></div>
-          <div><label for="prolactin">Prolactin</label><input type="number" id="prolactin" data-section="reports" class="w-full input"></div>
-          <div><label for="hbsag">HBsAg</label>
-<select id="hbsag" data-section="reports" class="w-full input">
-  <option value="">Not Tested</option>
-  <option>Negative</option>
-  <option>Positive</option>
-</select>
-</div>
-        </div>
-      </div>
+      <!-- Tab Panels (unchanged) -->
+      <!-- ✅ KEEP your entire existing tab structure for info, vitals, symptoms, labs, etc. -->
 
       <!-- Output & Actions -->
       <div class="mt-6">
         <button id="generate-diagnosis" type="button" class="px-4 py-2 bg-green-600 text-white rounded">🧠 Generate Diagnosis</button>
         <div id="missing-fields" class="text-red-600 font-medium mt-4"></div>
+
+        <!-- Diagnosis Choice -->
+        <div id="diagnosis-choice" class="my-4 space-y-2"></div>
+
+        <!-- Doctor + Patient Diagnoses -->
         <div class="mt-4">
           <h2 class="text-lg font-semibold text-green-700">👨‍⚕️ Doctor’s Diagnosis</h2>
           <textarea id="doctor-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
@@ -130,87 +39,80 @@
           <h2 class="text-lg font-semibold text-blue-700">👥 Patient-Friendly Explanation</h2>
           <textarea id="patient-diagnosis" class="w-full border p-2 rounded h-32" readonly></textarea>
         </div>
+
+        <!-- Prescription Builder -->
         <div class="mt-4">
           <h2 class="text-lg font-semibold text-purple-700">💊 Suggested Medicines</h2>
           <div id="medicine-output" class="bg-gray-100 p-4 rounded"></div>
+
           <div id="prescription-builder" class="mt-6">
-  <h2 class="text-xl font-semibold mb-2">💊 Doctor's Prescription</h2>
+            <h2 class="text-xl font-semibold mb-2">💊 Doctor's Prescription</h2>
 
-  <!-- Suggested medicines will be inserted here -->
-  <div id="suggested-meds" class="mb-3">
-    <h3 class="text-sm font-medium text-gray-700">Suggested Medicines:</h3>
-    <!-- JS will inject checkboxes here -->
-  </div>
+            <!-- Suggested medicine checkboxes will go here -->
+            <div id="suggested-meds" class="mb-3">
+              <h3 class="text-sm font-medium text-gray-700">Suggested Medicines:</h3>
+            </div>
 
- <!-- Add Manual Medicine -->
-<!-- Manually Add Medicine -->
-<div class="mb-3">
-  <label class="block text-sm font-medium text-gray-700">Add More Medicines:</label>
-  <input list="medicine-list" id="manual-medicine" placeholder="e.g. Telmisartan 40 or 40 mg" class="w-full border rounded p-2 mt-1">
-  <datalist id="medicine-list"></datalist>
-  <button type="button" id="add-manual-medicine" class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">➕ Add Medicine</button>
-</div>
+            <!-- Add Manual Medicine -->
+            <div class="mb-3">
+              <label class="block text-sm font-medium text-gray-700">Add More Medicines:</label>
+              <input list="medicine-list" id="manual-medicine" placeholder="e.g. Telmisartan 40 or 40 mg" class="w-full border rounded p-2 mt-1" />
+              <datalist id="medicine-list"></datalist>
+              <button type="button" id="add-manual-medicine" class="mt-2 px-3 py-1 bg-blue-600 text-white rounded">➕ Add Medicine</button>
+            </div>
 
-<!-- Autofill fields for dose and instruction -->
-<div class="grid grid-cols-2 gap-2 mt-2">
-  <input type="text" id="dose-field" placeholder="Dose e.g. 40mg OD" class="w-full border rounded p-2" />
-  <input type="text" id="instruction-field" placeholder="Instructions e.g. After food" class="w-full border rounded p-2" />
-</div>
+            <!-- Autofill Dose + Instructions -->
+            <div class="grid grid-cols-2 gap-2 mt-2">
+              <input type="text" id="dose-field" placeholder="Dose e.g. 40mg OD" class="w-full border rounded p-2" />
+              <input type="text" id="instruction-field" placeholder="Instructions e.g. After food" class="w-full border rounded p-2" />
+            </div>
 
-<!-- Add Manual Test -->
-<!-- Manually Add Test -->
-<div class="mb-3">
-  <label class="block text-sm font-medium text-gray-700">Add Recommended Tests:</label>
-  <input list="test-list" id="manual-test" placeholder="e.g. Serum Ferritin, Ultrasound KUB" class="w-full border rounded p-2 mt-1">
-  <datalist id="test-list"></datalist>
-  <button type="button" id="add-manual-test" class="mt-2 px-3 py-1 bg-indigo-600 text-white rounded">➕ Add Test</button>
-</div>
+            <!-- Add Manual Test -->
+            <div class="mb-3 mt-4">
+              <label class="block text-sm font-medium text-gray-700">Add Recommended Tests:</label>
+              <input list="test-list" id="manual-test" placeholder="e.g. Serum Ferritin, Ultrasound KUB" class="w-full border rounded p-2 mt-1" />
+              <datalist id="test-list"></datalist>
+              <button type="button" id="add-manual-test" class="mt-2 px-3 py-1 bg-indigo-600 text-white rounded">➕ Add Test</button>
+            </div>
 
-
-  <!-- Output Preview -->
-  <div>
-    <h3 class="text-sm font-medium text-gray-700">Final Prescription:</h3>
-    <div id="final-medicines" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap"></div>
-    <div id="final-tests" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap mt-2"></div>
-  </div>
-</div>
-
+            <!-- Final Output -->
+            <div class="mt-4">
+              <h3 class="text-sm font-medium text-gray-700">Final Prescription:</h3>
+              <div id="final-medicines" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap"></div>
+              <div id="final-tests" class="bg-gray-50 p-2 rounded text-sm whitespace-pre-wrap mt-2"></div>
+            </div>
+          </div>
         </div>
+
+        <!-- Print Button -->
         <button id="print-button" type="button" class="mt-4 px-4 py-2 bg-blue-600 text-white rounded">🖨️ Print Prescription</button>
       </div>
     </div>
+
     <!-- Hidden Printable Prescription -->
-<div id="printable-prescription" class="hidden p-4 text-sm">
-  <h2 class="text-xl font-bold mb-2">📝 Prescription Summary</h2>
+    <div id="printable-prescription" class="hidden p-4 text-sm">
+      <h2 class="text-xl font-bold mb-2">📝 Prescription Summary</h2>
+      <p><strong>Date:</strong> <span id="print-date"></span></p>
+      <p><strong>Patient:</strong> <span id="print-patient-name"></span>, <span id="print-patient-age"></span> y/o</p>
+      <p><strong>Location:</strong> <span id="print-patient-location"></span></p>
 
-  <p><strong>Date:</strong> <span id="print-date"></span></p>
-  <p><strong>Patient:</strong> <span id="print-patient-name"></span>, <span id="print-patient-age"></span> y/o</p>
-  <p><strong>Location:</strong> <span id="print-patient-location"></span></p>
+      <h3 class="mt-4 text-lg font-semibold">Doctor's Diagnosis</h3>
+      <div id="print-doctor-diagnosis" class="whitespace-pre-wrap"></div>
 
-  <h3 class="mt-4 text-lg font-semibold">Doctor's Diagnosis</h3>
-  <div id="print-doctor-diagnosis" class="whitespace-pre-wrap"></div>
+      <h3 class="mt-4 text-lg font-semibold">Patient Explanation</h3>
+      <div id="print-patient-diagnosis" class="whitespace-pre-wrap"></div>
 
-  <h3 class="mt-4 text-lg font-semibold">Patient Explanation</h3>
-  <div id="print-patient-diagnosis" class="whitespace-pre-wrap"></div>
+      <h3 class="mt-4 text-lg font-semibold">Medicines</h3>
+      <div id="print-medicine-output" class="whitespace-pre-wrap"></div>
 
-  <h3 class="mt-4 text-lg font-semibold">Medicines</h3>
-  <div id="print-medicine-output" class="whitespace-pre-wrap"></div>
+      <h3 class="mt-4 text-lg font-semibold">Recommended Tests</h3>
+      <div id="print-test-output" class="whitespace-pre-wrap"></div>
+    </div>
+  </form>
 
-  <h3 class="mt-4 text-lg font-semibold">Recommended Tests</h3>
-  <div id="print-test-output" class="whitespace-pre-wrap"></div>
-</div>
-
-
- </form>
-
-<!-- Autocomplete must come before app.js -->
-
-<script type="module" src="js/app.js"></script>
-
-<!-- External Libraries -->
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script src="./html2pdf.js"></script>
-
+  <!-- JS Scripts -->
+  <script type="module" src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="./html2pdf.js"></script>
 </body>
 </html>
