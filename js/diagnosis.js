@@ -1,89 +1,67 @@
+// diagnosis.js – Match diagnosis rules based on visitData
+
+// 📦 Declare and export diagnosis rule store
 export let diagnosisRules = [];
 
-// Load enriched diagnosis rules
-export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.json') {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Failed to load diagnosis rules');
-    diagnosisRules = await response.json();
-    return diagnosisRules;
-  } catch (error) {
-    console.error('Error loading diagnosis rules:', error);
-    return [];
-  }
+// 🔄 Load rules from file and update in-memory list
+export async function loadDiagnosisRulesFromFile(url = './data/diagnosisRules.json') {
+  const response = await fetch(url);
+  const rules = await response.json();
+  diagnosisRules.length = 0;
+  diagnosisRules.push(...rules);
 }
 
+// 🧠 Match diagnosis rules against input data
+export function getMatchedDiagnoses(data) {
+  // 🛡️ Ensure at least 3 key inputs are filled before matching
+  const importantSections = ['blood', 'vitals', 'symptoms', 'medical', 'urine', 'ultrasound'];
+  const totalFieldsFilled = importantSections
+    .flatMap(sec => Object.values(data[sec] || {}))
+    .filter(val => val && val !== '').length;
 
-// Check if a rule is applicable (i.e., all its required fields are present)
-export function isRuleApplicable(rule, visit) {
-  if (!rule.missingFields || rule.missingFields.length === 0) return true;
+  // 🚨 Show toast warning if insufficient data
+  const toast = document.getElementById('toast-warning');
+  if (totalFieldsFilled < 3) {
+    if (toast) {
+      toast.classList.remove('hidden');
+      toast.innerText = '⚠️ Please enter at least 3 key values before generating diagnosis.';
+      setTimeout(() => toast.classList.add('hidden'), 4000);
+    }
+    return [];
+  }
 
-  return rule.missingFields.every(field => {
-    const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-    const value = visit?.[section]?.[key];
-    return value !== undefined && value !== null && value !== '';
+  // ✅ Match rules that meet conditions
+  const matched = [];
+  for (const rule of diagnosisRules) {
+    if (matchRule(rule, data)) matched.push(rule);
+  }
+  return matched;
+}
+
+// 🧩 Helper: Evaluate if a rule matches the input data
+function matchRule(rule, data) {
+  if (!rule.conditions || !Array.isArray(rule.conditions)) return false;
+  return rule.conditions.every(cond => {
+    const section = data[cond.section];
+    if (!section) return false;
+    const val = section[cond.field];
+    if (cond.equals !== undefined) return val === cond.equals;
+    if (cond.greaterThan !== undefined) return parseFloat(val) > cond.greaterThan;
+    if (cond.lessThan !== undefined) return parseFloat(val) < cond.lessThan;
+    return false;
   });
 }
 
-
-
-// Generate diagnosis objects (not just text) for rendering in doctor & patient view
-export function getMatchedDiagnoses(visit) {
-  const matches = [];
-
-  // Step 1: Group rules by exclusiveGroup (if any)
-  const grouped = {};
-  const ungrouped = [];
-
+// 🧱 Return list of fields required by any rule but missing in current data
+export function getMissingFields(data) {
+  const requiredFields = [];
   for (const rule of diagnosisRules) {
-    if (!isRuleApplicable(rule, visit)) continue;
-
-    if (rule.exclusiveGroup) {
-      if (!grouped[rule.exclusiveGroup]) grouped[rule.exclusiveGroup] = [];
-      grouped[rule.exclusiveGroup].push(rule);
-    } else {
-      ungrouped.push(rule);
-    }
-  }
-
-  // Step 2: From each exclusiveGroup, pick only the first match (or customize logic)
-  for (const group of Object.values(grouped)) {
-    matches.push(group[0]); // use first matched rule (you can sort or rank if needed)
-  }
-
-  // Step 3: Add all ungrouped matches
-  matches.push(...ungrouped);
-
-  return matches;
-}
-
-
-// For doctor panel display
-export function generateDiagnosisText(visit) {
-  const matches = getMatchedDiagnoses(visit);
-  return matches.length
-    ? matches.map(r => `- ${r.diagnosis} (Reason: ${r.doctorReason})`).join('\n')
-    : "No diagnosis suggestions matched.";
-}
-
-// Safe getMissingFields logic
-export function getMissingFields(visit) {
-  const needed = new Set();
-  const validKeys = new Set(Object.keys(visit).flatMap(section =>
-    Object.keys(visit[section] || {})
-  ));
-
-  for (const rule of diagnosisRules) {
-    if (rule.missingFields) {
-      for (const field of rule.missingFields) {
-        const [section, key] = field.includes('-') ? field.split('-') : ["", field];
-        if (!visit[section] || !(key in visit[section])) {
-          if (!validKeys.has(key)) continue; // skip invalid field
-          needed.add(field);
-        }
+    for (const cond of rule.conditions || []) {
+      const section = data[cond.section];
+      if (!section || section[cond.field] === undefined || section[cond.field] === '') {
+        requiredFields.push(`${cond.section}.${cond.field}`);
       }
     }
   }
-
-  return Array.from(needed);
+  return [...new Set(requiredFields)];
 }
