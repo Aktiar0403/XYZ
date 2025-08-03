@@ -1,6 +1,6 @@
 // app.js – Updated with Datalist Medicine/Test Picker
 import { loadMedicinesFromFile, medicines } from './medicines.js';
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses } from './diagnosis.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses,diagnosisRules } from './diagnosis.js';
 import { applyReferenceTooltips } from './inputhints.js';
 
 let visitData = {};
