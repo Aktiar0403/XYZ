@@ -27,7 +27,19 @@ export function getMatchedDiagnoses(data) {
       toast.innerText = '⚠️ Please enter at least 3 key values before generating diagnosis.';
       setTimeout(() => toast.classList.add('hidden'), 4000);
     }
-    return [];
+    if (toast) {
+      toast.classList.remove('hidden');
+      toast.innerText = '⚠️ Not enough input to analyze. Please enter some vitals, labs, or symptoms.';
+      setTimeout(() => toast.classList.add('hidden'), 4000);
+    }
+    return [{
+      diagnosis: 'Insufficient Data',
+      doctorReason: 'Not enough information provided to assess the case.',
+      patientExplanation: 'Please enter some symptoms, test values, or history so we can begin analysis.',
+      suggestedMedicines: [],
+      recommendedTests: [],
+      followUpAdvice: 'Complete minimum 3 sections like vitals, labs, or history.'
+    }];
   }
 
   // ✅ Match rules that meet conditions
