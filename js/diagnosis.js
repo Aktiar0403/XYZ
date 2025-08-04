@@ -17,14 +17,26 @@ export async function loadDiagnosisRulesFromFile(url = '/data/diagnosisRules.jso
 
 // Check if a rule is applicable based on missingFields and value presence
 export function isRuleApplicable(rule, visit) {
-  if (!rule.missingFields || rule.missingFields.length === 0) return true;
+  if (!rule || !rule.conditions || rule.conditions.length === 0) return false;
 
-  return rule.missingFields.every(field => {
-    const [section, key] = field.includes('-') ? field.split('-', 2) : ["", field];
-    const value = visit?.[section]?.[key];
-    return value !== undefined && value !== null && value !== '';
+  return rule.conditions.every(cond => {
+    const { section, field, operator, value } = cond;
+    const inputVal = visit?.[section]?.[field];
+
+    if (inputVal === undefined || inputVal === null || inputVal === '') return false;
+
+    switch (operator) {
+      case '==': return inputVal == value;
+      case '!=': return inputVal != value;
+      case '>': return parseFloat(inputVal) > value;
+      case '<': return parseFloat(inputVal) < value;
+      case 'in': return Array.isArray(value) && value.includes(inputVal);
+      case 'not in': return Array.isArray(value) && !value.includes(inputVal);
+      default: return false;
+    }
   });
 }
+
 
 // Optional scoring function to prioritize rules
 function scoreRule(rule) {
