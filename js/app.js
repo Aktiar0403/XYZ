@@ -71,16 +71,19 @@ function addManualTest() {
 function handleGenerateDiagnosis() {
   visitData = collectVisitData();
   matched = getMatchedDiagnoses(visitData);
-  const missing = getMissingFields(visitData);
-
-
+  const missing = getMissingFields(visitData);  // ✅ MUST CALL the function
 
   console.log("Collected visitData:", visitData);
   console.log("Matched Diagnoses:", matched);
   console.log("Missing Fields:", missing);
 
-  if (matched.length === 0 && Object.keys(visitData).length === 0) {
-    document.getElementById('missing-fields').innerText = '❗ Please enter patient details before generating diagnosis.';
+  const isEmptyInput = Object.values(visitData).every(section =>
+    Object.values(section).every(v => v === null || v === false || v === '')
+  );
+
+  if (matched.length === 0 && isEmptyInput) {
+    document.getElementById('missing-fields').innerText =
+      '❗ Please enter patient details before generating diagnosis.';
     return;
   }
 
@@ -94,6 +97,7 @@ function handleGenerateDiagnosis() {
   document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
 }
+
 
 function handlePrint() {
   document.getElementById('print-date').innerText = new Date().toLocaleDateString();
