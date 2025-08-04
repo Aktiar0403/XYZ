@@ -82,22 +82,20 @@ export function generateDiagnosisText(visit) {
 }
 
 export function getMissingFields(visit) {
-  const needed = new Set();
-  const validKeys = new Set(Object.keys(visit).flatMap(section =>
-    Object.keys(visit[section] || {})
-  ));
+  const filledFields = new Set();
 
-  for (const rule of diagnosisRules) {
-    if (rule.missingFields) {
-      for (const field of rule.missingFields) {
-        const [section, key] = field.includes('-') ? field.split('-', 2) : ["", field];
-        if (!visit[section] || !(key in visit[section])) {
-          if (!validKeys.has(key)) continue;
-          needed.add(field);
-        }
+  // Collect all filled fields in section-field format
+  for (const section in visit) {
+    for (const field in visit[section]) {
+      const value = visit[section][field];
+      if (value !== null && value !== '' && value !== undefined) {
+        filledFields.add(`${section}-${field}`);
       }
     }
   }
 
-  return Array.from(needed);
+  return (rule) => {
+    if (!rule?.missingFields?.length) return [];
+    return rule.missingFields.filter(f => !filledFields.has(f));
+  };
 }
