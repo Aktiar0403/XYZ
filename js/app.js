@@ -148,6 +148,7 @@ function collectVisitData() {
 function renderDiagnosisOptions(matched) {
   const container = document.getElementById('diagnosis-choice');
   container.innerHTML = '';
+
   matched.forEach((m, i) => {
     const radio = document.createElement('input');
     radio.type = 'radio';
@@ -155,21 +156,30 @@ function renderDiagnosisOptions(matched) {
     radio.value = m.diagnosis;
     radio.id = `diag-${i}`;
     radio.className = 'mr-2';
-    if (i === 0) {
-      radio.checked = true;
-      finalDiagnosis = m.diagnosis;
-    }
-    radio.addEventListener('change', () => finalDiagnosis = m.diagnosis);
 
     const label = document.createElement('label');
     label.htmlFor = `diag-${i}`;
     label.className = 'block text-sm';
     label.innerText = m.diagnosis;
 
+    // If it's the first one, mark selected and pre-fill doctor-diagnosis
+    if (i === 0) {
+      radio.checked = true;
+      finalDiagnosis = m.diagnosis;
+      document.getElementById('doctor-diagnosis').value = `• ${m.doctorReason}`;
+    }
+
+    // ⬇️ When radio changes, update diagnosis and reason in textarea
+    radio.addEventListener('change', () => {
+      finalDiagnosis = m.diagnosis;
+      document.getElementById('doctor-diagnosis').value = `• ${m.doctorReason}`;
+    });
+
     container.appendChild(radio);
     container.appendChild(label);
   });
 }
+
 
 function populateSuggestions(matched) {
   finalMeds.clear();
