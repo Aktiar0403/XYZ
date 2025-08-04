@@ -31,6 +31,7 @@ function setupEventListeners() {
   document.getElementById('add-manual-test')?.addEventListener('click', addManualTest);
   document.getElementById('generate-diagnosis')?.addEventListener('click', handleGenerateDiagnosis);
   document.getElementById('print-button')?.addEventListener('click', handlePrint);
+  document.getElementById('reset-button')?.addEventListener('click', handleResetAll);
 }
 
 function autofillMedicineDetails(e) {
