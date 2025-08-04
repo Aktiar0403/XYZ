@@ -95,7 +95,7 @@ function handleGenerateDiagnosis() {
 
   document.getElementById('doctor-diagnosis').value = '';
   document.getElementById('patient-diagnosis').value =
-    matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
+    matched.map(d => `• ${d.patientExplanation}`).join('');
 
   document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
