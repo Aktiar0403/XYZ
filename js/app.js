@@ -120,12 +120,26 @@ function collectVisitData() {
   document.querySelectorAll('[data-section]').forEach(input => {
     const section = input.dataset.section;
     const key = input.id;
-    const value = input.value?.trim();
+
     if (!data[section]) data[section] = {};
-    data[section][key] = value;
+
+    if (input.type === 'checkbox') {
+      data[section][key] = input.checked;
+    } else if (input.type === 'number') {
+      const val = input.value.trim();
+      data[section][key] = val !== '' ? parseFloat(val) : null;
+    } else if (input.tagName === 'SELECT') {
+      const val = input.value.trim();
+      data[section][key] = val !== '' ? val : null;
+    } else {
+      const val = input.value.trim();
+      data[section][key] = val !== '' ? val : null;
+    }
   });
+
   return data;
 }
+
 
 function renderDiagnosisOptions(matched) {
   const container = document.getElementById('diagnosis-choice');
