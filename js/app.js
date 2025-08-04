@@ -73,6 +73,8 @@ function handleGenerateDiagnosis() {
   matched = getMatchedDiagnoses(visitData);
 
   const missing = getMissingFields(visitData);  // ✅ this is the fix
+  console.log("typeof missing:", typeof missing);
+console.log("missing array sample:", missing.slice?.(0, 5));
 
   console.log("Collected visitData:", visitData);
   console.log("Matched Diagnoses:", matched);
@@ -95,7 +97,7 @@ function handleGenerateDiagnosis() {
 
   document.getElementById('doctor-diagnosis').value = '';
   document.getElementById('patient-diagnosis').value =
-    matched.map(d => `• ${d.patientExplanation}`).join('');
+    matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
 
   document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
