@@ -1,4 +1,4 @@
-// app.js – Refactored into Modular Functions
+// app.js – Refactored with New Patient Reset Feature
 import { loadMedicinesFromFile, medicines } from './medicines.js';
 import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses, diagnosisRules } from './diagnosis.js';
 import { applyReferenceTooltips } from './inputhints.js';
@@ -77,6 +77,11 @@ function handleGenerateDiagnosis() {
   console.log("Matched Diagnoses:", matched);
   console.log("Missing Fields:", missing);
 
+  if (matched.length === 0 && Object.keys(visitData).length === 0) {
+    document.getElementById('missing-fields').innerText = '❗ Please enter patient details before generating diagnosis.';
+    return;
+  }
+
   renderDiagnosisOptions(matched);
   populateSuggestions(matched);
   renderFinalMeds();
@@ -100,7 +105,6 @@ function handlePrint() {
   exportToPDF('printable-prescription');
 }
 
-
 function handleResetAll() {
   document.querySelectorAll('#visit-form input, #visit-form select, textarea').forEach(input => input.value = '');
   document.getElementById('doctor-diagnosis').value = '';
@@ -120,7 +124,6 @@ function collectVisitData() {
   document.querySelectorAll('[data-section]').forEach(input => {
     const section = input.dataset.section;
     const key = input.id;
-
     if (!data[section]) data[section] = {};
 
     if (input.type === 'checkbox') {
@@ -136,9 +139,8 @@ function collectVisitData() {
       data[section][key] = val !== '' ? val : null;
     }
   });
-
   return data;
-}
+} 
 
 
 function renderDiagnosisOptions(matched) {
