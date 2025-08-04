@@ -1,6 +1,6 @@
-// app.js – Updated with Datalist Medicine/Test Picker
+// app.js – Refactored into Modular Functions
 import { loadMedicinesFromFile, medicines } from './medicines.js';
-import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses,diagnosisRules } from './diagnosis.js';
+import { loadDiagnosisRulesFromFile, getMissingFields, getMatchedDiagnoses, diagnosisRules } from './diagnosis.js';
 import { applyReferenceTooltips } from './inputhints.js';
 
 let visitData = {};
@@ -10,6 +10,10 @@ let finalTests = new Set();
 let finalDiagnosis = "";
 
 window.addEventListener('DOMContentLoaded', async () => {
+  await initializeApp();
+});
+
+async function initializeApp() {
   await loadDiagnosisRulesFromFile();
   console.log("Loaded rules:", diagnosisRules);
   await loadMedicinesFromFile();
@@ -18,77 +22,97 @@ window.addEventListener('DOMContentLoaded', async () => {
   if (form) applyReferenceTooltips(form);
 
   populateDatalists();
-document.getElementById('manual-medicine')?.addEventListener('change', (e) => {
+  setupEventListeners();
+}
+
+function setupEventListeners() {
+  document.getElementById('manual-medicine')?.addEventListener('change', autofillMedicineDetails);
+  document.getElementById('add-manual-medicine')?.addEventListener('click', addManualMedicine);
+  document.getElementById('add-manual-test')?.addEventListener('click', addManualTest);
+  document.getElementById('generate-diagnosis')?.addEventListener('click', handleGenerateDiagnosis);
+  document.getElementById('print-button')?.addEventListener('click', handlePrint);
+}
+
+function autofillMedicineDetails(e) {
   const val = e.target.value.trim();
   const found = medicines.find(m => m.name === val || m.composition === val || `${m.name} (${m.composition})` === val);
   if (found) {
     document.getElementById('dose-field').value = found.dose || '';
     document.getElementById('instruction-field').value = found.instructions || '';
   }
-});
+}
 
-  // ✅ Add manual medicine
-  document.getElementById('add-manual-medicine')?.addEventListener('click', () => {
+function addManualMedicine() {
   const val = document.getElementById('manual-medicine').value.trim();
   const dose = document.getElementById('dose-field').value.trim();
   const instruction = document.getElementById('instruction-field').value.trim();
 
   if (val) {
-    // Combine into one string (optional customization)
     const medText = dose || instruction
       ? `${val} - ${dose || ''} ${instruction || ''}`.trim()
       : val;
-
     finalMeds.add(medText);
   }
 
-  // Clear fields
   document.getElementById('manual-medicine').value = '';
   document.getElementById('dose-field').value = '';
   document.getElementById('instruction-field').value = '';
   renderFinalMeds();
-});
+}
+
+function addManualTest() {
+  const val = document.getElementById('manual-test').value.trim();
+  if (val) finalTests.add(val);
+  document.getElementById('manual-test').value = '';
+  renderFinalTests();
+}
+
+function handleGenerateDiagnosis() {
+  visitData = collectVisitData();
+  matched = getMatchedDiagnoses(visitData);
+  const missing = getMissingFields(visitData);
+
+  console.log("Collected visitData:", visitData);
+  console.log("Matched Diagnoses:", matched);
+  console.log("Missing Fields:", missing);
+
+  renderDiagnosisOptions(matched);
+  populateSuggestions(matched);
+  renderFinalMeds();
+  renderFinalTests();
+
+  document.getElementById('doctor-diagnosis').value = "";
+  document.getElementById('patient-diagnosis').value = matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
+  document.getElementById('missing-fields').innerText = missing.length
+    ? `Please complete: ${missing.join(', ')}` : '';
+}
+
+function handlePrint() {
+  document.getElementById('print-date').innerText = new Date().toLocaleDateString();
+  document.getElementById('print-patient-name').innerText = visitData?.info?.['patient-name'] || '';
+  document.getElementById('print-patient-age').innerText = visitData?.info?.['patient-age'] || '';
+  document.getElementById('print-patient-location').innerText = visitData?.info?.['patient-location'] || '';
+  document.getElementById('print-doctor-diagnosis').innerText = finalDiagnosis;
+  document.getElementById('print-patient-diagnosis').innerText = document.getElementById('patient-diagnosis').value;
+  document.getElementById('print-medicine-output').innerText = Array.from(finalMeds).join('\n');
+  document.getElementById('print-test-output').innerText = Array.from(finalTests).join('\n');
+  exportToPDF('printable-prescription');
+}
 
 
-  // ✅ Add manual test
-  document.getElementById('add-manual-test')?.addEventListener('click', () => {
-    const val = document.getElementById('manual-test').value.trim();
-    if (val) finalTests.add(val);
-    document.getElementById('manual-test').value = '';
-    renderFinalTests();
-  });
-
-  document.getElementById('generate-diagnosis')?.addEventListener('click', () => {
-    visitData = collectVisitData();
-    matched = getMatchedDiagnoses(visitData);
-    const missing = getMissingFields(visitData);
-    console.log("Collected visitData:", visitData);
-    console.log("Matched Diagnoses:", matched);
-    console.log("Missing Fields:", missing);
-
-    renderDiagnosisOptions(matched);
-    populateSuggestions(matched);
-    renderFinalMeds();
-    renderFinalTests();
-
-    document.getElementById('doctor-diagnosis').value = "";
-    document.getElementById('patient-diagnosis').value = matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
-    document.getElementById('missing-fields').innerText = missing.length
-      ? `Please complete: ${missing.join(', ')}` : '';
-  });
-
-  document.getElementById('print-button')?.addEventListener('click', () => {
-    document.getElementById('print-date').innerText = new Date().toLocaleDateString();
-    document.getElementById('print-patient-name').innerText = visitData?.info?.['patient-name'] || '';
-    document.getElementById('print-patient-age').innerText = visitData?.info?.['patient-age'] || '';
-    document.getElementById('print-patient-location').innerText = visitData?.info?.['patient-location'] || '';
-    document.getElementById('print-doctor-diagnosis').innerText = finalDiagnosis;
-    document.getElementById('print-patient-diagnosis').innerText = document.getElementById('patient-diagnosis').value;
-    document.getElementById('print-medicine-output').innerText = Array.from(finalMeds).join('\n');
-    document.getElementById('print-test-output').innerText = Array.from(finalTests).join('\n');
-    exportToPDF('printable-prescription');
-  });
-});
+function handleResetAll() {
+  document.querySelectorAll('#visit-form input, #visit-form select, textarea').forEach(input => input.value = '');
+  document.getElementById('doctor-diagnosis').value = '';
+  document.getElementById('patient-diagnosis').value = '';
+  document.getElementById('missing-fields').innerText = '';
+  finalMeds.clear();
+  finalTests.clear();
+  matched = [];
+  finalDiagnosis = "";
+  renderFinalMeds();
+  renderFinalTests();
+  document.getElementById('diagnosis-choice').innerHTML = '';
+}
 
 function collectVisitData() {
   const data = {};
