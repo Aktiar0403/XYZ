@@ -71,7 +71,7 @@ function addManualTest() {
 function handleGenerateDiagnosis() {
   visitData = collectVisitData();
   matched = getMatchedDiagnoses(visitData);
-  const missing = getMissingFields(visitData);  // ✅ MUST CALL the function
+  const missing = getMissingFields(visitData);  // ✅ Must include the () to call it
 
   console.log("Collected visitData:", visitData);
   console.log("Matched Diagnoses:", matched);
@@ -93,7 +93,9 @@ function handleGenerateDiagnosis() {
   renderFinalTests();
 
   document.getElementById('doctor-diagnosis').value = "";
-  document.getElementById('patient-diagnosis').value = matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
+  document.getElementById('patient-diagnosis').value =
+    matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
+
   document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
 }
