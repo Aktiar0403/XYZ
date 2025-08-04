@@ -99,7 +99,14 @@ console.log("missing array sample:", missing.slice?.(0, 5));
   document.getElementById('patient-diagnosis').value =
     matched.map(d => `• ${d.patientExplanation}`).join('\n\n');
 
+  if (Array.isArray(missing)) {
   document.getElementById('missing-fields').innerText = missing.length
+    ? `Please complete: ${missing.join(', ')}` : '';
+} else {
+  console.error("🛑 missing is not an array!", missing);
+  document.getElementById('missing-fields').innerText = "⚠️ Internal error – 'missing' is not an array.";
+}
+document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
 }
 
