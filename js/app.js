@@ -71,8 +71,8 @@ function addManualTest() {
 function handleGenerateDiagnosis() {
   visitData = collectVisitData();
   matched = getMatchedDiagnoses(visitData);
-  const missingForRule = getMissingFields(visitData);
-const missing = matched.flatMap(rule => missingForRule(rule));
+  const missing = getMissingFields(visitData);
+
 
 
   console.log("Collected visitData:", visitData);
