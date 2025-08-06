@@ -104,7 +104,7 @@ console.log("missing array sample:", missing.slice?.(0, 5));
     ? `Please complete: ${missing.join(', ')}` : '';
 } else {
   console.error("🛑 missing is not an array!", missing);
-  document.getElementById('missing-fields').innerText = "⚠️ Internal error – 'missing' is not an array.";
+  document.getElementById('missing-fields').innerText = "⚠️ Please Provide patient Data.";
 }
 document.getElementById('missing-fields').innerText = missing.length
     ? `Please complete: ${missing.join(', ')}` : '';
