@@ -1,55 +1,58 @@
-// diagnosis.js – includes patched getMissingFields
-
+// diagnosis.js
 export let diagnosisRules = [];
 
 export async function loadDiagnosisRulesFromFile() {
-  const response = await fetch('./data/diagnosisRules.json');
-  diagnosisRules = await response.json();
+  try {
+    const response = await fetch('/data/diagnosisRules.json');
+    diagnosisRules = await response.json();
+    console.log("✅ Loaded rules:", diagnosisRules.length);
+  } catch (err) {
+    console.error("❌ Error loading diagnosisRules.json:", err);
+  }
 }
 
 export function getMatchedDiagnoses(visitData) {
-  return diagnosisRules.filter(rule => isRuleApplicable(rule, visitData));
-}
-
-export function isRuleApplicable(rule, visitData) {
-  if (!rule.conditions || !Array.isArray(rule.conditions)) return false;
-  return rule.conditions.every(cond => {
-    const val = visitData?.[cond.section]?.[cond.field];
-    switch (cond.operator) {
-      case '==': return val === cond.value;
-      case '!=': return val !== cond.value;
-      case '<': return typeof val === 'number' && val < cond.value;
-      case '<=': return typeof val === 'number' && val <= cond.value;
-      case '>': return typeof val === 'number' && val > cond.value;
-      case '>=': return typeof val === 'number' && val >= cond.value;
-      case 'in': return Array.isArray(cond.value) && cond.value.includes(val);
-      case 'not in': return Array.isArray(cond.value) && !cond.value.includes(val);
-      default: return false;
+  return diagnosisRules.filter(rule => {
+    if (rule.type === "simple") {
+      const val = visitData?.[rule.section]?.[rule.field];
+      return evalCondition(val, rule.operator, rule.value);
     }
+
+    if (rule.type === "compound") {
+      return rule.conditions.every(cond => {
+        const val = visitData?.[cond.section]?.[cond.field];
+        return evalCondition(val, cond.operator, cond.value);
+      });
+    }
+
+    return false;
   });
 }
 
-// ✅ PATCHED VERSION that supports both "flank-pain" and "symptoms-flank-pain"
-export function getMissingFields(visit) {
-  const filledFields = new Set();
-
-  for (const section in visit) {
-    for (const field in visit[section]) {
-      const value = visit[section][field];
-      if (value !== null && value !== '' && value !== undefined) {
-        filledFields.add(`${section}-${field}`);
-      }
-    }
+function evalCondition(actual, operator, expected) {
+  if (actual === undefined || actual === null) return false;
+  switch (operator) {
+    case "==": return actual == expected;
+    case "!=": return actual != expected;
+    case "<": return actual < expected;
+    case "<=": return actual <= expected;
+    case ">": return actual > expected;
+    case ">=": return actual >= expected;
+    case "in": return Array.isArray(expected) && expected.includes(actual);
+    default: return false;
   }
+}
 
-  return (rule) => {
-    if (!rule?.missingFields?.length) return [];
-    return rule.missingFields.filter(f => {
-      // If it's already section-field, check directly
-      if (f.includes('-')) return !filledFields.has(f);
+export function getMissingFields(visitData) {
+  const required = ["blood.egfr", "blood.creatinine", "urine.acr", "medical.diabetes"];
+  const missing = [];
 
-      // If it's just field name, check if any section-field ends with that
-      return ![...filledFields].some(ff => ff.endsWith(`-${f}`));
-    });
-  };
+  required.forEach(f => {
+    const [section, field] = f.split(".");
+    if (!visitData?.[section]?.[field] && visitData?.[section]?.[field] !== 0) {
+      missing.push(`${section}-${field}`);
+    }
+  });
+
+  return missing;
 }
