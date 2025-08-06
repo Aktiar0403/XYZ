@@ -1,5 +1,5 @@
 // app.js
-
+import { referenceRanges } from './referenceRanges.js';
 import {
   loadDiagnosisRulesFromFile,
   getMatchedDiagnoses,
